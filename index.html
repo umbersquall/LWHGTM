@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Longevity Whole Health: GTM Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --gd:#0a4227;--gm:#1a6640;--gl:#63a569;--gp:#e8f4ea;--gf:#f3faf4;
+  --w:#ffffff;--ink:#111;--muted:#4a5a50;--bd:#d0e6d5;
+  --cd:#1a1a2e;--cl:#7c6aee;--cp:#f5f4ff;--cbrd:#d4cffa;
+}
+body{font-family:'Outfit',Arial,sans-serif;color:var(--ink);background:#f8faf9;min-height:100vh;}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:58px;background:var(--gd);position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(0,0,0,0.2);}
+.nlogo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nowl{width:30px;height:30px;background:var(--gl);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.nwm{font-size:14px;font-weight:600;color:var(--w);}
+.nwm span{color:var(--gl);}
+.nlinks{display:flex;gap:6px;}
+.nlinks a{font-size:12px;color:rgba(255,255,255,0.65);text-decoration:none;cursor:pointer;padding:5px 10px;border-radius:6px;transition:background 0.15s;}
+.nlinks a:hover,.nlinks a.on{color:var(--w);background:rgba(255,255,255,0.1);}
+
+/* HERO */
+.hero{background:var(--gd);padding:4rem 2rem 3rem;text-align:center;}
+.ey{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gl);background:rgba(99,165,105,0.15);border:0.5px solid rgba(99,165,105,0.4);border-radius:20px;padding:4px 14px;margin-bottom:1.25rem;}
+.hero h1{font-size:36px;font-weight:600;color:var(--w);line-height:1.15;max-width:560px;margin:0 auto 0.6rem;}
+.hero h1 em{font-style:normal;color:var(--gl);}
+.slogan{font-size:12px;font-weight:300;color:rgba(255,255,255,0.38);letter-spacing:0.1em;margin-bottom:0.75rem;}
+.hero-sub{font-size:14px;color:rgba(255,255,255,0.55);max-width:420px;margin:0 auto 2rem;line-height:1.65;font-weight:300;}
+.hbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.bp{background:var(--gl);color:var(--w);border:none;border-radius:8px;padding:10px 22px;font-size:13px;font-weight:500;font-family:'Outfit',Arial,sans-serif;cursor:pointer;}
+.bp:hover{background:#4f8e54;}
+.bg{background:transparent;color:var(--w);border:0.5px solid rgba(255,255,255,0.3);border-radius:8px;padding:10px 22px;font-size:13px;font-family:'Outfit',Arial,sans-serif;cursor:pointer;}
+.bg:hover{border-color:rgba(255,255,255,0.7);}
+
+/* SECTION TABS */
+.tab-bar{background:var(--w);border-bottom:1px solid var(--bd);position:sticky;top:58px;z-index:99;overflow-x:auto;}
+.tab-inner{display:flex;max-width:960px;margin:0 auto;padding:0 1.5rem;}
+.tab{flex:1;padding:0.8rem 0.5rem;text-align:center;cursor:pointer;border-bottom:2px solid transparent;min-width:80px;transition:border-color 0.15s;}
+.tab:hover{background:var(--gf);}
+.tab.on{border-bottom-color:var(--gl);}
+.tab-lbl{font-size:12px;font-weight:500;color:var(--gd);}
+.tab-sub{font-size:10px;color:var(--muted);font-weight:300;}
+
+/* PAGE SECTIONS */
+.pb{display:none;}
+.pb.on{display:block;}
+.sec{padding:3rem 2rem;max-width:960px;margin:0 auto;}
+.sey{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gl);margin-bottom:0.4rem;}
+.st{font-size:24px;font-weight:600;color:var(--gd);line-height:1.2;margin-bottom:0.5rem;}
+.sb{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;max-width:520px;margin-bottom:1.75rem;}
+
+/* CARDS & GRIDS */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+.card{background:var(--w);border:0.5px solid var(--bd);border-radius:12px;padding:1.25rem;}
+.ci{width:36px;height:36px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;color:var(--gd);font-size:16px;margin-bottom:10px;}
+.ct{font-size:14px;font-weight:600;color:var(--gd);margin-bottom:5px;}
+.cb{font-size:12px;color:var(--muted);line-height:1.6;font-weight:300;}
+.badge{display:inline-block;font-size:10px;font-weight:500;padding:2px 10px;border-radius:20px;background:var(--gp);color:var(--gm);border:0.5px solid var(--bd);margin-bottom:8px;}
+.dl{list-style:none;margin-top:8px;}
+.dl li{font-size:12px;color:var(--muted);padding:3px 0 3px 13px;position:relative;line-height:1.5;}
+.dl li::before{content:'';position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--gl);}
+
+/* PRODUCT ARCH */
+.product-arch{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:2rem;}
+.prod-mem{background:var(--gd);border-radius:14px;padding:1.5rem;overflow:hidden;}
+.prod-clara{background:var(--cd);border-radius:14px;padding:1.5rem;overflow:hidden;}
+.prod-ey{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.prod-mem .prod-ey{color:var(--gl);}
+.prod-clara .prod-ey{color:var(--cl);}
+.prod-t{font-size:18px;font-weight:600;color:var(--w);margin-bottom:6px;}
+.prod-price{font-size:22px;font-weight:600;color:var(--gl);margin-bottom:8px;}
+.prod-price span{font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);}
+.prod-b{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;font-weight:300;margin-bottom:1.25rem;}
+.ap{border-radius:8px;padding:0.875rem 1rem;margin-bottom:8px;}
+.ap-direct{background:rgba(99,165,105,0.15);border:0.5px solid rgba(99,165,105,0.3);}
+.ap-employer{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.15);}
+.ap-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:3px;}
+.ap-employer .ap-label{color:rgba(255,255,255,0.45);}
+.ap-t{font-size:12px;font-weight:500;color:var(--w);margin-bottom:2px;}
+.ap-b{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;font-weight:300;}
+.clara-free{display:inline-flex;align-items:center;gap:8px;margin-bottom:8px;}
+.clara-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;background:rgba(124,106,238,0.2);border:0.5px solid rgba(124,106,238,0.4);color:var(--cl);}
+.clara-future{font-size:11px;font-weight:300;color:rgba(255,255,255,0.35);}
+.cr{border-radius:8px;padding:0.875rem 1rem;margin-bottom:8px;}
+.cr1{background:rgba(124,106,238,0.15);border:0.5px solid rgba(124,106,238,0.3);}
+.cr2{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.1);}
+.cr-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--cl);margin-bottom:3px;}
+.cr2 .cr-label{color:rgba(255,255,255,0.35);}
+.cr-t{font-size:12px;font-weight:500;color:var(--w);margin-bottom:2px;}
+.cr-b{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.4;font-weight:300;}
+
+/* MOTION BANDS */
+.motion-band{border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem;}
+.mb-b2c{background:var(--gp);border:0.5px solid var(--bd);}
+.mb-b2b{background:#EEF6FF;border:0.5px solid #C5DDF7;}
+.mb-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:5px;}
+.mb-b2c .mb-lbl{color:var(--gm);}
+.mb-b2b .mb-lbl{color:#185FA5;}
+.mb-title{font-size:13px;font-weight:600;margin-bottom:3px;}
+.mb-b2c .mb-title{color:var(--gd);}
+.mb-b2b .mb-title{color:#0C447C;}
+.funnel-steps{display:flex;align-items:center;gap:0;margin-top:10px;flex-wrap:wrap;}
+.fs-step{padding:6px 10px;border-top:0.5px solid;border-bottom:0.5px solid;border-left:0.5px solid;background:rgba(255,255,255,0.7);font-size:10px;}
+.fs-step:first-child{border-radius:5px 0 0 5px;}
+.fs-step:last-child{border-right:0.5px solid;border-radius:0 5px 5px 0;}
+.mb-b2c .fs-step{border-color:var(--bd);color:var(--gd);}
+.mb-b2b .fs-step{border-color:#C5DDF7;color:#185FA5;}
+.fa{width:16px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+.mb-b2c .fa{color:var(--gl);}
+.mb-b2b .fa{color:#378ADD;}
+.fs-r{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;opacity:0.65;display:block;}
+
+/* MSG PILLARS */
+.msg-pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:1.25rem;}
+.mp{border-left:3px solid var(--gl);border-radius:0 8px 8px 0;background:var(--gf);padding:0.875rem 1rem;}
+.mp-t{font-size:12px;font-weight:600;color:var(--gd);margin-bottom:3px;}
+.mp-b{font-size:11px;color:var(--muted);line-height:1.55;font-weight:300;}
+
+/* PROFILE CARDS */
+.profile-card{background:var(--w);border:0.5px solid var(--bd);border-radius:12px;padding:1.25rem;position:relative;}
+.profile-tag{position:absolute;top:1rem;right:1rem;font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;padding:2px 9px;border-radius:20px;}
+.profile-quote{font-size:12px;font-style:italic;color:var(--gl);margin-bottom:10px;}
+.profile-t{font-size:14px;font-weight:600;color:var(--gd);margin-bottom:8px;}
+.profile-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--gl);margin-bottom:4px;margin-top:8px;}
+.profile-items{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;}
+.pill{font-size:10px;padding:2px 9px;border-radius:20px;background:var(--gf);border:0.5px solid var(--bd);color:var(--muted);}
+.pain-list{list-style:none;}
+.pain-list li{font-size:11px;color:var(--muted);padding:3px 0 3px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);}
+.pain-list li:last-child{border:none;}
+.pain-list li::before{content:'';position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:#D85A30;}
+
+/* CIRCUIT */
+.circuit-steps{display:flex;flex-direction:column;gap:6px;margin-top:1rem;}
+.cs-row{display:flex;align-items:flex-start;gap:12px;background:var(--w);border:0.5px solid var(--bd);border-radius:8px;padding:0.875rem;}
+.cs-num{width:26px;height:26px;border-radius:50%;background:var(--gd);color:var(--w);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.cs-t{font-size:12px;font-weight:600;color:var(--gd);margin-bottom:2px;}
+.cs-b{font-size:11px;color:var(--muted);line-height:1.5;font-weight:300;}
+.cs-tech{font-size:10px;color:var(--gl);margin-top:4px;}
+
+/* CLARA BLOCK */
+.clara-hero-block{background:var(--cd);border-radius:12px;padding:1.75rem;margin-bottom:1.5rem;}
+.chb-ey{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--cl);margin-bottom:8px;}
+.chb-t{font-size:20px;font-weight:600;color:var(--w);margin-bottom:8px;}
+.chb-hero{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;font-weight:300;padding:1rem 1.25rem;background:rgba(124,106,238,0.12);border:0.5px solid rgba(124,106,238,0.3);border-radius:8px;margin-bottom:1.5rem;font-style:italic;}
+.clara-status-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.cs-card{border-radius:10px;padding:1rem 1.25rem;}
+.cs-now{background:rgba(124,106,238,0.18);border:0.5px solid rgba(124,106,238,0.35);}
+.cs-build{background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.12);}
+.cs-future{background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.12);}
+.cs-stage{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--cl);margin-bottom:5px;}
+.cs-build .cs-stage,.cs-future .cs-stage{color:rgba(255,255,255,0.4);}
+.cs-ct{font-size:12px;font-weight:500;color:var(--w);margin-bottom:3px;}
+.cs-cb{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;font-weight:300;}
+.clara-value-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:1.5rem;}
+.cv{background:var(--cp);border:0.5px solid var(--cbrd);border-radius:10px;padding:1rem 1.25rem;}
+.cv-icon{width:32px;height:32px;border-radius:50%;background:#EEEDFE;display:flex;align-items:center;justify-content:center;color:var(--cl);font-size:14px;margin-bottom:8px;}
+.cv-t{font-size:13px;font-weight:600;color:#2d2d5e;margin-bottom:4px;}
+.cv-b{font-size:12px;color:#534AB7;line-height:1.55;font-weight:300;}
+.clara-gtm-note{background:var(--gf);border:0.5px solid var(--bd);border-left:3px solid var(--gl);border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin-top:1.5rem;}
+.cgn-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;}
+.cgn-t{font-size:13px;font-weight:600;color:var(--gd);margin-bottom:4px;}
+.cgn-b{font-size:12px;color:var(--muted);line-height:1.6;font-weight:300;}
+
+/* TEAM */
+.team-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:1.5rem;}
+.tc{background:var(--w);border:0.5px solid var(--bd);border-radius:10px;padding:1rem;}
+.tci{width:32px;height:32px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;color:var(--gd);font-size:14px;margin-bottom:8px;}
+.tct{font-size:13px;font-weight:600;color:var(--gd);margin-bottom:3px;}
+.tcb{font-size:11px;color:var(--muted);line-height:1.5;font-weight:300;}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--bd);border-radius:12px;overflow:hidden;margin-top:1.5rem;}
+.mc{background:var(--w);padding:1.25rem 0.75rem;text-align:center;}
+.mn{font-size:24px;font-weight:600;color:var(--gd);}
+.mn span{font-size:12px;color:var(--gl);}
+.ml{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4;}
+
+/* ECOSYSTEM */
+.eco-hero{background:var(--gd);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;}
+.flywheel{background:rgba(99,165,105,0.12);border:0.5px solid rgba(99,165,105,0.3);border-radius:8px;padding:0.875rem 1.25rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:1rem;}
+.fw-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);flex-shrink:0;}
+.fw-step{font-size:11px;color:rgba(255,255,255,0.75);font-weight:300;}
+.fw-arrow{color:var(--gl);font-size:12px;}
+.partner-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.25rem;}
+.ps-btn{background:var(--w);border:0.5px solid var(--bd);border-radius:8px;padding:0.875rem 0.5rem;cursor:pointer;text-align:center;transition:border-color 0.15s;}
+.ps-btn:hover{border-color:var(--gl);}
+.ps-btn.on{border:2px solid var(--gl);background:var(--gp);}
+.ps-icon{width:28px;height:28px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;color:var(--gd);font-size:13px;margin:0 auto 6px;}
+.ps-btn.on .ps-icon{background:var(--gl);color:var(--w);}
+.ps-role{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--gl);margin-bottom:2px;}
+.ps-name{font-size:12px;font-weight:600;color:var(--gd);}
+.ps-type{font-size:10px;color:var(--muted);font-weight:300;}
+.partner-detail{background:var(--w);border:0.5px solid var(--bd);border-radius:12px;padding:1.25rem;margin-bottom:1.25rem;}
+.pd-header{display:flex;align-items:center;gap:12px;margin-bottom:1rem;padding-bottom:0.875rem;border-bottom:0.5px solid var(--bd);}
+.pd-icon{width:40px;height:40px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;color:var(--gd);font-size:18px;flex-shrink:0;}
+.pd-title{font-size:15px;font-weight:600;color:var(--gd);}
+.pd-sub{font-size:11px;color:var(--muted);margin-top:2px;font-weight:300;line-height:1.4;}
+.pd-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+.pd-section{background:var(--gf);border-radius:8px;padding:0.875rem;}
+.pd-section-t{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--gl);margin-bottom:6px;}
+.pd-list{list-style:none;}
+.pd-list li{font-size:11px;color:var(--muted);padding:3px 0 3px 12px;position:relative;line-height:1.5;}
+.pd-list li::before{content:'';position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:var(--gl);}
+.pd-open{background:var(--gd);border-radius:6px;padding:0.75rem 1rem;margin-top:10px;}
+.pd-open-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--gl);margin-bottom:3px;}
+.pd-open-q{font-size:12px;color:rgba(255,255,255,0.85);font-style:italic;font-weight:300;}
+
+/* JOURNEY */
+.journey-header{background:var(--gd);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;}
+.jh-t{font-size:17px;font-weight:600;color:var(--w);margin-bottom:4px;}
+.jh-b{font-size:11px;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.6;max-width:480px;margin-bottom:1rem;}
+.milestone-row{display:flex;align-items:center;gap:0;flex-wrap:wrap;}
+.ms{padding:6px 12px;background:rgba(99,165,105,0.12);border:0.5px solid rgba(99,165,105,0.3);font-size:11px;font-weight:500;color:var(--w);}
+.ms:first-child{border-radius:5px 0 0 5px;}
+.ms:last-child{border-radius:0 5px 5px 0;}
+.ms.now{background:rgba(99,165,105,0.25);border-color:rgba(99,165,105,0.5);}
+.ms-arrow{color:var(--gl);font-size:12px;width:16px;text-align:center;}
+.tracks-header{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:6px;}
+.th-track{border-radius:8px 8px 0 0;padding:0.75rem 1rem;text-align:center;}
+.th-med{background:var(--gd);}
+.th-clara{background:var(--cd);}
+.th-comm{background:#1a2d1a;}
+.th-ey{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;}
+.th-med .th-ey{color:var(--gl);}
+.th-clara .th-ey{color:var(--cl);}
+.th-comm .th-ey{color:#63a569;}
+.th-t{font-size:13px;font-weight:600;color:var(--w);}
+.th-sub{font-size:10px;font-weight:300;margin-top:2px;color:rgba(255,255,255,0.45);}
+.phase-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0.75rem 0 0.35rem;border-top:0.5px solid var(--bd);margin-top:6px;}
+.phase-label:first-of-type{border-top:none;margin-top:0;}
+.track-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:6px;}
+.tp{padding:0.875rem;border:0.5px solid;min-height:90px;border-radius:4px;}
+.tp-med{background:var(--gp);border-color:var(--bd);}
+.tp-clara{background:var(--cp);border-color:var(--cbrd);}
+.tp-comm{background:#f0f7f0;border-color:#c0ddc0;}
+.tp.tbd{background:var(--gf);border-color:var(--bd);border-style:dashed;}
+.tp-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;margin-bottom:6px;}
+.tp-med .tp-icon{background:rgba(10,66,39,0.12);color:var(--gd);}
+.tp-clara .tp-icon{background:rgba(124,106,238,0.15);color:var(--cl);}
+.tp-comm .tp-icon{background:rgba(99,165,105,0.2);color:var(--gm);}
+.tp.tbd .tp-icon{background:rgba(0,0,0,0.04);color:#aaa;}
+.tp-t{font-size:12px;font-weight:600;margin-bottom:3px;}
+.tp-med .tp-t{color:var(--gd);}
+.tp-clara .tp-t{color:#3C3489;}
+.tp-comm .tp-t{color:#1a4d1a;}
+.tp.tbd .tp-t{color:#aaa;}
+.tp-b{font-size:11px;line-height:1.5;font-weight:300;}
+.tp-med .tp-b,.tp.tbd .tp-b{color:var(--muted);}
+.tp-clara .tp-b{color:#534AB7;}
+.tp-comm .tp-b{color:#3a6b3a;}
+.tp.tbd .tp-b{color:#bbb;}
+.tbd-badge{display:inline-block;font-size:9px;font-weight:600;padding:1px 7px;border-radius:20px;background:rgba(0,0,0,0.05);color:#aaa;border:0.5px solid #ddd;margin-top:5px;letter-spacing:0.05em;text-transform:uppercase;}
+.def-badge{display:inline-block;font-size:9px;font-weight:600;padding:1px 7px;border-radius:20px;margin-top:5px;letter-spacing:0.05em;text-transform:uppercase;}
+.med-def{background:rgba(10,66,39,0.08);color:var(--gm);border:0.5px solid var(--bd);}
+.comm-def{background:rgba(99,165,105,0.15);color:var(--gm);border:0.5px solid #c0ddc0;}
+.renewal-band{background:var(--gd);border-radius:10px;padding:1rem 1.25rem;margin-top:1.25rem;display:flex;align-items:center;gap:14px;}
+.rb-icon{width:36px;height:36px;border-radius:50%;background:rgba(99,165,105,0.2);display:flex;align-items:center;justify-content:center;color:var(--gl);font-size:16px;flex-shrink:0;}
+.rb-t{font-size:13px;font-weight:600;color:var(--w);}
+.rb-b{font-size:11px;color:rgba(255,255,255,0.5);font-weight:300;margin-top:2px;line-height:1.5;}
+
+/* TECH STACK */
+.stack-note{background:var(--gf);border:0.5px solid var(--bd);border-left:3px solid var(--gl);border-radius:0 10px 10px 0;padding:0.875rem 1.125rem;margin-bottom:1.5rem;font-size:12px;color:var(--muted);line-height:1.6;font-weight:300;}
+.role-stacks{display:flex;flex-direction:column;gap:18px;}
+.rs{border-radius:12px;overflow:hidden;border:0.5px solid var(--bd);}
+.rs-header{padding:1rem 1.25rem;display:flex;align-items:center;gap:12px;}
+.rs-sdr{background:var(--gd);}
+.rs-ae{background:#0c3a5a;}
+.rs-cc{background:#2d1a4a;}
+.rs-shared{background:#1a1a1a;}
+.rs-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.rs-sdr .rs-icon{background:rgba(99,165,105,0.2);color:var(--gl);}
+.rs-ae .rs-icon{background:rgba(55,138,221,0.25);color:#85B7EB;}
+.rs-cc .rs-icon{background:rgba(124,106,238,0.25);color:#AFA9EC;}
+.rs-shared .rs-icon{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);}
+.rs-role{font-size:14px;font-weight:600;color:var(--w);}
+.rs-sub{font-size:11px;font-weight:300;color:rgba(255,255,255,0.45);margin-top:1px;}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--bd);}
+.tool{background:var(--w);padding:0.875rem 1rem;}
+.tool.tbd-tool{background:var(--gf);}
+.tool-cat{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:4px;}
+.tbd-tool .tool-cat{color:#bbb;}
+.tool-name{font-size:13px;font-weight:600;color:var(--gd);margin-bottom:3px;}
+.tbd-tool .tool-name{color:#aaa;}
+.tool-desc{font-size:11px;color:var(--muted);line-height:1.5;font-weight:300;}
+.tbd-tool .tool-desc{color:#bbb;}
+.tool-tbd-tag{display:inline-block;font-size:9px;font-weight:600;padding:1px 7px;border-radius:20px;background:rgba(0,0,0,0.04);color:#bbb;border:0.5px solid #e0e0e0;margin-top:4px;letter-spacing:0.05em;text-transform:uppercase;}
+
+/* HANDOFF */
+.handoff-stage{background:var(--w);border:0.5px solid var(--bd);border-radius:12px;overflow:hidden;margin-bottom:12px;}
+.hs-header{padding:1rem 1.25rem;display:flex;align-items:center;gap:12px;}
+.hs-sdr{background:var(--gp);border-bottom:0.5px solid var(--bd);}
+.hs-ae{background:#EEF6FF;border-bottom:0.5px solid #C5DDF7;}
+.hs-cc{background:#F0EEFE;border-bottom:0.5px solid var(--cbrd);}
+.hs-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.hs-sdr .hs-icon{background:var(--gd);color:var(--gl);}
+.hs-ae .hs-icon{background:#0c3a5a;color:#85B7EB;}
+.hs-cc .hs-icon{background:#2d1a4a;color:#AFA9EC;}
+.hs-role{font-size:14px;font-weight:600;color:var(--gd);}
+.hs-ae .hs-role{color:#0C447C;}
+.hs-cc .hs-role{color:#3C3489;}
+.hs-sub{font-size:11px;color:var(--muted);font-weight:300;margin-top:2px;}
+.hs-body{padding:1.25rem;}
+.hs-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+.hs-col-t{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:8px;}
+.hs-list{list-style:none;}
+.hs-list li{font-size:12px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);}
+.hs-list li:last-child{border:none;}
+.hs-list li::before{content:'';position:absolute;left:2px;top:10px;width:4px;height:4px;border-radius:50%;background:var(--gl);}
+.handoff-arrow{text-align:center;padding:0.5rem 0;color:var(--gl);font-size:22px;}
+.ho-packet{background:var(--gd);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:12px;}
+.hop-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gl);margin-bottom:8px;}
+.hop-t{font-size:14px;font-weight:600;color:var(--w);margin-bottom:8px;}
+.hop-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;}
+.hop-item{background:rgba(99,165,105,0.12);border:0.5px solid rgba(99,165,105,0.25);border-radius:8px;padding:0.75rem 1rem;}
+.hop-item-t{font-size:12px;font-weight:600;color:var(--w);margin-bottom:2px;}
+.hop-item-b{font-size:11px;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.4;}
+
+/* ACTION ROW */
+.ar{display:flex;gap:8px;flex-wrap:wrap;margin-top:1.5rem;}
+.btn-s{background:var(--gl);color:var(--w);border:none;border-radius:7px;padding:8px 16px;font-size:12px;font-weight:500;font-family:'Outfit',Arial,sans-serif;cursor:pointer;}
+.btn-s:hover{background:#4f8e54;}
+.btn-sc{background:var(--cl);color:var(--w);border:none;border-radius:7px;padding:8px 16px;font-size:12px;font-weight:500;font-family:'Outfit',Arial,sans-serif;cursor:pointer;}
+.btn-o{background:transparent;border:0.5px solid var(--bd);border-radius:7px;padding:8px 16px;font-size:12px;color:var(--gd);font-family:'Outfit',Arial,sans-serif;cursor:pointer;}
+.btn-o:hover{background:var(--gf);}
+
+/* FOOTER */
+.cta-sec{background:var(--gd);padding:3rem 2rem;text-align:center;margin-top:2rem;}
+.cta-sec h2{font-size:24px;font-weight:600;color:var(--w);margin-bottom:0.6rem;}
+.cta-sec p{font-size:13px;color:rgba(255,255,255,0.5);max-width:380px;margin:0 auto 1.5rem;line-height:1.65;font-weight:300;}
+.foot{background:#061f13;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footc{font-size:11px;color:rgba(255,255,255,0.3);}
+.footl{display:flex;gap:16px;flex-wrap:wrap;}
+.footl span{font-size:11px;color:rgba(255,255,255,0.35);cursor:pointer;}
+</style>
+</head>
+<body>
+<style>
+#pw-gate{position:fixed;inset:0;background:#0a4227;display:flex;align-items:center;justify-content:center;z-index:9999;}
+#pw-box{background:#0e5230;border:0.5px solid rgba(99,165,105,0.3);border-radius:16px;padding:2.5rem 2rem;width:100%;max-width:360px;text-align:center;}
+#pw-logo{width:44px;height:44px;background:#63a569;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;}
+#pw-t{font-size:17px;font-weight:600;color:#ffffff;margin-bottom:6px;font-family:'Outfit',Arial,sans-serif;}
+#pw-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:1.75rem;font-family:'Outfit',Arial,sans-serif;font-weight:300;}
+#pw-input{width:100%;padding:10px 14px;border-radius:8px;border:0.5px solid rgba(99,165,105,0.4);background:rgba(255,255,255,0.07);color:#ffffff;font-size:14px;font-family:'Outfit',Arial,sans-serif;outline:none;margin-bottom:10px;box-sizing:border-box;text-align:center;letter-spacing:0.05em;}
+#pw-input::placeholder{color:rgba(255,255,255,0.3);}
+#pw-input:focus{border-color:rgba(99,165,105,0.7);}
+#pw-btn{width:100%;padding:10px;border-radius:8px;border:none;background:#63a569;color:#ffffff;font-size:13px;font-weight:500;font-family:'Outfit',Arial,sans-serif;cursor:pointer;margin-bottom:10px;}
+#pw-btn:hover{background:#4f8e54;}
+#pw-err{font-size:12px;color:#F09595;display:none;margin-top:4px;font-family:'Outfit',Arial,sans-serif;}
+#pw-slogan{font-size:11px;color:rgba(255,255,255,0.25);margin-top:1.5rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'Outfit',Arial,sans-serif;}
+body.locked{overflow:hidden;}
+</style>
+
+<div id="pw-gate">
+  <div id="pw-box">
+    <div id="pw-logo"><i class="ti ti-leaf" style="font-size:20px;color:#0a4227;"></i></div>
+    <div id="pw-t">Longevity Whole Health</div>
+    <div id="pw-sub">Internal GTM strategy. Confidential.</div>
+    <input id="pw-input" type="password" placeholder="Enter access code" onkeydown="if(event.key==='Enter')checkPw()">
+    <button id="pw-btn" onclick="checkPw()">Access</button>
+    <div id="pw-err">Incorrect access code. Please try again.</div>
+    <div id="pw-slogan">Live for better.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  document.body.classList.add('locked');
+  var stored = sessionStorage.getItem('lwh-gtm-auth');
+  if(stored === 'granted'){ unlock(); }
+})();
+
+function checkPw(){
+  var val = document.getElementById('pw-input').value;
+  var hash = 0;
+  for(var i=0;i<val.length;i++){ hash = ((hash<<5)-hash)+val.charCodeAt(i); hash|=0; }
+  if(hash === -1189146700){ sessionStorage.setItem('lwh-gtm-auth','granted'); unlock(); }
+  else{ document.getElementById('pw-err').style.display='block'; document.getElementById('pw-input').value=''; document.getElementById('pw-input').focus(); }
+}
+
+function unlock(){
+  var gate = document.getElementById('pw-gate');
+  if(gate) gate.style.display='none';
+  document.body.classList.remove('locked');
+}
+</script>
+
+<nav class="nav">
+  <a class="nlogo" href="#">
+    <div class="nowl"><i class="ti ti-leaf" style="font-size:14px;color:#0a4227;"></i></div>
+    <span class="nwm">Longevity <span>Whole Health</span></span>
+  </a>
+  <div class="nlinks">
+    <a onclick="showTab(0)" id="na0" class="on">GTM</a>
+    <a onclick="showTab(1)" id="na1">Products</a>
+    <a onclick="showTab(2)" id="na2">Members</a>
+    <a onclick="showTab(3)" id="na3">Employers</a>
+    <a onclick="showTab(4)" id="na4">Team</a>
+    <a onclick="showTab(5)" id="na5">Ecosystem</a>
+    <a onclick="showTab(6)" id="na6">Journey</a>
+    <a onclick="showTab(7)" id="na7">Tech stack</a>
+    <a onclick="showTab(8)" id="na8">Strategy</a>
+    <a onclick="showTab(9)" id="na9">Competition</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Uniting <span style="color:#63a569;">science</span>, <span style="color:#7c6aee;">technology</span>, and <span style="color:#F9CB42;">human-centered empathy</span>.</h1>
+  <p class="slogan">Live for better.</p>
+</section>
+
+<div class="tab-bar" id="tabbar">
+  <div class="tab-inner">
+    <div class="tab on" id="t0" onclick="showTab(0)"><div class="tab-lbl">GTM</div></div>
+    <div class="tab" id="t1" onclick="showTab(1)"><div class="tab-lbl">Products</div></div>
+    <div class="tab" id="t2" onclick="showTab(2)"><div class="tab-lbl">Members</div></div>
+    <div class="tab" id="t3" onclick="showTab(3)"><div class="tab-lbl">Employers</div></div>
+    <div class="tab" id="t4" onclick="showTab(4)"><div class="tab-lbl">Team</div></div>
+    <div class="tab" id="t5" onclick="showTab(5)"><div class="tab-lbl">Ecosystem</div></div>
+    <div class="tab" id="t6" onclick="showTab(6)"><div class="tab-lbl">Journey</div></div>
+    <div class="tab" id="t7" onclick="showTab(7)"><div class="tab-lbl">Tech stack</div></div>
+    <div class="tab" id="t8" onclick="showTab(8)"><div class="tab-lbl">Strategy</div></div>
+    <div class="tab" id="t9" onclick="showTab(9)"><div class="tab-lbl">Competition</div></div>
+  </div>
+</div>
+
+<!-- ── STRATEGY ── -->
+<div class="pb on" id="p0">
+<div class="sec">
+  <div class="sey">GTM · Path forward</div>
+  <div class="st">The path forward.</div>
+  <div class="sb">The membership is what the SDR positions and the AE closes. Clara is part of the membership, and what the whole business is building toward as a standalone product.</div>
+
+  <!-- VISUAL: PHASE ARC -->
+  <div style="background:var(--gd);border-radius:14px;padding:2rem;margin-bottom:1.5rem;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(99,165,105,0.7);margin-bottom:1rem;text-align:center;">How we go to market</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem;">
+      <div style="background:rgba(99,165,105,0.18);border:0.5px solid rgba(99,165,105,0.4);border-radius:10px;padding:1.25rem;text-align:center;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:8px;">Phase 1</div>
+        <div style="font-size:16px;font-weight:600;color:var(--w);margin-bottom:6px;">Memberships<br>Direct to Consumer</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);line-height:1.5;">Sell Longevity One memberships directly to individuals. Build proof, outcomes, and member stories.</div>
+      </div>
+      <div style="background:rgba(99,165,105,0.1);border:0.5px solid rgba(99,165,105,0.25);border-radius:10px;padding:1.25rem;text-align:center;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(99,165,105,0.7);margin-bottom:8px;">Phase 2</div>
+        <div style="font-size:16px;font-weight:600;color:var(--w);margin-bottom:6px;">Benefits Programs<br>to Employers</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;">Sell Employer One programs to businesses. Employees receive the membership as a workplace benefit.</div>
+      </div>
+      <div style="background:rgba(124,106,238,0.12);border:0.5px solid rgba(124,106,238,0.3);border-radius:10px;padding:1.25rem;text-align:center;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--cl);margin-bottom:8px;">Phase 3</div>
+        <div style="font-size:16px;font-weight:600;color:var(--w);margin-bottom:6px;">Clara<br>Standalone Product</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;">Spin Clara into its own subscription, direct to consumers and to doctor&#39;s offices whose patients want to stay connected to their health data.</div>
+      </div>
+    </div>
+    <div style="background:rgba(99,165,105,0.1);border:0.5px solid rgba(99,165,105,0.2);border-radius:8px;padding:0.875rem 1.25rem;text-align:center;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;">Every membership includes</div>
+      <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.8);"><i class="ti ti-stethoscope" style="color:#63a569;font-size:14px;"></i>Medical journey</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.8);"><i class="ti ti-sparkles" style="color:#7c6aee;font-size:14px;"></i>Clara journey</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.8);"><i class="ti ti-heart" style="color:#F9CB42;font-size:14px;"></i>Community journey</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="sey" style="margin-bottom:0.75rem;">Products</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem;">
+    <div class="card" style="border-top:3px solid var(--gl);">
+      <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;">Product 1</div>
+      <div class="ct">Longevity One membership</div>
+      <div class="cb">The core 12-month membership. Includes the Longevity Circuit, year-round care, Clara, and community. $4,000/year. Sold direct to individuals.</div>
+    </div>
+    <div class="card" style="border-top:3px solid #378ADD;">
+      <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#185FA5;margin-bottom:6px;">Product 2</div>
+      <div class="ct">Employer One program</div>
+      <div class="cb">The employer-funded group benefit. Includes the full Longevity One membership for each enrolled employee. Sold to businesses as a workplace benefit.</div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--cl);">
+      <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--cl);margin-bottom:6px;">Product 3</div>
+      <div class="ct">Clara</div>
+      <div class="cb">Included with every membership today. As outcomes evidence builds, Clara launches as a standalone subscription, direct to consumers and to clinical practices.</div>
+    </div>
+  </div>
+
+  <!-- GTM MOTION -->
+  <div class="sey" style="margin-bottom:0.75rem;">GTM motion</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;">
+    <div style="background:var(--gp);border:0.5px solid var(--bd);border-radius:10px;padding:1rem 1.25rem;">
+      <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gm);margin-bottom:6px;">B2C direct</div>
+      <div style="font-size:13px;font-weight:600;color:var(--gd);margin-bottom:4px;">Marketing drives MQLs, SDR qualifies, AE closes</div>
+      <div style="font-size:11px;color:var(--muted);line-height:1.5;">Campaigns generate form fills. SDR qualifies inbound same day. AE runs consultative discovery and closes the Longevity One membership direct.</div>
+    </div>
+    <div style="background:#EEF6FF;border:0.5px solid #C5DDF7;border-radius:10px;padding:1rem 1.25rem;">
+      <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#185FA5;margin-bottom:6px;">B2B employer</div>
+      <div style="font-size:13px;font-weight:600;color:#0C447C;margin-bottom:4px;">SDR dials cold, books demo, AE closes group package</div>
+      <div style="font-size:11px;color:#185FA5;line-height:1.5;font-weight:300;">Pure outbound into Northern Ontario employers. Single call goal: booked demo. AE builds the ROI case and closes the Employer One program.</div>
+    </div>
+  </div>
+
+  <!-- SALES PROCESS -->
+  <div class="sey" style="margin-bottom:0.75rem;">Sales process</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.5rem;">
+    <div style="border-radius:10px;overflow:hidden;border:0.5px solid var(--bd);">
+      <div style="background:var(--gd);padding:0.75rem 1rem;">
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:3px;">SDR</div>
+        <div style="font-size:13px;font-weight:600;color:var(--w);">Prospecting</div>
+      </div>
+      <div style="padding:0.875rem 1rem;background:var(--w);">
+        <div style="font-size:11px;color:var(--muted);line-height:1.55;">Identifies and reaches qualified prospects through outbound calls, email, and LinkedIn. Goal: qualified conversation handed to AE.</div>
+      </div>
+    </div>
+    <div style="border-radius:10px;overflow:hidden;border:0.5px solid var(--bd);">
+      <div style="background:var(--gd);padding:0.75rem 1rem;">
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:3px;">AE</div>
+        <div style="font-size:13px;font-weight:600;color:var(--w);">Qualification + closing</div>
+      </div>
+      <div style="padding:0.875rem 1rem;background:var(--w);">
+        <div style="font-size:11px;color:var(--muted);line-height:1.55;">Leads discovery to understand health goals or workforce challenges. Presents the right product and closes to a signed membership or group agreement.</div>
+      </div>
+    </div>
+    <div style="border-radius:10px;overflow:hidden;border:0.5px solid var(--bd);">
+      <div style="background:var(--gd);padding:0.75rem 1rem;">
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:3px;">Client Concierge</div>
+        <div style="font-size:13px;font-weight:600;color:var(--w);">Activation, adoption + renewal</div>
+      </div>
+      <div style="padding:0.875rem 1rem;background:var(--w);">
+        <div style="font-size:11px;color:var(--muted);line-height:1.55;">Receives the member post-close. Activates the membership and Clara. Drives adoption across the 12-month journey. Owns renewal and referral.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HANDOFF DIVIDER -->
+  <hr style="border:none;border-top:0.5px solid var(--bd);margin:2rem 0;">
+
+  <!-- HANDOFF CONTENT (moved from standalone tab) -->
+  <div class="sec" style="padding:0;">
+  <div class="sey">The handoff process</div>
+  <div class="st">SDR &rarr; AE &rarr; Client Concierge.</div>
+  <div class="sb">Three clean handoffs. Each one transfers full context. No member should ever feel like they&#39;re starting over. What travels with the member at every stage is as important as the handoff itself.</div>
+
+  <div class="handoff-stage">
+    <div class="hs-header hs-sdr">
+      <div class="hs-icon"><i class="ti ti-phone-outgoing"></i></div>
+      <div><div class="hs-role">SDR: top of funnel</div><div class="hs-sub">Owns the prospect from first contact through to qualified handoff to the AE</div></div>
+    </div>
+    <div class="hs-body">
+      <div class="hs-cols">
+        <div>
+          <div class="hs-col-t">B2C: MQL qualification</div>
+          <ul class="hs-list">
+            <li>Responds to form fill same business day</li>
+            <li>Confirms health motivation and context</li>
+            <li>Assesses budget awareness ($4,000/year)</li>
+            <li>Checks HSA / benefits eligibility</li>
+            <li>Books discovery call with AE</li>
+            <li>Logs all notes in CRM before handoff</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hs-col-t">B2B: cold outbound</div>
+          <ul class="hs-list">
+            <li>Builds employer target list</li>
+            <li>Cold calls HR Director / VP People / CEO</li>
+            <li>Opens with workforce pain, not product pitch</li>
+            <li>Single goal: book 30-min demo for AE</li>
+            <li>Confirms decision-maker is on the call</li>
+            <li>Sends calendar invite and pre-read to prospect</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hs-col-t">Qualification criteria (both)</div>
+          <ul class="hs-list">
+            <li>Right ICP fit: individual or employer</li>
+            <li>Health / workforce motivation confirmed</li>
+            <li>Budget awareness or employer funding path</li>
+            <li>Decision maker engaged</li>
+            <li>Discovery call or demo booked and confirmed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ho-packet">
+    <div class="hop-label">Handoff 1 &middot; SDR &rarr; AE</div>
+    <div class="hop-t">What travels with the prospect to the AE</div>
+    <div class="hop-items">
+      <div class="hop-item"><div class="hop-item-t">Contact record</div><div class="hop-item-b">Full CRM entry: name, role, company, source, date of first contact</div></div>
+      <div class="hop-item"><div class="hop-item-t">Qualification notes</div><div class="hop-item-b">Why they enquired, what they said about their health or workforce situation, any concerns raised</div></div>
+      <div class="hop-item"><div class="hop-item-t">Budget signal</div><div class="hop-item-b">Whether $4,000/year was acknowledged, HSA eligibility, or employer funding path confirmed</div></div>
+      <div class="hop-item"><div class="hop-item-t">ICP classification</div><div class="hop-item-b">B2C individual or B2B employer, and the specific pathway (direct or group benefit)</div></div>
+      <div class="hop-item"><div class="hop-item-t">Call recording</div><div class="hop-item-b">Grain recording or summary of the qualification call for the AE to review before discovery</div></div>
+    </div>
+  </div>
+
+  <div class="handoff-arrow"><i class="ti ti-arrow-down"></i></div>
+
+  <div class="handoff-stage">
+    <div class="hs-header hs-ae">
+      <div class="hs-icon"><i class="ti ti-user-check"></i></div>
+      <div><div class="hs-role" style="color:#EEF6FF;">AE: discovery to close</div><div class="hs-sub">Owns the sales cycle from first discovery call through to signed membership agreement</div></div>
+    </div>
+    <div class="hs-body">
+      <div class="hs-cols">
+        <div>
+          <div class="hs-col-t">B2C: individual close</div>
+          <ul class="hs-list">
+            <li>Reviews SDR notes and call recording before discovery</li>
+            <li>Leads consultative discovery: health goals, frustrations, what they&#39;ve tried</li>
+            <li>Positions Longevity One as the structured path forward</li>
+            <li>Introduces Clara as a daily health companion, not an add-on</li>
+            <li>Uses HSA angle to address price objection</li>
+            <li>Sends proposal and follows up within 24 hours</li>
+            <li>Closes to signed membership agreement</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hs-col-t">B2B: employer close</div>
+          <ul class="hs-list">
+            <li>Reviews SDR notes on company, decision-makers, and stated challenges</li>
+            <li>Leads demo: workforce challenges first, solution second</li>
+            <li>Builds employer ROI case: absenteeism, retention, culture</li>
+            <li>Proposes pilot cohort (30-90 day) as low-risk on-ramp</li>
+            <li>Navigates multi-stakeholder process (HR + CFO + CEO)</li>
+            <li>Closes to signed Employer One group agreement</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hs-col-t">AE handoff readiness</div>
+          <ul class="hs-list">
+            <li>Signed agreement in place</li>
+            <li>Member goals and health context documented</li>
+            <li>Any sensitivities or concerns noted</li>
+            <li>Start date and onboarding timeline confirmed</li>
+            <li>Clara activation included in onboarding expectations</li>
+            <li>Grain call recording from discovery attached</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ho-packet">
+    <div class="hop-label">Handoff 2 &middot; AE &rarr; Client Concierge</div>
+    <div class="hop-t">What travels with the member to the Concierge</div>
+    <div class="hop-items">
+      <div class="hop-item"><div class="hop-item-t">Member profile</div><div class="hop-item-b">Full personal context: name, background, why they joined, what they&#39;re hoping to achieve</div></div>
+      <div class="hop-item"><div class="hop-item-t">Health goals</div><div class="hop-item-b">Stated health goals from discovery: what they want to feel, fix, or understand by end of membership</div></div>
+      <div class="hop-item"><div class="hop-item-t">Sensitivities</div><div class="hop-item-b">Any concerns raised during the sale: health anxiety, privacy, cost, skepticism, so the Concierge can handle with care</div></div>
+      <div class="hop-item"><div class="hop-item-t">Membership details</div><div class="hop-item-b">Start date, access path (direct or employer), HSA arrangement, any agreed terms</div></div>
+      <div class="hop-item"><div class="hop-item-t">Discovery recording</div><div class="hop-item-b">Grain recording of the AE discovery call. The Concierge hears the member in their own words before they ever speak</div></div>
+      <div class="hop-item"><div class="hop-item-t">Clara activation flag</div><div class="hop-item-b">Clara activation confirmed as a day-one onboarding step, not optional, not an afterthought</div></div>
+    </div>
+  </div>
+
+  <div class="handoff-arrow"><i class="ti ti-arrow-down"></i></div>
+
+  <div class="handoff-stage">
+    <div class="hs-header hs-cc">
+      <div class="hs-icon"><i class="ti ti-heart-handshake"></i></div>
+      <div><div class="hs-role" style="color:#F0EEFE;">Client Concierge: member success</div><div class="hs-sub">Owns the member relationship from onboarding through to renewal and the Clara evidence base</div></div>
+    </div>
+    <div class="hs-body">
+      <div class="hs-cols">
+        <div>
+          <div class="hs-col-t">Activation (day 1-14)</div>
+          <ul class="hs-list">
+            <li>Warm intro call: member hears a human voice first</li>
+            <li>Reviews AE handoff notes and Grain recording before the call</li>
+            <li>Confirms assessment booking and pre-visit intake</li>
+            <li>Activates Clara: introduces it as daily companion, not a bonus feature</li>
+            <li>Sets expectations for the 12-month journey</li>
+            <li>Connects member to the community</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hs-col-t">Adoption (months 2-11)</div>
+          <ul class="hs-list">
+            <li>30 / 60 / 90-day check-in calls</li>
+            <li>Quarterly touchpoints with health progress review</li>
+            <li>Flags at-risk members early and re-engages</li>
+            <li>Coordinates care team follow-up where needed</li>
+            <li>Ensures community touchpoints land each month</li>
+            <li>Documents Clara wins at every check-in</li>
+          </ul>
+        </div>
+        <div>
+          <div class="hs-col-t">Renewal (month 10-12)</div>
+          <ul class="hs-list">
+            <li>Begins renewal conversation at month 10, not month 12</li>
+            <li>Anchors renewal in Medical progress evidence</li>
+            <li>Reminds member what Clara continuity means</li>
+            <li>Reinforces the community they&#39;d be leaving</li>
+            <li>Three reasons to stay: Medical, Clara, Community</li>
+            <li>Surfaces referral opportunity at renewal moment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.5rem;border-left:3px solid var(--gl);border-radius:0 12px 12px 0;">
+    <div class="badge">Handoff principle</div>
+    <div class="ct">No member should ever have to repeat themselves.</div>
+    <div class="cb">Every handoff transfers context, not just contact details. The SDR note sets up the AE. The AE recording sets up the Concierge. By the time a member speaks to their Concierge for the first time, the Concierge already knows their name, their goals, their concerns, and what made them say yes. That&#39;s the standard.</div>
+  </div>
+  </div>
+
+</div>
+</div>
+<div class="pb" id="p1">
+<div class="sec">
+  <div class="sey">The product portfolio</div>
+  <div class="st">Two products. Know them both cold.</div>
+  <div class="sb">The membership is what the SDR positions and the AE closes. Clara is part of the membership, and what the whole business is building toward as a standalone product.</div>
+
+  <div class="product-arch">
+    <div class="prod-mem">
+      <div class="prod-ey">Product 1 · The membership</div>
+      <div class="prod-t">Longevity One</div>
+      <div class="prod-price">$4,000 <span>/ year</span></div>
+      <div class="prod-b">A 12-month proactive health membership. One comprehensive assessment day, year-round care access, continuous biometric monitoring, and Clara included.</div>
+      <div class="ap ap-direct"><div class="ap-label">Access path 1 · Direct</div><div class="ap-t">Individual purchases directly</div><div class="ap-b">B2C motion. Driven by marketing campaigns and MQLs. HSA-eligible.</div></div>
+      <div class="ap ap-employer"><div class="ap-label">Access path 2 · Employer-provided</div><div class="ap-t">Employer funds it as a benefit</div><div class="ap-b">B2B motion. Employer purchases group package. Employee receives the membership as a benefit.</div></div>
+    </div>
+    <div class="prod-clara">
+      <div class="prod-ey">Product 2 · Clara</div>
+      <div class="prod-t">Clara</div>
+      <div class="clara-free"><span class="clara-badge">Free for members now</span><span class="clara-future">→ subscription coming</span></div>
+      <div class="prod-b">Clara is an AI care coordination and engagement companion that helps members navigate and act on their health by unifying data, interpreting context, and guiding decisions in real time for consistent, proactive care outcomes.</div>
+      <div class="cr cr1"><div class="cr-label">Today: included with membership</div><div class="cr-t">Clara is a benefit, not a feature</div><div class="cr-b">Every member gets Clara free. We treat it as a product internally, building usage data, outcomes, and evidence from day one.</div></div>
+      <div class="cr cr2"><div class="cr-label">Tomorrow: standalone subscription</div><div class="cr-t">Clara earns its own market</div><div class="cr-b">When the evidence base is strong enough, Clara launches beyond LWH membership as a paid subscription.</div></div>
+    </div>
+  </div>
+
+  <div class="clara-hero-block">
+    <div class="chb-ey"><i class="ti ti-sparkles" style="font-size:13px;"></i> Clara · internal positioning</div>
+    <div class="chb-t">How we talk about Clara internally.</div>
+    <div class="chb-hero">"Clara is an AI care coordination and engagement companion that helps members navigate and act on their health by unifying data, interpreting context, and guiding decisions in real time for consistent, proactive care outcomes."</div>
+    <div class="clara-status-row">
+      <div class="cs-card cs-now"><div class="cs-stage">Now</div><div class="cs-ct">Free with every membership</div><div class="cs-cb">Activates on day one. Daily health companion. Every interaction builds the evidence base.</div></div>
+      <div class="cs-card cs-build"><div class="cs-stage">Building</div><div class="cs-ct">Outcomes documentation</div><div class="cs-cb">Concierge documents Clara success stories at every check-in. These become the proof points for the standalone launch.</div></div>
+      <div class="cs-card cs-future"><div class="cs-stage">Future</div><div class="cs-ct">Subscription product</div><div class="cs-cb">Clara launches beyond LWH members to the broader market as a standalone AI health subscription.</div></div>
+    </div>
+  </div>
+
+  <div class="sey">What Clara does for a member</div>
+  <div class="clara-value-grid">
+    <div class="cv"><div class="cv-icon"><i class="ti ti-database"></i></div><div class="cv-t">Unifies health data</div><div class="cv-b">Brings together biomarker results, biometric monitoring, care history, and lifestyle patterns into one coherent picture.</div></div>
+    <div class="cv"><div class="cv-icon"><i class="ti ti-brain"></i></div><div class="cv-t">Interprets context</div><div class="cv-b">Goes beyond numbers to understand what the data means for this member, their goals, trajectory, and where they need guidance.</div></div>
+    <div class="cv"><div class="cv-icon"><i class="ti ti-route"></i></div><div class="cv-t">Guides decisions in real time</div><div class="cv-b">Delivers personalized, actionable guidance day-to-day so members act on their health consistently.</div></div>
+    <div class="cv"><div class="cv-icon"><i class="ti ti-chart-line"></i></div><div class="cv-t">Drives proactive outcomes</div><div class="cv-b">Keeps members engaged and moving toward their health goals across the full 12-month journey and beyond.</div></div>
+  </div>
+
+  <div class="clara-gtm-note">
+    <div class="cgn-label">Internal GTM note · Clara</div>
+    <div class="cgn-t">Treat Clara as a product from day one, because it is one.</div>
+    <div class="cgn-b">When a prospect asks "what's Clara?" the answer is not "it's an app included with the membership." It's the hero statement. Clara is the differentiator that no standard care experience offers, and it's what turns a 12-month membership into a daily habit.</div>
+  </div>
+
+  <div class="sey" style="margin-top:2rem;">The Longevity Circuit: 5 stations</div>
+  <div class="circuit-steps">
+    <div class="cs-row"><div class="cs-num">1</div><div><div class="cs-t">Foundational health screening</div><div class="cs-b">Advanced bloodwork and biomarker testing, metabolic health, cardiovascular risk, nutritional markers. Lab analysis begins while the member continues through the circuit.</div><div class="cs-tech">Piccolo Xpress · HemoCue · FoodMarble AIRE 2 · PGx &amp; food sensitivity</div></div></div>
+    <div class="cs-row"><div class="cs-num">2</div><div><div class="cs-t">Body composition &amp; structural health</div><div class="cs-b">Bone health, muscle quality, hydration, visceral fat. Identifies opportunities for strength, mobility, and long-term metabolic improvement.</div><div class="cs-tech">GE Lunar DXA · InBody 970 · MuscleSound ultrasound</div></div></div>
+    <div class="cs-row"><div class="cs-num">3</div><div><div class="cs-t">Cognitive, cardiovascular &amp; sensory performance</div><div class="cs-b">Vascular age, mental sharpness, hearing, and vision, contributors to quality of life and healthy aging.</div><div class="cs-tech">EndoPAT · Cognivue Clarity · Depisteo VT1 · Audioscan Verifit 2</div></div></div>
+    <div class="cs-row"><div class="cs-num">4</div><div><div class="cs-t">Advanced preventive screening</div><div class="cs-b">Early detection imaging, breast health and comprehensive skin mapping, personalized to each member's care plan.</div><div class="cs-tech">GE Invenia ABUS · FotoFinder ATBM Master</div></div></div>
+    <div class="cs-row"><div class="cs-num">5</div><div><div class="cs-t">Heart, lung &amp; performance testing</div><div class="cs-b">Cardiovascular and respiratory function, endurance, heart health, lung function, and physical performance indicators.</div><div class="cs-tech">GE CASE V7 · NDD EasyOne Air · FitCheck Solo</div></div></div>
+  </div>
+</div>
+</div>
+
+<!-- ── B2C ── -->
+<div class="pb" id="p2">
+<div class="sec">
+  <div class="sey">Motion 1 · B2C</div>
+  <div class="st">Individual members. Clarity-seekers. Direct purchase.</div>
+  <div class="sb">Marketing drives form fills and inbound MQLs. SDRs qualify same-day. AEs run consultative close on the direct Longevity One membership at $4,000/year.</div>
+  <div class="two" style="margin-bottom:1rem;">
+    <div class="profile-card">
+      <div class="profile-tag" style="background:var(--gp);color:var(--gm);">B2C member profile</div>
+      <div class="profile-quote">"Seeking clarity, not just answers"</div>
+      <div class="profile-t">The health-motivated individual</div>
+      <div class="profile-label">They are</div>
+      <div class="profile-items"><span class="pill">Adults 30–65</span><span class="pill">Northern Ontario</span><span class="pill">Health-aware</span><span class="pill">Frustrated with standard care</span></div>
+      <div class="profile-label">Pain points</div>
+      <ul class="pain-list">
+        <li>"Something is off" despite normal check-ups</li>
+        <li>Fatigue, poor sleep, brain fog, weight</li>
+        <li>No clear path forward</li>
+      </ul>
+      <div class="profile-label">They want</div>
+      <div class="profile-items"><span class="pill">Root-cause clarity</span><span class="pill">Personalized insight</span><span class="pill">Confidence</span></div>
+    </div>
+    <div class="card">
+      <div class="ci"><i class="ti ti-speakerphone"></i></div>
+      <div class="badge">Campaign strategy</div>
+      <div class="ct">Drive form fills. Qualify. Close the direct membership.</div>
+      <div class="cb">Marketing generates MQLs. SDR contacts same business day. AE runs consultative discovery and closes Longevity One direct at $4,000/year.</div>
+      <ul class="dl">
+        <li>Digital campaigns, 35–60 professionals, Northern Ontario</li>
+        <li>Messaging anchor: "uncertainty to understanding"</li>
+        <li>Form fill → SDR same-day callback, no exceptions</li>
+        <li>SDR qualifies: health motivation, budget fit, readiness</li>
+        <li>Full context handoff to AE before discovery call</li>
+        <li>AE presents Longevity One, $4,000/year direct</li>
+        <li>Clara is a differentiator in the close, not a footnote</li>
+        <li>HSA coverage positioned to reduce price sensitivity</li>
+      </ul>
+    </div>
+  </div>
+  <div class="msg-pillars">
+    <div class="mp"><div class="mp-t">Health clarity</div><div class="mp-b">Lead with understanding and awareness, not treatment. Members gain meaningful insight into what is happening in their bodies.</div></div>
+    <div class="mp"><div class="mp-t">Root-cause understanding</div><div class="mp-b">We look beyond symptoms to find the "why." Never position as diagnosis, always as discovery and direction.</div></div>
+    <div class="mp"><div class="mp-t">Confidence &amp; control</div><div class="mp-b">LWH is a source of guidance and empowerment. Members leave with clarity and a plan, not fear.</div></div>
+    <div class="mp"><div class="mp-t">Long-term wellness</div><div class="mp-b">A 12-month journey. No quick fixes. Prevention, consistency, habit-building, and Clara alongside every step.</div></div>
+  </div>
+  <div class="card" style="margin-top:1.25rem;">
+    <div class="badge">B2C hero statement</div>
+    <div class="ct" style="font-size:15px;line-height:1.35;margin-bottom:6px;">"Health clarity for Northeastern Ontario, built on real insight, not guesswork."</div>
+    <div class="cb">We help Northeastern Ontario residents gain meaningful health insights through a personalized, root-cause approach focused on long-term wellness, confidence, and healthier living.</div>
+  </div>
+</div>
+</div>
+
+<!-- ── B2B ── -->
+<div class="pb" id="p3">
+<div class="sec">
+  <div class="sey">Motion 2 · B2B</div>
+  <div class="st">Employers. Workforce challenges. Membership as a benefit.</div>
+  <div class="sb">Pure cold outbound. SDRs build target lists and dial Northern Ontario employers. Every call has one goal: booked demo. AE closes the employer group benefit package.</div>
+  <div class="two" style="margin-bottom:1rem;">
+    <div class="profile-card">
+      <div class="profile-tag" style="background:#EEF6FF;color:#185FA5;">B2B employer profile</div>
+      <div class="profile-quote">"Investing in people, not just productivity"</div>
+      <div class="profile-t">The Northern Ontario employer</div>
+      <div class="profile-label">Decision makers</div>
+      <div class="profile-items"><span class="pill">HR Directors</span><span class="pill">VP People</span><span class="pill">CEOs</span><span class="pill">Benefits managers</span><span class="pill">50–500 employees</span></div>
+      <div class="profile-label">Pain points</div>
+      <ul class="pain-list">
+        <li>Burnout, fatigue, absenteeism across workforce</li>
+        <li>Retention challenges, recruitment difficulty</li>
+        <li>Wellness perks that feel disconnected or unused</li>
+      </ul>
+      <div class="profile-label">They want</div>
+      <div class="profile-items"><span class="pill">Employer of choice</span><span class="pill">Measurable ROI</span><span class="pill">Culture lift</span></div>
+    </div>
+    <div class="card">
+      <div class="ci" style="background:#EEF6FF;color:#185FA5;"><i class="ti ti-phone-call"></i></div>
+      <div class="badge" style="background:#EEF6FF;color:#185FA5;border-color:#C5DDF7;">Outbound motion</div>
+      <div class="ct">Cold call. Book demo. Close the employer package.</div>
+      <div class="cb">SDR builds list, dials cold. One goal: 30-min demo for the AE. AE leads with workforce pain and closes with the group benefit ROI case.</div>
+      <ul class="dl">
+        <li>SDR target: 50–500 employee companies, Northern Ontario</li>
+        <li>Titles: HR Director, VP People, CEO, Benefits Manager</li>
+        <li>Cold call + LinkedIn, single goal: booked demo</li>
+        <li>Hook: retention, absenteeism, employer of choice framing</li>
+        <li>AE demo: workforce challenges → Longevity solution → ROI</li>
+        <li>Employees get the full Longevity One membership + Clara</li>
+        <li>Pilot cohort (30–90 day) available as low-risk on-ramp</li>
+        <li>HSA / group benefits as the funding path</li>
+      </ul>
+    </div>
+  </div>
+  <div class="msg-pillars">
+    <div class="mp" style="border-left-color:#378ADD;"><div class="mp-t">Workforce stability</div><div class="mp-b">Connect the membership to reduced absenteeism and turnover. Concrete bottom-line framing for the CFO conversation.</div></div>
+    <div class="mp" style="border-left-color:#378ADD;"><div class="mp-t">Employer of choice</div><div class="mp-b">Meaningful investment in people. Strengthens employer brand. Open with: "What does health mean for your people strategy?"</div></div>
+    <div class="mp" style="border-left-color:#378ADD;"><div class="mp-t">Culture &amp; engagement</div><div class="mp-b">Supported employees stay longer and perform better. Show member outcomes, not feature lists.</div></div>
+    <div class="mp" style="border-left-color:#378ADD;"><div class="mp-t">Clara as a differentiator</div><div class="mp-b">No other employer benefit includes an AI health companion. Clara makes the package genuinely different, and gives employees a daily reason to engage.</div></div>
+  </div>
+  <div class="card" style="margin-top:1.25rem;border-left:3px solid #378ADD;border-radius:0 12px 12px 0;">
+    <div class="badge" style="background:#EEF6FF;color:#185FA5;border-color:#C5DDF7;">B2B hero statement</div>
+    <div class="ct" style="font-size:15px;line-height:1.35;margin-bottom:6px;">"Better business is built on healthier employees and stronger workplace culture."</div>
+    <div class="cb">We partner with Northeastern Ontario employers to deliver a people-first approach to employee wellness that helps build healthier teams, stronger workplace culture, and reduce costly workforce disruptions.</div>
+  </div>
+</div>
+</div>
+
+<!-- ── TEAM ── -->
+<div class="pb" id="p4">
+<div class="sec">
+  <div class="sey">The team</div>
+  <div class="st">Five roles. Two motions.</div>
+  <div class="sb">Every role needs to understand both products, and the difference between selling a membership directly versus selling an employer on funding it as a benefit.</div>
+  <div class="motion-band mb-b2c" style="margin-bottom:8px;">
+    <div class="mb-lbl">B2C lane</div>
+    <div class="mb-title">Marketing → SDR qualifies MQLs → AE closes direct purchase → Concierge activates Clara and owns 12-month journey</div>
+  </div>
+  <div class="motion-band mb-b2b">
+    <div class="mb-lbl" style="color:#185FA5;">B2B lane</div>
+    <div class="mb-title" style="color:#0C447C;">SDR cold dials → books employer demo → AE closes group package → Concierge group onboarding and Clara activation</div>
+  </div>
+  <div class="team-row">
+    <div class="tc"><div class="tci"><i class="ti ti-briefcase"></i></div><div class="tct">GTM Manager</div><div class="tcb">Owns both motions. Coaches on both product conversations, membership close and Clara positioning. Manages phase transitions.</div></div>
+    <div class="tc"><div class="tci"><i class="ti ti-phone-outgoing"></i></div><div class="tct">SDR</div><div class="tcb">B2C: same-day MQL qualification. B2B: cold outbound, employer targets. Demo booked = success.</div></div>
+    <div class="tc"><div class="tci"><i class="ti ti-user-check"></i></div><div class="tct">Account Executive</div><div class="tcb">B2C: individual discovery and direct close. B2B: employer demo, ROI case, group package close. Positions Clara in both conversations.</div></div>
+    <div class="tc"><div class="tci"><i class="ti ti-heart-handshake"></i></div><div class="tct">Client Concierge</div><div class="tcb">Onboards members and activates Clara. Runs 12-month journey. Documents Clara outcomes, building the evidence base for Phase 3.</div></div>
+    <div class="tc"><div class="tci"><i class="ti ti-cpu"></i></div><div class="tct">GTM Prompt Engineer</div><div class="tcb">Builds AI workflows across both motions. Manages the prompt library and GTM tech stack.</div></div>
+  </div>
+  <div class="metrics">
+    <div class="mc"><div class="mn">2<span> products</span></div><div class="ml">Membership + Clara</div></div>
+    <div class="mc"><div class="mn">2<span> paths</span></div><div class="ml">Direct + employer-provided</div></div>
+    <div class="mc"><div class="mn">$4<span>k/yr</span></div><div class="ml">Longevity One price</div></div>
+    <div class="mc"><div class="mn">12<span>mo</span></div><div class="ml">Membership journey</div></div>
+  </div>
+  <div style="margin-top:2rem;">
+    <div class="sey" style="margin-bottom:0.75rem;">Role competencies</div>
+    <div style="font-size:13px;color:var(--muted);font-weight:300;margin-bottom:1.25rem;line-height:1.6;">Every person on the GTM team needs comfort across three areas. Not expertise in all — but enough fluency in each to show up fully for members, employers, and each other.</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+
+      <div style="border-radius:12px;overflow:hidden;border:0.5px solid var(--bd);">
+        <div style="background:var(--gd);padding:1rem 1.25rem;">
+          <div style="font-size:18px;color:var(--gl);margin-bottom:8px;"><i class="ti ti-book"></i></div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(99,165,105,0.8);margin-bottom:4px;">Competency 1</div>
+          <div style="font-size:15px;font-weight:600;color:var(--w);">Domain knowledge</div>
+        </div>
+        <div style="background:var(--w);padding:1rem 1.25rem;">
+          <div style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:1rem;">Understand how to sell, how to serve clients, and how to build community and trust over time.</div>
+          <ul style="list-style:none;">
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--gl);display:block;"></span>The LWH product, membership, and Clara</li>
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--gl);display:block;"></span>The sales motion, ICP, and competitive landscape</li>
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--gl);display:block;"></span>The member journey from activation to renewal</li>
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--gl);display:block;"></span>How to build relationships and community that make people want to stay</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-radius:12px;overflow:hidden;border:0.5px solid var(--cbrd);">
+        <div style="background:var(--cd);padding:1rem 1.25rem;">
+          <div style="font-size:18px;color:var(--cl);margin-bottom:8px;"><i class="ti ti-cpu"></i></div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(124,106,238,0.8);margin-bottom:4px;">Competency 2</div>
+          <div style="font-size:15px;font-weight:600;color:var(--w);">AI application</div>
+        </div>
+        <div style="background:var(--w);padding:1rem 1.25rem;">
+          <div style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:1rem;">A willingness to use AI to solve problems, build solutions, and get more done with less friction.</div>
+          <ul style="list-style:none;">
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--cl);display:block;"></span>Use Claude to research, draft, and prepare faster</li>
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--cl);display:block;"></span>Embrace Clara as a product you understand deeply, not just sell</li>
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--cl);display:block;"></span>Work with the GTM Prompt Engineer to build and use workflows</li>
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--cl);display:block;"></span>Curiosity about what AI can do next, not just what it does today</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-radius:12px;overflow:hidden;border:0.5px solid #FAC775;">
+        <div style="background:#1a1200;padding:1rem 1.25rem;">
+          <div style="font-size:18px;color:#F9CB42;margin-bottom:8px;"><i class="ti ti-users"></i></div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(249,203,66,0.8);margin-bottom:4px;">Competency 3</div>
+          <div style="font-size:15px;font-weight:600;color:var(--w);">IRL context</div>
+        </div>
+        <div style="background:var(--w);padding:1rem 1.25rem;">
+          <div style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:1rem;">Be genuinely good with people. Help members and employers understand their outcomes in plain, human terms.</div>
+          <ul style="list-style:none;">
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:#F9CB42;display:block;"></span>Listen before you speak, and ask the right question</li>
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:#F9CB42;display:block;"></span>Translate complex health and data language into clarity</li>
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--gf);"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:#F9CB42;display:block;"></span>Build trust through consistency, not just enthusiasm</li>
+            <li style="font-size:11px;color:var(--muted);padding:4px 0 4px 13px;position:relative;line-height:1.5;"><span style="position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:#F9CB42;display:block;"></span>Show up the same way whether it&#39;s a cold call or a renewal conversation</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── ECOSYSTEM ── -->
+<div class="pb" id="p5">
+<div class="sec">
+  <div class="sey">The ecosystem</div>
+  <div class="st">Nine roles. One outcomes layer.</div>
+  <div class="sb">Longevity Whole Health sits at the centre of a nine-partner ecosystem. Each partner sees healthcare from a different seat. Meet them there, in their language, with their metrics.</div>
+  <div class="eco-hero">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;">The flywheel</div>
+    <div style="font-size:17px;font-weight:600;color:var(--w);margin-bottom:6px;">Outcomes compound through the ecosystem.</div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.6;margin-bottom:0;">Member outcomes become evidence. Evidence flows back to every ecosystem partner. Partners pull more members in.</div>
+    <div class="flywheel">
+      <span class="fw-label">Flywheel</span>
+      <span class="fw-step">Employer funds</span><span class="fw-arrow"><i class="ti ti-arrow-right"></i></span>
+      <span class="fw-step">Employee transforms</span><span class="fw-arrow"><i class="ti ti-arrow-right"></i></span>
+      <span class="fw-step">Outcomes feed back to advisors, insurers, unions, communities, platforms</span><span class="fw-arrow"><i class="ti ti-arrow-right"></i></span>
+      <span class="fw-step">Partners pull more members in</span>
+    </div>
+  </div>
+  <div class="sey">Select a partner</div>
+  <div class="partner-selector" id="partnerGrid">
+    <div class="ps-btn on" id="ps0" onclick="showPartner(0)"><div class="ps-icon"><i class="ti ti-building"></i></div><div class="ps-role">Buyer</div><div class="ps-name">Employer</div><div class="ps-type">Funder</div></div>
+    <div class="ps-btn" id="ps1" onclick="showPartner(1)"><div class="ps-icon"><i class="ti ti-user"></i></div><div class="ps-role">Beneficiary</div><div class="ps-name">Employee</div><div class="ps-type">User</div></div>
+    <div class="ps-btn" id="ps2" onclick="showPartner(2)"><div class="ps-icon"><i class="ti ti-tool"></i></div><div class="ps-role">Workforce</div><div class="ps-name">Unions</div><div class="ps-type">Labour rep</div></div>
+    <div class="ps-btn" id="ps3" onclick="showPartner(3)"><div class="ps-icon"><i class="ti ti-leaf"></i></div><div class="ps-role">Community</div><div class="ps-name">Indigenous communities</div><div class="ps-type">Sovereign partner</div></div>
+    <div class="ps-btn" id="ps4" onclick="showPartner(4)"><div class="ps-icon"><i class="ti ti-users"></i></div><div class="ps-role">Strategy</div><div class="ps-name">HR Advisory</div><div class="ps-type">Influencer</div></div>
+    <div class="ps-btn" id="ps5" onclick="showPartner(5)"><div class="ps-icon"><i class="ti ti-file-invoice"></i></div><div class="ps-role">Procurement</div><div class="ps-name">Broker / Benefits advisor</div><div class="ps-type">Gatekeeper</div></div>
+    <div class="ps-btn" id="ps6" onclick="showPartner(6)"><div class="ps-icon"><i class="ti ti-shield"></i></div><div class="ps-role">Risk</div><div class="ps-name">Insurer</div><div class="ps-type">Underwriter</div></div>
+    <div class="ps-btn" id="ps7" onclick="showPartner(7)"><div class="ps-icon"><i class="ti ti-devices"></i></div><div class="ps-role">Channel</div><div class="ps-name">HR Platform</div><div class="ps-type">Benefits software</div></div>
+    <div class="ps-btn" id="ps8" onclick="showPartner(8)"><div class="ps-icon"><i class="ti ti-device-mobile"></i></div><div class="ps-role">Continuum</div><div class="ps-name">HealthTech</div><div class="ps-type">Virtual care</div></div>
+  </div>
+  <div class="partner-detail" id="partnerDetail"></div>
+</div>
+</div>
+
+<!-- ── JOURNEY ── -->
+<div class="pb" id="p6">
+<div class="sec">
+  <div class="sey">Member journey</div>
+  <div class="st">Three tracks. One 12-month journey.</div>
+  <div class="sb">Every member moves through three parallel tracks, Medical, Clara, and Community. This is a living map, update it as each touchpoint is solved.</div>
+
+  <div class="journey-header">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;">Journey overview</div>
+    <div class="jh-t">Activation → Assessment → Ongoing → Renewal</div>
+    <div class="jh-b">Members activate on day one, complete their baseline assessment, and move through monthly touchpoints across all three tracks. By renewal, Clara is essential, the community is valued, and medical progress is visible.</div>
+    <div class="milestone-row">
+      <div class="ms now">Day 1<br><span style="font-size:9px;opacity:0.7;">Activation</span></div>
+      <div class="ms-arrow"><i class="ti ti-arrow-right"></i></div>
+      <div class="ms now">Month 1<br><span style="font-size:9px;opacity:0.7;">Baseline</span></div>
+      <div class="ms-arrow"><i class="ti ti-arrow-right"></i></div>
+      <div class="ms">Months 2–6<br><span style="font-size:9px;opacity:0.7;">Active</span></div>
+      <div class="ms-arrow"><i class="ti ti-arrow-right"></i></div>
+      <div class="ms">Months 7–11<br><span style="font-size:9px;opacity:0.7;">Deepening</span></div>
+      <div class="ms-arrow"><i class="ti ti-arrow-right"></i></div>
+      <div class="ms">Month 12<br><span style="font-size:9px;opacity:0.7;">Renewal</span></div>
+    </div>
+  </div>
+
+  <div class="tracks-header">
+    <div class="th-track th-med"><div class="th-ey">Track 1</div><div class="th-t"><i class="ti ti-stethoscope" style="font-size:12px;margin-right:4px;"></i>Medical</div><div class="th-sub">Baseline → care plan → monitoring</div></div>
+    <div class="th-track th-clara"><div class="th-ey">Track 2</div><div class="th-t"><i class="ti ti-sparkles" style="font-size:12px;margin-right:4px;"></i>Clara</div><div class="th-sub">Onboarding → daily habit → essential</div></div>
+    <div class="th-track th-comm"><div class="th-ey">Track 3</div><div class="th-t"><i class="ti ti-users" style="font-size:12px;margin-right:4px;"></i>Community</div><div class="th-sub">Welcome → monthly → belonging</div></div>
+  </div>
+
+  <div class="phase-label">Day 1: activation</div>
+  <div class="track-row">
+    <div class="tp tp-med"><div class="tp-icon"><i class="ti ti-clipboard-check"></i></div><div class="tp-t">Digital intake + booking</div><div class="tp-b">Member completes pre-visit questionnaire. Assessment day booked. Care team reviews in advance, no clipboard on arrival.</div><span class="def-badge med-def">Defined</span></div>
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-sparkles"></i></div><div class="tp-t">Clara onboarding</div><div class="tp-b">Member activates Clara. Initial health context gathered. Clara introduced as a daily health companion.</div><span class="tbd-badge">To be developed</span></div>
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-mail"></i></div><div class="tp-t">Welcome to the community</div><div class="tp-b">Welcome message and community introduction. Sets the tone for belonging from day one.</div><span class="tbd-badge">To be developed</span></div>
+  </div>
+
+  <div class="phase-label">Month 1: the Longevity Circuit</div>
+  <div class="track-row">
+    <div class="tp tp-med"><div class="tp-icon"><i class="ti ti-activity"></i></div><div class="tp-t">Baseline assessment day</div><div class="tp-b">5-station Longevity Circuit. 100+ biomarkers. Same-day results. Medical Director one-on-one. Personalized health roadmap issued.</div><span class="def-badge med-def">Defined</span></div>
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-database"></i></div><div class="tp-t">Clara receives baseline data</div><div class="tp-b">Assessment results flow into Clara. Clara begins contextualizing the member's health picture and personalizing guidance.</div><span class="tbd-badge">To be developed</span></div>
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-news"></i></div><div class="tp-t">First community touchpoint</div><div class="tp-b">Newsletter, event invite, or member spotlight. At least monthly, format to be defined.</div><span class="tbd-badge">To be developed</span></div>
+  </div>
+
+  <div class="phase-label">Months 2–6: active journey</div>
+  <div class="track-row">
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-heart-rate-monitor"></i></div><div class="tp-t">Care plan in motion</div><div class="tp-b">Roadmap dictates what happens next, referrals, follow-up testing, episodic care, and biometric monitoring. Path is member-specific.</div><span class="tbd-badge">To be developed</span></div>
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-sun"></i></div><div class="tp-t">Daily habit building</div><div class="tp-b">Clara moves from onboarding to routine. Daily check-ins, habit nudges, data interpretation, and proactive guidance.</div><span class="tbd-badge">To be developed</span></div>
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-calendar-event"></i></div><div class="tp-t">Monthly touchpoints</div><div class="tp-b">At least one meaningful community connection per month, newsletter, member event, webinar, or health education content.</div><span class="tbd-badge">To be developed</span></div>
+  </div>
+
+  <div class="phase-label">Months 7–11: deepening</div>
+  <div class="track-row">
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-chart-line"></i></div><div class="tp-t">Progress review</div><div class="tp-b">Mid-journey clinical review. Track progress against baseline. Adjust care plan as needed. Concierge coordinates with care team.</div><span class="tbd-badge">To be developed</span></div>
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-brain"></i></div><div class="tp-t">Clara becomes essential</div><div class="tp-b">By this stage Clara should be embedded in daily life, the member's trusted health companion. Goal: they can't imagine health without it.</div><span class="tbd-badge">To be developed</span></div>
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-star"></i></div><div class="tp-t">Member stories + recognition</div><div class="tp-b">Surface wins. Member spotlights, milestone recognition, peer connections. Community should feel earned, not broadcast-only.</div><span class="tbd-badge">To be developed</span></div>
+  </div>
+
+  <div class="phase-label">Month 12: renewal</div>
+  <div class="track-row">
+    <div class="tp tp-med"><div class="tp-icon"><i class="ti ti-refresh"></i></div><div class="tp-t">Annual reassessment</div><div class="tp-b">Year-two baseline assessment. Compare against year-one results. Demonstrate measurable progress. Renewal anchored in evidence.</div><span class="def-badge med-def">Defined</span></div>
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-lock"></i></div><div class="tp-t">Clara continuity</div><div class="tp-b">Member renewal means Clara continues. If they don't renew, they risk losing their Clara history. Continuity is a powerful retention lever.</div><span class="tbd-badge">To be developed</span></div>
+    <div class="tp tbd"><div class="tp-icon"><i class="ti ti-users"></i></div><div class="tp-t">Renew your community</div><div class="tp-b">Renewal isn't just the membership, it's staying in the community. Framing renewal as a community decision, not a transaction.</div><span class="tbd-badge">To be developed</span></div>
+  </div>
+
+  <div class="renewal-band">
+    <div class="rb-icon"><i class="ti ti-refresh"></i></div>
+    <div>
+      <div class="rb-t">Renewal = Community + Clara + Medical progress. Three reasons to stay.</div>
+      <div class="rb-b">The member who has used Clara daily, attended community touchpoints, and seen measurable health progress doesn't need to be sold on renewal. They need to be reminded of what they'd be leaving. The Concierge's job at month 12 is to make that felt.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── HANDOFF ── -->
+<div class="pb" id="p7">
+<div class="sec">
+  <div class="sey">GTM tech stack</div>
+  <div class="st">The tools behind the motion.</div>
+  <div class="sb">Mapped by role. Confirmed tools are named. Placeholders are flagged, evaluate and select before launch.</div>
+
+  <div class="stack-note">This stack is being actively built. Confirmed tools are shown with their use case. Placeholders are flagged, the right tool for each category should be evaluated and selected before launch. Every role's stack should be reviewed by the GTM Prompt Engineer to identify AI automation opportunities.</div>
+
+  <div class="role-stacks">
+    <div class="rs">
+      <div class="rs-header rs-sdr">
+        <div class="rs-icon"><i class="ti ti-phone-outgoing"></i></div>
+        <div><div class="rs-role">Sales Development Rep</div><div class="rs-sub">Prospecting · outbound sequences · MQL qualification · demo booking</div></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool"><div class="tool-cat">AI assistant</div><div class="tool-name">Claude</div><div class="tool-desc">Prospect research briefs, outbound sequence writing, call prep, objection scripts, and MQL qualification notes.</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">CRM</div><div class="tool-name">TBD</div><div class="tool-desc">Contact records, lead status, activity logging, and pipeline visibility. Evaluate HubSpot, Salesforce, or Pipedrive.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Dialer</div><div class="tool-name">TBD</div><div class="tool-desc">Power dialer for high-volume outbound calls. Evaluate Aircall, JustCall, or Orum for auto-dial and call recording.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Sequencing</div><div class="tool-name">TBD</div><div class="tool-desc">Automated email + LinkedIn outbound sequences. Evaluate Apollo, Instantly, or Outreach for B2B cadences.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Data enrichment</div><div class="tool-name">TBD</div><div class="tool-desc">Build and enrich target lists with verified contact data. Evaluate Apollo, Clay, or ZoomInfo for Northern Ontario coverage.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">LinkedIn outreach</div><div class="tool-name">LinkedIn Sales Navigator</div><div class="tool-desc">B2B prospect identification and InMail outreach for employer targets, HR Directors, VP People, and business owners.</div><div class="tool-tbd-tag">Recommended</div></div>
+      </div>
+    </div>
+
+    <div class="rs">
+      <div class="rs-header rs-ae">
+        <div class="rs-icon"><i class="ti ti-user-check"></i></div>
+        <div><div class="rs-role">Account Executive</div><div class="rs-sub">Discovery · demos · proposals · pipeline · close</div></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool"><div class="tool-cat">AI assistant</div><div class="tool-name">Claude</div><div class="tool-desc">Proposal drafting, discovery prep, deal summaries, follow-up emails, employer ROI case building, and competitive positioning.</div></div>
+        <div class="tool"><div class="tool-cat">Call recording + AI notes</div><div class="tool-name">Grain</div><div class="tool-desc">Records and transcribes discovery calls and demos. AI-generated call summaries and highlights. Shared with Concierge at handoff.</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">CRM</div><div class="tool-name">TBD</div><div class="tool-desc">Pipeline management, deal stages, forecasting, and activity tracking. Must integrate with Grain for call notes.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Proposal / e-sign</div><div class="tool-name">TBD</div><div class="tool-desc">Proposal creation and digital signature for membership agreements. Evaluate PandaDoc, DocuSign, or HubSpot Quotes.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Video conferencing</div><div class="tool-name">TBD</div><div class="tool-desc">Discovery calls and employer demos. Must integrate with Grain for recording. Evaluate Zoom or Google Meet.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Scheduling</div><div class="tool-name">TBD</div><div class="tool-desc">Frictionless meeting booking for prospects. Evaluate Calendly or HubSpot Meetings to eliminate back-and-forth.</div><div class="tool-tbd-tag">Placeholder</div></div>
+      </div>
+    </div>
+
+    <div class="rs">
+      <div class="rs-header rs-cc">
+        <div class="rs-icon"><i class="ti ti-heart-handshake"></i></div>
+        <div><div class="rs-role">Client Concierge</div><div class="rs-sub">Member onboarding · journey management · check-ins · renewal</div></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool"><div class="tool-cat">AI assistant</div><div class="tool-name">Claude</div><div class="tool-desc">Member check-in briefs, journey update summaries, renewal talking points, Clara outcome documentation, and risk flagging.</div></div>
+        <div class="tool"><div class="tool-cat">Call recording + AI notes</div><div class="tool-name">Grain</div><div class="tool-desc">Records member check-in calls. AI summaries captured in the member record. Clara outcome moments documented for evidence base.</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">CRM / member portal</div><div class="tool-name">TBD</div><div class="tool-desc">Member journey tracking, check-in cadence, health milestone logging, and renewal pipeline. Must connect to the Longevity One member portal.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Email / comms</div><div class="tool-name">TBD</div><div class="tool-desc">Member newsletters, check-in scheduling, and community touchpoints. Evaluate Mailchimp, HubSpot, or Kit for member comms.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Community platform</div><div class="tool-name">TBD</div><div class="tool-desc">Where the Community track lives, events, content, discussions. Evaluate Circle, Mighty Networks, or a private portal approach.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Scheduling</div><div class="tool-name">TBD</div><div class="tool-desc">Member check-in and care team appointment booking. Should integrate with the member portal for a seamless experience.</div><div class="tool-tbd-tag">Placeholder</div></div>
+      </div>
+    </div>
+
+    <div class="rs">
+      <div class="rs-header rs-shared">
+        <div class="rs-icon"><i class="ti ti-layout-grid"></i></div>
+        <div><div class="rs-role">Shared across all roles</div><div class="rs-sub">Team-wide tools managed by the GTM Prompt Engineer</div></div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool tbd-tool"><div class="tool-cat">Ads manager</div><div class="tool-name">TBD</div><div class="tool-desc">B2C campaign management. Evaluate Meta Ads Manager and Google Ads for Northern Ontario audience targeting and MQL generation.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Analytics</div><div class="tool-name">TBD</div><div class="tool-desc">Campaign performance, funnel conversion tracking, and MQL quality measurement. Evaluate GA4 + CRM dashboards.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Knowledge base</div><div class="tool-name">TBD</div><div class="tool-desc">Internal sales playbooks, product knowledge, scripts, and objection guides. Evaluate Notion, Confluence, or a shared drive.</div><div class="tool-tbd-tag">Placeholder</div></div>
+        <div class="tool tbd-tool"><div class="tool-cat">Prompt library</div><div class="tool-name">Claude Projects</div><div class="tool-desc">GTM Prompt Engineer maintains role-specific Claude prompt libraries, SDR research, AE proposals, Concierge check-in briefs.</div><div class="tool-tbd-tag">Recommended</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<script>
+const partners=[{icon:'ti-building',name:'Employer',role:'Buyer',sub:'The funder of the membership. Decides whether Longevity is a benefit, a perk, or a strategic differentiator.',focus:['Talent attraction, retention, and productivity','Total benefit cost vs. workforce experience','Culture, engagement, and employer brand','Executive and high-performer health risk'],solve:['Burnout, absenteeism, and presenteeism','Disengaged or disconnected employees','Difficulty differentiating in a tight talent market','A wellness budget with no measurable return'],partner:['Employer-paid membership for all or tiered groups','Executive health stream + broader workforce stream','Pilot cohorts (30–90 day) with outcome readouts','Onsite assessments + lunch-and-learns as on-ramps'],comms:['Lead with retention, productivity, absenteeism','Show member outcomes, not feature lists','Position membership as a differentiator, not a perk'],open:'"What does health mean for your people strategy?"'},{icon:'ti-user',name:'Employee',role:'Beneficiary',sub:'The user of the membership and where outcomes happen. Activation is the unlock, without it, the employer sees no return.',focus:['Personal energy, performance, and longevity','Family health and aging well','Control and clarity over their own health','Time and friction, can they actually use it?'],solve:['Unanswered questions GPs are too rushed to address','Fragmented care across multiple providers','Anxiety about their numbers, symptoms, or trajectory','Wanting agency, not just appointments'],partner:['Frictionless onboarding through their employer','Clear first 90-day journey: assess → insight → plan','Family-add option once trust is established','Member stories shared back to drive peer enrollment'],comms:['Speak to confidence, clarity, and root cause','Lead with the experience, not the science','Highlight a low-friction first step (the assessment)'],open:'"What do you wish you understood about your health?"'},{icon:'ti-tool',name:'Unions',role:'Workforce representative',sub:'Represent unionized members at the bargaining table. In Northern Ontario mining, smelting, and industrial sectors, unions shape what benefits an employer offers.',focus:['Member health, safety, and dignity at work','Wages, benefits, pensions, and retirement security','Occupational health, mining, smelting, trades','Bargaining outcomes and member retention'],solve:['Equitable benefits negotiated into the contract','Real workplace safety, not just policy language','Care that addresses occupational and shift-work risk','A benefits package members can compare with pride'],partner:['Inclusion in collectively-bargained benefits packages','Member-paid premium tier as an optional add-on','Joint occupational-health programming with employers','Be a value-add the local can champion at bargaining'],comms:['Speak member outcomes, not vendor features','Lead with longevity, MSK, mental health, shift recovery','Frame us as a benefit the union secured, not imposed'],open:'"What did your members say in the last survey?"'},{icon:'ti-leaf',name:'Indigenous communities',role:'Community partner',sub:'Sovereign First Nations partners across Anishinaabe and Cree territories in the Sudbury region. Many engage with mining companies through Impact Benefit Agreements that include health and wellness commitments.',focus:['Community health sovereignty and self-determination','Cultural safety and integration with traditional healing','Closing intergenerational health inequities','Workforce wellbeing for community members in industry'],solve:['Care that respects culture, history, and community voice','Gaps in chronic disease, mental health, and longevity','Health programs tied to IBA wellness commitments','Workforce health for members employed by industry partners'],partner:['Community-led conversations first, we listen before we propose','Co-design with Health Directors and Tribal Council leadership','Bridge role with mining-company partners via IBA wellness funds','Cultural safety training for Longevity staff, non-negotiable'],comms:['Lead with relationship, reciprocity, and long-term commitment','Recognize sovereignty in every conversation','Move at the community\'s pace, not the sales pipeline\'s'],open:'"What health priorities has the community identified?"'},{icon:'ti-users',name:'HR Advisory / People Strategy',role:'Strategic advisor',sub:'Trusted advisor to the employer on culture, performance, and wellbeing strategy. Often the first influencer in the room before a buying decision is made.',focus:['Culture, performance, and wellbeing strategy','Leadership effectiveness and team health','EVP, engagement, and retention design','Translating people strategy into programs'],solve:['Clients with wellbeing intent but no execution','Programs that look good on paper, no measurable lift','Pressure to show ROI on culture investments','Differentiating their advisory practice'],partner:['Co-design wellbeing programs with Longevity inside','Recommended-vendor / preferred-partner status','Joint case studies and white-papers','Speaking partnerships at their client events'],comms:['Speak strategy, not services, culture, EVP, performance','Position us as the execution layer for their philosophy','Bring data: outcome metrics, engagement, retention'],open:'"How are your clients operationalizing wellbeing?"'},{icon:'ti-file-invoice',name:'Broker / Benefits advisor',role:'Procurement gatekeeper',sub:'Designs the benefits stack and shepherds renewals. Compensation is shifting from price-only to advisory value.',focus:['Benefits design, renewals, and client retention','Cost containment and plan optimization','Differentiating beyond commodity quotes','Maintaining advisory relevance with HR leaders'],solve:['Clients pushing back on rising premiums','Pressure to bring something new each renewal','Losing accounts to advisory-led competitors','Wellness add-ons that fail to engage employees'],partner:['Referral arrangement with clear economics','Co-presented client meetings, we bring the substance','Inclusion in their wellbeing / non-traditional toolkit','Client retention case studies they can use in pitches'],comms:['Position as a new category, not another vendor','Lead with renewal differentiation','Make them look smart in front of HR leaders'],open:'"What\'s giving you renewal leverage this year?"'},{icon:'ti-shield',name:'Insurer',role:'Risk layer',sub:'Underwrites the population. Their entire business is reducing the cost and frequency of downstream claims.',focus:['Claims cost, loss ratios, and risk selection','Population health and chronic disease load','Disability, drug, and paramedical utilization','Differentiated wellness to support group renewal'],solve:['Rising chronic, mental health, and MSK claims','Sponsor demand for value beyond reimbursement','Difficulty proving prevention ROI to underwriters','Wellness vendors that don\'t move clinical needles'],partner:['Population pilot tied to claims-cost benchmarks','Integration into their sponsor wellness toolkit','Anonymized outcomes data sharing on chronic risk','Co-marketing to brokers and large group sponsors'],comms:['Speak claims language, disability, MSK, metabolic','Frame us as upstream prevention, not a benefit','Bring the clinical and the actuarial story together'],open:'"Where is your claims pressure highest?"'},{icon:'ti-devices',name:'HR Software / Benefits Platform',role:'Channel',sub:'Where benefits live for the employer and employee. Their KPI is engagement and stickiness on the platform.',focus:['Admin efficiency and HR ops automation','Employee experience and platform engagement','Marketplace breadth and ecosystem partners','Stickiness, what keeps employers from churning'],solve:['Clients asking for premium, differentiated benefits','Low employee engagement on the platform','Generic point solutions that don\'t move usage metrics','Need for outcome-led stories to win and retain accounts'],partner:['Marketplace listing with embedded enrollment','Single-sign-on or deep-link integration','Co-marketing to their employer base','Platform-native member experience and analytics'],comms:['Talk engagement, retention, perceived value','Show how Longevity drives platform stickiness','Make the integration story easy and concrete'],open:'"What\'s pulling employees back into the platform?"'},{icon:'ti-device-mobile',name:'HealthTech',role:'Care continuum',sub:'Virtual care, digital triage, and engagement apps. They scale access, we deliver the longitudinal, in-person depth they can\'t.',focus:['Access, scale, and convenience at low unit cost','Digital engagement and adherence','Virtual triage, primary care, and mental health','Completing the care continuum for sponsors'],solve:['Complex members who don\'t fit virtual-only','Sponsor demand for diagnostic and in-person depth','Engagement that drops off after first interaction','Differentiation in a crowded virtual-care market'],partner:['Bidirectional referral pathway for complex cases','Bundled offering, virtual front door + Longevity depth','Joint care plans and shared notes where appropriate','Co-marketing as a complete continuum, not competitors'],comms:['Position as complement, not competitor','Highlight what we do that virtual care can\'t','Speak the language of continuum and outcomes'],open:'"Where do your complex members fall through?"'}];
+
+function showPartner(n){
+  for(let i=0;i<9;i++) document.getElementById('ps'+i).classList.toggle('on',i===n);
+  const p=partners[n];
+  document.getElementById('partnerDetail').innerHTML=`<div class="pd-header"><div class="pd-icon"><i class="ti ${p.icon}"></i></div><div><div class="pd-title">${p.name}</div><div class="pd-sub">${p.sub}</div></div></div><div class="pd-grid"><div class="pd-section"><div class="pd-section-t">Their focus</div><ul class="pd-list">${p.focus.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="pd-section"><div class="pd-section-t">What they solve for</div><ul class="pd-list">${p.solve.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="pd-section"><div class="pd-section-t">How we partner</div><ul class="pd-list">${p.partner.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="pd-section"><div class="pd-section-t">How we communicate</div><ul class="pd-list">${p.comms.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><div class="pd-open"><div class="pd-open-label">Opening question</div><div class="pd-open-q">${p.open}</div></div>`;
+}
+
+function showTab(n){
+  for(let i=0;i<10;i++){
+    var p=document.getElementById('p'+i);
+    var t=document.getElementById('t'+i);
+    var na=document.getElementById('na'+i);
+    if(p) p.classList.toggle('on',i===n);
+    if(t) t.classList.toggle('on',i===n);
+    if(na) na.classList.toggle('on',i===n);
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+showPartner(0);
+</script>
+</body>
+</html>
+<!-- ═══════════════════════════════════════════════════════
+     BUSINESS STRATEGY SECTION (tab index 9)
+     added June 2026
+     ═══════════════════════════════════════════════════════ -->
+<style>
+.pillar-sci{background:rgba(10,66,39,0.08);border:0.5px solid var(--bd);}
+.pillar-tech{background:var(--cp);border:0.5px solid var(--cbrd);}
+.pillar-emp{background:var(--gf);border:0.5px solid var(--bd);}
+.sc-s{background:#E8F4EA;}.sc-w{background:#FEF3E7;}.sc-o{background:#E6F1FB;}.sc-t{background:#FBEAF0;}
+.sc-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;}
+.sc-s .sc-label{color:#0F6E56;}.sc-w .sc-label{color:#854F0B;}.sc-o .sc-label{color:#185FA5;}.sc-t .sc-label{color:#993556;}
+.sc-list{list-style:none;}
+.sc-list li{font-size:12px;line-height:1.55;padding:4px 0 4px 13px;position:relative;color:var(--ink);border-bottom:0.5px solid rgba(0,0,0,0.05);}
+.sc-list li:last-child{border:none;}
+.sc-list li::before{content:'';position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;}
+.sc-s .sc-list li::before{background:#0F6E56;}.sc-w .sc-list li::before{background:#854F0B;}
+.sc-o .sc-list li::before{background:#185FA5;}.sc-t .sc-list li::before{background:#993556;}
+.hc-member-s{background:var(--gd);}.hc-employer-s{background:#0c3a5a;}
+.hc-ey-s{font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.hc-member-s .hc-ey-s{color:rgba(99,165,105,0.8);}.hc-employer-s .hc-ey-s{color:rgba(55,138,221,0.8);}
+.hc-txt{font-size:13px;font-weight:400;color:var(--w);line-height:1.6;}
+.hc-txt em{font-style:normal;}.hc-member-s .hc-txt em{color:var(--gl);}.hc-employer-s .hc-txt em{color:#85B7EB;}
+.vc-over{font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.vc-under{font-size:13px;font-weight:600;color:var(--gd);margin-bottom:4px;}
+.vc-b-s{font-size:11px;color:var(--muted);line-height:1.5;}
+.mc-num{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;}
+</style>
+
+
+
+<div class="pb" id="p8">
+<div class="sec">
+  <div class="sey">Business strategy</div>
+  <div class="st">Where we stand. Where we're going.</div>
+  <div class="sb">A five-tenet longevity ecosystem built on three interlocking pillars, and a product model no competitor in Canada has assembled.</div>
+
+  <!-- MISSION BLOCK -->
+  <div style="background:var(--gd);border-radius:14px;padding:2rem;margin-bottom:1.5rem;text-align:center;">
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(99,165,105,0.8);margin-bottom:1rem;">Live for better.</div>
+    <div style="font-size:19px;font-weight:500;color:var(--w);line-height:1.4;max-width:540px;margin:0 auto 1.5rem;">Redefine the future of healthcare by uniting <span style="color:#63a569;">science</span>, <span style="color:#7c6aee;">technology</span>, and <span style="color:#F9CB42;">human-centered empathy</span>.</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+      <div style="background:rgba(99,165,105,0.15);border:0.5px solid rgba(99,165,105,0.3);border-radius:10px;padding:1rem;text-align:left;">
+        <div style="font-size:18px;color:#63a569;margin-bottom:8px;"><i class="ti ti-stethoscope"></i></div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#63a569;margin-bottom:3px;">Science</div>
+        <div style="font-size:13px;font-weight:600;color:#ffffff;margin-bottom:3px;">Medical journey</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.65);line-height:1.5;">Advanced diagnostics, 100+ biomarkers, physician-led care, proactive baseline, and year-round clinical continuity.</div>
+      </div>
+      <div style="background:rgba(124,106,238,0.15);border:0.5px solid rgba(124,106,238,0.3);border-radius:10px;padding:1rem;text-align:left;">
+        <div style="font-size:18px;color:#7c6aee;margin-bottom:8px;"><i class="ti ti-sparkles"></i></div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#7c6aee;margin-bottom:3px;">Technology</div>
+        <div style="font-size:13px;font-weight:600;color:#ffffff;margin-bottom:3px;">Clara</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.65);line-height:1.5;">AI care coordination and engagement, unifying data, interpreting context, guiding decisions in real time for proactive outcomes.</div>
+      </div>
+      <div style="background:rgba(249,203,66,0.12);border:0.5px solid rgba(249,203,66,0.3);border-radius:10px;padding:1rem;text-align:left;">
+        <div style="font-size:18px;color:#F9CB42;margin-bottom:8px;"><i class="ti ti-heart"></i></div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F9CB42;margin-bottom:3px;">Human-centered empathy</div>
+        <div style="font-size:13px;font-weight:600;color:#ffffff;margin-bottom:3px;">Community</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.65);line-height:1.5;">Monthly touchpoints, belonging, shared experience. Renewal is a community decision, not a transaction.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKET OPPORTUNITY -->
+  <div class="sey" style="margin-bottom:0.4rem;">The opportunity</div>
+  <div style="font-size:13px;color:var(--muted);margin-bottom:1rem;line-height:1.6;font-weight:300;">Healthcare is reactive. Longevity must be proactive. The market is moving, and Northern Ontario has no one leading it yet.</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem;">
+    <div style="background:var(--gf);border-radius:10px;padding:1rem;">
+      <div style="font-size:24px;font-weight:600;color:var(--gd);">$600<span style="font-size:13px;color:var(--gl);">B+</span></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4;">Global longevity economy (AInvest, 2025)</div>
+    </div>
+    <div style="background:var(--gf);border-radius:10px;padding:1rem;">
+      <div style="font-size:24px;font-weight:600;color:var(--gd);">$20<span style="font-size:13px;color:var(--gl);">M ARR</span></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4;">Full capacity revenue at 5,000 members</div>
+    </div>
+    <div style="background:var(--gf);border-radius:10px;padding:1rem;">
+      <div style="font-size:24px;font-weight:600;color:var(--gd);">2<span style="font-size:13px;color:var(--gl);"> years</span></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4;">Anticipated path to profitability</div>
+    </div>
+  </div>
+
+  <!-- THE MODEL -->
+  <div class="sey" style="margin-bottom:0.4rem;">The model</div>
+  <div style="font-size:13px;color:var(--muted);font-weight:300;margin-bottom:1rem;">Five tenets. One integrated ecosystem.</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:1.5rem;">
+    <div class="card"><div class="mc-num">01</div><div class="ct">AI-driven insights</div><div class="cb">Predictive analytics that personalize care and guide real-time interventions. Clara is the member-facing layer.</div></div>
+    <div class="card"><div class="mc-num">02</div><div class="ct">State-of-the-art facility</div><div class="cb">Advanced diagnostics, imaging, and recovery in a wellness-forward clinical environment.</div></div>
+    <div class="card"><div class="mc-num">03</div><div class="ct">Proactive assessments</div><div class="cb">The Longevity Circuit: 5 stations, 100+ biomarkers, same-day results, personalized health roadmap.</div></div>
+    <div class="card"><div class="mc-num">04</div><div class="ct">Day-to-day care</div><div class="cb">Year-round episodic access, same or next-day appointments, virtual and in-person, prescription renewals.</div></div>
+    <div class="card"><div class="mc-num">05</div><div class="ct">Empathy-rooted experience</div><div class="cb">Every interaction built on compassion, trust, and human connection. Data informs. People lead.</div></div>
+  </div>
+
+  <!-- VISION -->
+  <div class="sey" style="margin-bottom:0.75rem;">Vision</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem;">
+    <div class="card"><div class="vc-over">Prevention</div><div class="vc-under">over reaction</div><div class="vc-b-s">Identify risk before it becomes illness. Proactive care, early intervention, continuous insight.</div></div>
+    <div class="card"><div class="vc-over">Precision</div><div class="vc-under">over generalization</div><div class="vc-b-s">Personalized, data-driven solutions tailored to the individual, not a one-size standard.</div></div>
+    <div class="card"><div class="vc-over">Empathy</div><div class="vc-under">over automation</div><div class="vc-b-s">Technology amplifies care. It never replaces the human connection at the centre of every interaction.</div></div>
+  </div>
+
+  <!-- HERO STATEMENTS -->
+  <div class="sey" style="margin-bottom:0.75rem;">Hero statements</div>
+  <div class="two" style="margin-bottom:1.5rem;">
+    <div style="background:#0c3a5a;border-radius:12px;padding:1.5rem;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#63a569;margin-bottom:10px;"><i class="ti ti-user" style="font-size:11px;margin-right:4px;"></i>For members · B2C</div>
+      <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,0.85);line-height:1.6;">We help <span style="color:#ffffff;font-weight:500;">Northeastern Ontario residents</span> gain meaningful health insights through a personalized, root-cause approach focused on <span style="color:#63a569;font-weight:500;">long-term wellness, confidence, and healthier living.</span></div>
+    </div>
+    <div style="background:#0c3a5a;border-radius:12px;padding:1.5rem;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#85B7EB;margin-bottom:10px;"><i class="ti ti-building" style="font-size:11px;margin-right:4px;"></i>For employers · B2B</div>
+      <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,0.85);line-height:1.6;">We partner with <span style="color:#ffffff;font-weight:500;">Northeastern Ontario employers</span> to deliver a people-first approach to employee wellness that helps <span style="color:#85B7EB;font-weight:500;">build healthier teams, stronger workplace culture, and reduce costly workforce disruptions.</span></div>
+    </div>
+  </div>
+
+  <!-- LWH SWOT -->
+  <div class="sey" style="margin-bottom:0.75rem;">LWH SWOT</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.5rem;">
+    <div class="sc-s" style="border-radius:10px;padding:1rem 1.25rem;">
+      <div class="sc-label">Strengths</div>
+      <ul class="sc-list">
+        <li>Only Northern Ontario clinic combining in-person diagnostic depth with a daily AI health companion</li>
+        <li>Clara is a product-in-waiting, no competitor has built this, and LWH owns it from day one</li>
+        <li>Longevity Circuit covers 5 stations, 100+ biomarkers in a single day, operationally rare</li>
+        <li>12-month membership creates recurring revenue, renewal mechanics, and genuine retention incentive</li>
+        <li>Three-pillar model (Medical + Clara + Community) creates compounding member value no single-track competitor can match</li>
+        <li>B2C and B2B motions running simultaneously with a clear phase progression to Clara subscription</li>
+        <li>5,000 member cap protects service quality and brand premium at scale</li>
+      </ul>
+    </div>
+    <div class="sc-w" style="border-radius:10px;padding:1rem 1.25rem;">
+      <div class="sc-label">Weaknesses</div>
+      <ul class="sc-list">
+        <li>New brand, no established trust or outcomes evidence in Northern Ontario yet</li>
+        <li>Clara's member journey and daily engagement model are not yet fully mapped</li>
+        <li>Community track touchpoints (newsletter, events, programming) are still to be developed</li>
+        <li>Single location, geographic reach limited to Greater Sudbury and surrounding area initially</li>
+        <li>Break-even at 2,500 members means early revenue pressure before proof is established</li>
+        <li>Sales team is being built, no pipeline, CRM, or playbooks fully operational yet</li>
+        <li>No outcomes data to anchor B2B employer ROI conversations in Phase 1</li>
+      </ul>
+    </div>
+    <div class="sc-o" style="border-radius:10px;padding:1rem 1.25rem;">
+      <div class="sc-label">Opportunities</div>
+      <ul class="sc-list">
+        <li>Northern Ontario executive health market is entirely uncontested, NEOMO has no ongoing membership</li>
+        <li>Employer benefit channel via mining, industrial, and public sector employers is large and warm</li>
+        <li>Clara subscription as a standalone product creates a second revenue line and a scalable digital business beyond the clinic</li>
+        <li>Unions and Indigenous communities represent underserved partnership channels with long-term relationship potential</li>
+        <li>Broker and benefits advisor channel can multiply B2B reach without linear SDR headcount</li>
+        <li>Global longevity economy tailwind, $600B+ market, consumer awareness accelerating</li>
+        <li>Strategic evolution into MRI full-body scan and AI-enhanced imaging creates a premium add-on tier</li>
+      </ul>
+    </div>
+    <div class="sc-t" style="border-radius:10px;padding:1rem 1.25rem;">
+      <div class="sc-label">Threats</div>
+      <ul class="sc-list">
+        <li>NEOMO owns the "Northern Ontario executive health" category name today with existing employer relationships</li>
+        <li>Southern Ontario clinics (Medcan, La Vie, Harrison) could extend north via virtual care or satellite</li>
+        <li>US longevity brands (Function Health, Forward, Parsley Health) exploring Canadian market entry</li>
+        <li>Ontario regulatory environment, messaging must stay clearly in the prevention lane</li>
+        <li>Talent scarcity in Northern Ontario, physicians, exercise physiologists, dietitians harder to recruit than in Toronto</li>
+        <li>HSA and employer benefit budget already allocated to Teladoc or similar may limit room for LWH</li>
+        <li>Clara's subscription timeline is contingent on outcomes evidence that doesn't exist yet</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FINANCIAL MODEL -->
+  <div class="sey" style="margin-bottom:0.75rem;">Financial model</div>
+  <div class="metrics">
+    <div class="mc"><div class="mn">$4<span>k/yr</span></div><div class="ml">Membership price per member</div></div>
+    <div class="mc"><div class="mn">5<span>k cap</span></div><div class="ml">Maximum members, exclusivity maintained</div></div>
+    <div class="mc"><div class="mn">2,500<span> mbrs</span></div><div class="ml">Break-even at ~$10M ARR</div></div>
+    <div class="mc"><div class="mn">$20<span>M ARR</span></div><div class="ml">Full capacity revenue potential</div></div>
+  </div>
+</div>
+</div>
+<!-- ═══════════════════════════════════════════════════════
+     COMPETITIVE INTELLIGENCE SECTION (tab index 10)
+     added June 2026
+     ═══════════════════════════════════════════════════════ -->
+<style>
+.cat-tabs-ci{display:flex;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.cat-tab-ci{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:0.5px solid var(--bd);color:var(--muted);background:var(--w);}
+.cat-tab-ci.on-clinic{background:var(--gp);border-color:var(--gl);color:var(--gd);}
+.cat-tab-ci.on-virtual{background:#EEF6FF;border-color:#C5DDF7;color:#0C447C;}
+.cat-tab-ci.on-wear{background:#FAEEDA;border-color:#FAC775;color:#633806;}
+.ci-adv{border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:12px;}
+.ci-adv-clinic{background:var(--gp);border:0.5px solid var(--bd);}
+.ci-adv-virtual{background:#EEF6FF;border:0.5px solid #C5DDF7;}
+.ci-adv-wear{background:#FAEEDA;border:0.5px solid #FAC775;}
+.ci-adv-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.ci-adv-clinic .ci-adv-icon{color:var(--gm);}
+.ci-adv-virtual .ci-adv-icon{color:#185FA5;}
+.ci-adv-wear .ci-adv-icon{color:#854F0B;}
+.ci-adv-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+.ci-adv-clinic .ci-adv-label{color:var(--gm);}
+.ci-adv-virtual .ci-adv-label{color:#185FA5;}
+.ci-adv-wear .ci-adv-label{color:#854F0B;}
+.ci-adv-t{font-size:13px;font-weight:600;color:var(--gd);margin-bottom:2px;}
+.ci-adv-virtual .ci-adv-t{color:#0C447C;}
+.ci-adv-wear .ci-adv-t{color:#633806;}
+.ci-adv-b{font-size:12px;color:var(--muted);line-height:1.55;font-weight:300;}
+.comp-row-ci{background:var(--w);border:0.5px solid var(--bd);border-radius:12px;overflow:hidden;margin-bottom:8px;}
+.comp-hdr-ci{display:flex;align-items:center;gap:12px;padding:1rem 1.25rem;cursor:pointer;}
+.comp-hdr-ci:hover{background:var(--gf);}
+.comp-av-ci{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;}
+.av-clinic{background:var(--gp);color:var(--gd);}
+.av-virtual{background:#EEF6FF;color:#0C447C;}
+.av-wear{background:#FAEEDA;color:#633806;}
+.av-tbd{background:var(--gf);color:var(--muted);}
+.comp-meta-ci{flex:1;min-width:0;}
+.comp-name-ci{font-size:14px;font-weight:500;color:var(--ink);}
+.comp-loc-ci{font-size:11px;color:var(--muted);margin-top:1px;}
+.comp-chev{font-size:16px;color:var(--muted);transition:transform 0.2s;flex-shrink:0;}
+.comp-row-ci.open .comp-chev{transform:rotate(180deg);}
+.comp-body-ci{display:none;border-top:0.5px solid var(--bd);}
+.comp-row-ci.open .comp-body-ci{display:block;}
+.comp-inner-ci{padding:1.25rem;}
+.hero-stmt-ci{background:var(--gf);border-radius:0 8px 8px 0;border-left:3px solid var(--bd);padding:0.875rem 1rem;margin-bottom:1.25rem;font-size:12px;color:var(--ink);line-height:1.6;font-style:italic;}
+.ci-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:12px;}
+.swot-grid-ci{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.swot-cell-ci{border-radius:8px;padding:0.75rem;}
+.sw-ci-s{background:#E8F4EA;}.sw-ci-w{background:#FEF3E7;}.sw-ci-o{background:#E6F1FB;}.sw-ci-t{background:#FBEAF0;}
+.swot-lbl-ci{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+.sw-ci-s .swot-lbl-ci{color:#0F6E56;}.sw-ci-w .swot-lbl-ci{color:#854F0B;}.sw-ci-o .swot-lbl-ci{color:#185FA5;}.sw-ci-t .swot-lbl-ci{color:#993556;}
+.swot-list-ci{list-style:none;}
+.swot-list-ci li{font-size:11px;line-height:1.5;padding:2px 0 2px 11px;position:relative;color:var(--ink);}
+.swot-list-ci li::before{content:'';position:absolute;left:2px;top:7px;width:4px;height:4px;border-radius:50%;}
+.sw-ci-s .swot-list-ci li::before{background:#0F6E56;}.sw-ci-w .swot-list-ci li::before{background:#854F0B;}
+.sw-ci-o .swot-list-ci li::before{background:#185FA5;}.sw-ci-t .swot-list-ci li::before{background:#993556;}
+.lwh-win-card{background:var(--gp);border:0.5px solid var(--bd);border-radius:10px;padding:1rem;}
+.lwh-win-label{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gm);margin-bottom:6px;}
+.lwh-win-list{list-style:none;margin-bottom:10px;}
+.lwh-win-list li{font-size:12px;color:var(--ink);padding:3px 0 3px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--bd);}
+.lwh-win-list li:last-child{border:none;}
+.lwh-win-list li::before{content:'';position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:#0F6E56;}
+.lwh-threat-label{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#993556;margin-bottom:6px;margin-top:10px;}
+.lwh-threat-list{list-style:none;}
+.lwh-threat-list li{font-size:11px;color:var(--muted);padding:3px 0 3px 13px;position:relative;line-height:1.5;}
+.lwh-threat-list li::before{content:'';position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:#993556;}
+.tbd-ci{border:0.5px dashed var(--bd);border-radius:10px;padding:1.25rem;text-align:center;}
+.pend-badge{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;background:var(--gf);color:var(--muted);border:0.5px solid var(--bd);}
+.ci-cat-section{display:none;}
+.ci-cat-section.on{display:block;}
+</style>
+
+<div class="pb" id="p9">
+<div class="sec">
+  <div class="sey">Competitive intelligence</div>
+  <div class="st">Know the landscape. Know where we win.</div>
+  <div class="sb">Three competitive categories, private clinics, virtual health providers, and wearables. Each card shows their hero statement, SWOT, where LWH wins, and what to watch out for.</div>
+
+  <div class="cat-tabs-ci">
+    <div class="cat-tab-ci on-clinic" id="ci-tab0" onclick="showCiCat(0)"><i class="ti ti-building-hospital" style="font-size:12px;margin-right:5px;"></i>Private clinics</div>
+    <div class="cat-tab-ci" id="ci-tab1" onclick="showCiCat(1)"><i class="ti ti-device-mobile" style="font-size:12px;margin-right:5px;"></i>Virtual health</div>
+    <div class="cat-tab-ci" id="ci-tab2" onclick="showCiCat(2)"><i class="ti ti-watch" style="font-size:12px;margin-right:5px;"></i>Wearables</div>
+  </div>
+
+  <div class="ci-cat-section on" id="ci-cs0">
+    <div class="ci-adv ci-adv-clinic">
+      <i class="ti ti-shield-check ci-adv-icon"></i>
+      <div>
+        <div class="ci-adv-label">LWH category advantage · private clinics</div>
+        <div class="ci-adv-t">We are the only clinic pairing in-person diagnostic depth with a daily AI health companion.</div>
+        <div class="ci-adv-b">Every clinic here offers an assessment. None offer Clara. None are building a daily engagement layer that turns a once-a-year visit into a year-round health habit, and a path to a standalone AI product.</div>
+      </div>
+    </div>
+    <div id="ci-clinic-list"></div>
+  </div>
+
+  <div class="ci-cat-section" id="ci-cs1">
+    <div class="ci-adv ci-adv-virtual">
+      <i class="ti ti-shield-check ci-adv-icon"></i>
+      <div>
+        <div class="ci-adv-label">LWH category advantage · virtual health</div>
+        <div class="ci-adv-t">Virtual care reacts. We prevent, in-person, in depth, with an AI companion that keeps members engaged between visits.</div>
+        <div class="ci-adv-b">Virtual providers are convenient but episodic. They address symptoms. LWH + Clara addresses root causes, with a diagnostic foundation no virtual-only platform can match.</div>
+      </div>
+    </div>
+    <div id="ci-virtual-list"></div>
+  </div>
+
+  <div class="ci-cat-section" id="ci-cs2">
+    <div class="ci-adv ci-adv-wear">
+      <i class="ti ti-shield-check ci-adv-icon"></i>
+      <div>
+        <div class="ci-adv-label">LWH category advantage · wearables</div>
+        <div class="ci-adv-t">Wearables collect data. Clara interprets it, in the context of a clinical baseline, a care plan, and a real physician relationship.</div>
+        <div class="ci-adv-b">A ring or watch gives you numbers. LWH gives you understanding. Clara unifies wearable data with biomarker results and guides the member on what to actually do with it.</div>
+      </div>
+    </div>
+    <div id="ci-wear-list"></div>
+  </div>
+
+</div>
+</div>
+
+<script>
+var ciClinics=[
+{id:'ci-neomo',initials:'NE',avClass:'av-clinic',name:'NEOMO Executive Health',loc:'Sudbury, Ontario · Direct competitor',
+hero:'They help Northern Ontario executives and business owners gain a clear picture of their health through a comprehensive one-day physician-led assessment, so they can get an actionable roadmap and manage risk without traveling south.',
+swot:{s:['Only executive health clinic in Northern Ontario, owns the category by default','One-day, 10-station format, genuine operational credibility','Evidence-based clinical voice resonates with the executive audience','Parent NEOMO Health Group provides institutional credibility and occupational health B2B channel'],
+w:['No ongoing membership or concierge product, single-transaction model only','No Clara equivalent, no daily engagement layer between assessments','No named physicians or testimonials on the site, credibility gap','Part-time hours (Mon–Fri, 8am–12pm) undermine the premium positioning'],
+o:['Corporate employer benefit channel via parent occupational health contracts','Specialty programs would lengthen the member relationship','A 12-month membership tier would unlock recurring revenue'],
+t:['LWH launches in Northern Ontario with a stronger product and a daily AI companion','Southern Ontario clinics extend reach north via virtual or satellite offerings','Single-city footprint limits growth and concentrates reputation risk']},
+wins:['LWH offers a 12-month membership, NEOMO is a one-time transaction','Clara creates daily engagement NEOMO cannot match','LWH is building renewal and community mechanics, NEOMO has no retention layer','LWH\'s $4,000/year is comparable pricing with a materially deeper product'],
+threats:['NEOMO owns the "Northern Ontario executive health" category name today','Existing trust with the Sudbury executive community, LWH must earn this','Occupational health B2B channel gives NEOMO warm employer access LWH doesn\'t have yet']},
+{id:'ci-medcan',initials:'MC',avClass:'av-clinic',name:'Medcan Health Management',loc:'Toronto, Oakville, Collingwood, Muskoka · National brand',
+hero:'They help proactive professionals and executives gain a comprehensive health baseline through a single-day, 15-station physician-led assessment and layered concierge membership, so they can catch risk early and stay ahead of disease.',
+swot:{s:['Deepest clinical breadth in Canada, 15 stations, 100+ biomarkers, in-house lab, imaging, pharmacy','B2B channel with 1,500+ businesses is a structural distribution advantage','Galleri multi-cancer screening differentiates in early-detection','M Care ($11,150/year) captures the ultra-premium concierge segment'],
+w:['No Clara equivalent, no daily AI engagement layer','GTA-concentrated, suburban and Northern Ontario completely underserved','Dual B2B/B2C model dilutes exclusivity for premium individual clients','No longevity-specific positioning, assessment is the hero, not healthspan optimization'],
+o:['Longevity as a distinct product pillar, currently a bolt-on','Menopause program could be a higher-profile acquisition channel for women 45–60'],
+t:['New entrants with stronger longevity and AI positioning','LWH in Northern Ontario captures a segment Medcan cannot reach geographically']},
+wins:['Clara creates a daily health relationship Medcan cannot replicate, no equivalent product exists in their stack','LWH is purpose-built for the Northern Ontario market Medcan does not serve','LWH\'s community track builds belonging, Medcan is transactional','Clara\'s subscription trajectory creates a revenue model Medcan doesn\'t have'],
+threats:['Medcan\'s brand credibility and 1,500+ B2B relationships are formidable','Galleri cancer screening is a genuine differentiator LWH does not currently match','If a prospect compares, Medcan\'s clinical depth is a real objection']},
+{id:'ci-lavie',initials:'LV',avClass:'av-clinic',name:'La Vie Executive Health Centre',loc:'Ottawa · Oakville (GTA reach)',
+hero:'They help longevity-minded professionals and executives predict and prevent health risks through a precision, physician-led Foundation Assessment and ongoing Point One Care partnership, so they can extend their healthspan and perform at their best for longer.',
+swot:{s:['Clearest longevity positioning of any Canadian private clinic, "We Predict to Prevent"','Foundation Assessment is clinically deep, DEXA, VO₂ max, AI skin mapping, whole genome sequencing','Point One Care concierge model creates a genuine long-term physician relationship','Specialty programs add recurring revenue and clinical depth'],
+w:['No Clara equivalent, no daily AI engagement layer','Pricing is invisible, adds friction for self-directed buyers','Brand in visible transition, inconsistent terminology across pages','Proof beyond testimonials is thin, no outcomes data'],
+o:['Ottawa and GTA longevity market before US entrants arrive','Menopause program timing is excellent, growing demand, underserved by public system'],
+t:['US longevity brands entering Canada','DTC testing erodes diagnostic moat at lower price points','LWH with Clara creates a daily engagement layer La Vie cannot match']},
+wins:['Clara gives LWH a daily member relationship La Vie cannot replicate','LWH operates in an underserved geography La Vie doesn\'t reach','LWH\'s community track creates renewal mechanics La Vie has no equivalent of','Clara\'s standalone subscription runway is a business model La Vie hasn\'t conceived'],
+threats:['La Vie\'s longevity positioning is the closest messaging overlap, prospects may compare directly','Point One Care\'s physician-led depth is a real clinical credibility signal','Ottawa and GTA brand equity LWH hasn\'t built yet']},
+{id:'ci-harrison',initials:'HH',avClass:'av-clinic',name:'Harrison Healthcare',loc:'Calgary · Toronto · Vancouver · Multi-city national',
+hero:'They help health-conscious professionals and families achieve proactive, personalized healthcare through a team-based Premier program spanning physician, dietitian, exercise physiologist, and mental health navigator, so they can protect their health and extend quality of life across every life stage.',
+swot:{s:['Institutional pedigree, founded by Don Copeman, creator of Copeman Healthcare','Genuine team-based model from day one, 7 disciplines','Multi-generational program architecture drives household revenue and retention','Multi-city footprint with national business travel coverage'],
+w:['No Clara equivalent, no daily AI engagement or behavioral health companion','Brand messaging lacks performance and longevity sharpness','Vancouver waitlist closed, largest West Coast market inaccessible','No explicit B2B employer channel despite clear HSA/corporate benefits awareness'],
+o:['Longevity framing could unlock the 40–60 health-forward demographic','Corporate employer benefit channel is implied but not formalized'],
+t:['LWH\'s Clara creates a daily engagement layer Harrison cannot match','Competitors with stronger longevity positioning capturing health-forward messaging','Talent shortfalls constrain enrollment capacity']},
+wins:['Clara provides daily health engagement Harrison has no equivalent of','LWH has an explicit B2B employer channel Harrison hasn\'t formalized','LWH\'s community track builds year-round belonging, Harrison\'s relationship is appointment-based','Clara\'s AI-guided daily actions extend clinical value between visits at scale'],
+threats:['Don Copeman\'s founding legacy is a trust signal LWH cannot manufacture','Team-based model depth, 7 disciplines, is a genuine clinical breadth argument','National multi-city footprint vs. LWH\'s Northern Ontario market, brand awareness gap']},
+{id:'ci-rezilient',initials:'RZ',avClass:'av-clinic',name:'Rezilient Health',loc:'USA only (St. Louis, MO) · Model awareness',
+hero:'They help self-insured US employers reduce healthcare costs and improve workforce health through a CloudClinic hybrid care model that gives employees unlimited primary and specialty care at zero out-of-pocket cost, so they can cut premiums, reduce absenteeism, and retain talent.',
+swot:{s:['CloudClinic model is genuinely innovative, remote physician beamed into staffed physical clinic','Clinical outcomes above 90th percentile nationally across all primary care quality measures','Simple employer economics, one fee, zero employee cost-sharing, documented 12% cost reduction','400+ employer customers and $10M Series A validate the model'],
+w:['US-only, no Canadian presence or stated Canadian ambitions','No preventive longevity or comprehensive health assessment product','No Clara equivalent, no AI health companion or member engagement layer','Specialty suite still under construction'],
+o:['CloudClinic model could eventually be adapted for Canadian employer market'],
+t:['Amazon (One Medical), Teladoc, and MDLive have deeper pockets and established payer integrations']},
+wins:['LWH operates in Canada, Rezilient has no Canadian presence','LWH combines in-person diagnostic depth with Clara\'s daily AI engagement','LWH\'s longevity and prevention positioning is meaningfully differentiated','This is a model-awareness competitor, but the employer benefit ROI framing is instructive for LWH\'s B2B motion'],
+threats:['If a US model like Rezilient enters Canada the employer benefit channel becomes more crowded','The CloudClinic cost-reduction ROI story is compelling to CFOs, LWH needs a strong ROI narrative for B2B']}
+];
+
+var ciVirtuals=[
+{id:'ci-teladoc',initials:'TH',avClass:'av-virtual',name:'Teladoc Health Canada',loc:'National · 9M members · Employer benefits channel',
+hero:'They help benefits-enrolled Canadian employees access timely medical care through a 24/7 virtual platform spanning telemedicine, mental health, and specialist navigation, so they can resolve health issues quickly without navigating the strained public system.',
+swot:{s:['Dominant distribution, 85,000+ plan sponsors, embedded in employer and insurer benefits stacks','Breadth of integrated services, telemedicine, mental health, EFAP, Expert Medical Services in one app','Scale-validated outcomes, 78% of Expert Medical Service cases resulted in enhanced diagnosis','20+ years in Canada, institutional trust with large employers and major carriers'],
+w:['No in-person capability, cannot deliver diagnostic depth of a Foundation Assessment','No preventive or longevity health product, reactive episodic care only','No Clara equivalent, no AI companion or behavioral health engagement layer','Utilitarian experience, competent but not premium or longevity-oriented'],
+o:['Mental health demand expansion','Deepening menopause care pathway as employer awareness grows'],
+t:['Premium private clinics capturing the segment willing to invest in proactive health','Dialogue, Maple, and League competing directly in the employer benefits channel']},
+wins:['LWH offers in-person diagnostic depth, 100+ biomarkers, 5 clinical stations, that Teladoc cannot replicate virtually','Clara provides a daily AI health companion Teladoc has nothing comparable to','LWH\'s proactive, root-cause model addresses what Teladoc never touches, prevention before symptoms appear','LWH\'s membership creates a year-round clinical relationship vs. Teladoc\'s episodic transactions'],
+threats:['Teladoc is already embedded in employer benefits stacks LWH is trying to sell into','9M member scale creates brand familiarity, employees may ask "why not just use Teladoc?"','HSA or benefits budget already allocated to Teladoc leaves less room for LWH in the same employer plan']},
+{id:'ci-felix',initials:'FX',avClass:'av-tbd',name:'Felix Health',loc:'Canada · Direct-to-consumer virtual prescribing',tbd:true},
+{id:'ci-june',initials:'JN',avClass:'av-tbd',name:'June Health',loc:'Canada · Women\'s health virtual',tbd:true},
+{id:'ci-nia',initials:'NH',avClass:'av-tbd',name:'NiaHealth',loc:'Canada · Mental health virtual',tbd:true},
+{id:'ci-maple',initials:'MP',avClass:'av-tbd',name:'Maple',loc:'Canada · On-demand virtual care',tbd:true},
+{id:'ci-lume',initials:'LM',avClass:'av-tbd',name:'Lume Women + Health',loc:'Canada · Women\'s health clinic',tbd:true}
+];
+
+var ciWear=[
+{id:'ci-oura',initials:'OR',avClass:'av-tbd',name:'Oura Ring',loc:'Sleep, HRV, readiness tracking',tbd:true},
+{id:'ci-apple',initials:'AW',avClass:'av-tbd',name:'Apple Watch',loc:'Activity, ECG, fall detection',tbd:true},
+{id:'ci-whoop',initials:'WH',avClass:'av-tbd',name:'WHOOP',loc:'Strain, recovery, performance tracking',tbd:true},
+{id:'ci-garmin',initials:'GR',avClass:'av-tbd',name:'Garmin monitors',loc:'Performance, GPS, heart rate',tbd:true},
+{id:'ci-samsung',initials:'SR',avClass:'av-tbd',name:'Samsung Smart Ring',loc:'Health tracking, sleep, activity',tbd:true},
+{id:'ci-withings',initials:'WT',avClass:'av-tbd',name:'Withings smart watches',loc:'ECG, blood pressure, sleep',tbd:true},
+{id:'ci-fitbit',initials:'FB',avClass:'av-tbd',name:'Fitbit',loc:'Activity, sleep, heart rate',tbd:true},
+{id:'ci-motiv',initials:'MO',avClass:'av-tbd',name:'Motiv Smart Ring',loc:'Activity, heart rate, sleep',tbd:true},
+{id:'ci-evie',initials:'EV',avClass:'av-tbd',name:'Evie Smart Ring',loc:'Women\'s health, activity, sleep',tbd:true}
+];
+
+function buildCiList(data,containerId){
+  var c=document.getElementById(containerId);
+  if(!c) return;
+  c.innerHTML='';
+  data.forEach(function(d){
+    var div=document.createElement('div');
+    div.className='comp-row-ci';
+    div.id=d.id;
+    if(d.tbd){
+      div.innerHTML='<div class="comp-hdr-ci" onclick="toggleCiComp(\''+d.id+'\')">'
+        +'<div class="comp-av-ci '+d.avClass+'">'+d.initials+'</div>'
+        +'<div class="comp-meta-ci"><div class="comp-name-ci">'+d.name+'</div><div class="comp-loc-ci">'+d.loc+'</div></div>'
+        +'<span class="pend-badge">Intelligence pending</span>'
+        +'<i class="ti ti-chevron-down comp-chev"></i></div>'
+        +'<div class="comp-body-ci"><div class="comp-inner-ci"><div class="tbd-ci">'
+        +'<div style="font-size:22px;color:var(--muted);margin-bottom:8px;"><i class="ti ti-clock"></i></div>'
+        +'<div style="font-size:13px;font-weight:500;color:var(--muted);margin-bottom:4px;">Competitive intelligence not yet gathered</div>'
+        +'<div style="font-size:11px;color:var(--muted);line-height:1.5;">This competitor card is a placeholder. Add intelligence when available to populate the hero statement, SWOT, and LWH competitive advantage.</div>'
+        +'</div></div></div>';
+    } else {
+      var sw=d.swot;
+      div.innerHTML='<div class="comp-hdr-ci" onclick="toggleCiComp(\''+d.id+'\')">'
+        +'<div class="comp-av-ci '+d.avClass+'">'+d.initials+'</div>'
+        +'<div class="comp-meta-ci"><div class="comp-name-ci">'+d.name+'</div><div class="comp-loc-ci">'+d.loc+'</div></div>'
+        +'<i class="ti ti-chevron-down comp-chev"></i></div>'
+        +'<div class="comp-body-ci"><div class="comp-inner-ci">'
+        +'<div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;">Hero statement</div>'
+        +'<div class="hero-stmt-ci">'+d.hero+'</div>'
+        +'<div class="ci-two">'
+        +'<div><div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">SWOT</div>'
+        +'<div class="swot-grid-ci">'
+        +'<div class="swot-cell-ci sw-ci-s"><div class="swot-lbl-ci">Strengths</div><ul class="swot-list-ci">'+sw.s.map(function(x){return'<li>'+x+'</li>';}).join('')+'</ul></div>'
+        +'<div class="swot-cell-ci sw-ci-w"><div class="swot-lbl-ci">Weaknesses</div><ul class="swot-list-ci">'+sw.w.map(function(x){return'<li>'+x+'</li>';}).join('')+'</ul></div>'
+        +'<div class="swot-cell-ci sw-ci-o"><div class="swot-lbl-ci">Opportunities</div><ul class="swot-list-ci">'+sw.o.map(function(x){return'<li>'+x+'</li>';}).join('')+'</ul></div>'
+        +'<div class="swot-cell-ci sw-ci-t"><div class="swot-lbl-ci">Threats</div><ul class="swot-list-ci">'+sw.t.map(function(x){return'<li>'+x+'</li>';}).join('')+'</ul></div>'
+        +'</div></div>'
+        +'<div><div class="lwh-win-card">'
+        +'<div class="lwh-win-label">Where LWH wins</div>'
+        +'<ul class="lwh-win-list">'+d.wins.map(function(x){return'<li>'+x+'</li>';}).join('')+'</ul>'
+        +'<div class="lwh-threat-label">Watch out for</div>'
+        +'<ul class="lwh-threat-list">'+d.threats.map(function(x){return'<li>'+x+'</li>';}).join('')+'</ul>'
+        +'</div></div>'
+        +'</div></div></div>';
+    }
+    c.appendChild(div);
+  });
+}
+
+function toggleCiComp(id){
+  var row=document.getElementById(id);
+  if(row) row.classList.toggle('open');
+}
+
+function showCiCat(n){
+  var labels=['on-clinic','on-virtual','on-wear'];
+  for(var i=0;i<3;i++){
+    var tab=document.getElementById('ci-tab'+i);
+    var sec=document.getElementById('ci-cs'+i);
+    if(tab){ tab.className='cat-tab-ci'+(i===n?' '+labels[i]:''); }
+    if(sec){ sec.classList.toggle('on',i===n); }
+  }
+}
+
+buildCiList(ciClinics,'ci-clinic-list');
+buildCiList(ciVirtuals,'ci-virtual-list');
+buildCiList(ciWear,'ci-wear-list');
+</script>
