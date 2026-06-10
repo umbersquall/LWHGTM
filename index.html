@@ -338,6 +338,59 @@ body{font-family:'Outfit',Arial,sans-serif;color:var(--ink);background:#f8faf9;m
 .footc{font-size:11px;color:rgba(255,255,255,0.3);}
 .footl{display:flex;gap:16px;flex-wrap:wrap;}
 .footl span{font-size:11px;color:rgba(255,255,255,0.35);cursor:pointer;}
+
+@media (max-width: 768px) {
+  .nav { padding: 0 1rem; height: auto; flex-wrap: wrap; gap: 8px; padding-top: 10px; padding-bottom: 10px; }
+  .nlinks { display: none; }
+  .tab-inner { padding: 0 0.5rem; }
+  .tab { min-width: 70px; padding: 0.6rem 0.25rem; }
+  .tab-lbl { font-size: 11px; }
+  .hero { padding: 2.5rem 1.25rem 2rem; }
+  .hero h1 { font-size: 22px; }
+  .slogan { font-size: 11px; }
+  .sec { padding: 2rem 1.25rem; }
+  .two { grid-template-columns: 1fr; }
+  .three { grid-template-columns: 1fr; }
+  .four { grid-template-columns: repeat(2, 1fr); }
+  .product-arch { grid-template-columns: 1fr; }
+  .msg-pillars { grid-template-columns: 1fr; }
+  .clara-status-row { grid-template-columns: 1fr; }
+  .clara-value-grid { grid-template-columns: 1fr; }
+  .hs-cols { grid-template-columns: 1fr; }
+  .hop-items { grid-template-columns: 1fr; }
+  .swot-grid { grid-template-columns: 1fr; }
+  .swot-grid-ci { grid-template-columns: 1fr; }
+  .ci-two { grid-template-columns: 1fr; }
+  .team-row { grid-template-columns: repeat(2, 1fr); }
+  .tools-grid { grid-template-columns: 1fr; }
+  .partner-selector { grid-template-columns: repeat(2, 1fr); }
+  .track-row { grid-template-columns: 1fr; }
+  .tracks-header { grid-template-columns: 1fr; }
+  .three-pillars { grid-template-columns: 1fr !important; }
+  .fin-row { grid-template-columns: repeat(2, 1fr); }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .milestone-row { gap: 4px; flex-wrap: wrap; }
+  .funnel-steps { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .fs-step { border-radius: 5px !important; border-right: 0.5px solid !important; width: 100%; }
+  .hero-cards { grid-template-columns: 1fr; }
+  .vision-grid { grid-template-columns: 1fr; }
+  .opp-band { grid-template-columns: 1fr; }
+  .model-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .st { font-size: 19px; }
+  .hc-member-s, .hc-employer-s { margin-bottom: 10px; }
+}
+
+@media (max-width: 480px) {
+  .tab-lbl { font-size: 10px; }
+  .tab { min-width: 55px; padding: 0.5rem 0.15rem; }
+  .hero h1 { font-size: 19px; }
+  .team-row { grid-template-columns: 1fr; }
+  .four { grid-template-columns: 1fr; }
+  .fin-row { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: 1fr; }
+  .partner-selector { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -411,7 +464,7 @@ function unlock(){
 </nav>
 
 <section class="hero">
-  <h1>Uniting <span style="color:#63a569;">science</span>, <span style="color:#7c6aee;">technology</span>, and <span style="color:#F9CB42;">human-centered empathy</span>.</h1>
+  <h1>Unifying <span style="color:#63a569;">science</span>, <span style="color:#7c6aee;">technology</span>, and <span style="color:#F9CB42;">human-centered empathy</span>.</h1>
   <p class="slogan">Live for better.</p>
 </section>
 
@@ -1217,7 +1270,7 @@ showPartner(0);
   <!-- MISSION BLOCK -->
   <div style="background:var(--gd);border-radius:14px;padding:2rem;margin-bottom:1.5rem;text-align:center;">
     <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(99,165,105,0.8);margin-bottom:1rem;">Live for better.</div>
-    <div style="font-size:19px;font-weight:500;color:var(--w);line-height:1.4;max-width:540px;margin:0 auto 1.5rem;">Redefine the future of healthcare by uniting <span style="color:#63a569;">science</span>, <span style="color:#7c6aee;">technology</span>, and <span style="color:#F9CB42;">human-centered empathy</span>.</div>
+    <div style="font-size:19px;font-weight:500;color:var(--w);line-height:1.4;max-width:540px;margin:0 auto 1.5rem;">Redefine the future of healthcare by unifying <span style="color:#63a569;">science</span>, <span style="color:#7c6aee;">technology</span>, and <span style="color:#F9CB42;">human-centered empathy</span>.</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
       <div style="background:rgba(99,165,105,0.15);border:0.5px solid rgba(99,165,105,0.3);border-radius:10px;padding:1rem;text-align:left;">
         <div style="font-size:18px;color:#63a569;margin-bottom:8px;"><i class="ti ti-stethoscope"></i></div>
