@@ -76,15 +76,15 @@ body{font-family:'Outfit',Arial,sans-serif;color:var(--ink);background:#f8faf9;m
 
 /* PRODUCT ARCH */
 .product-arch{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:2rem;}
-.prod-mem{background:var(--gd);border-radius:14px;padding:1.5rem;overflow:hidden;}
-.prod-clara{background:var(--cd);border-radius:14px;padding:1.5rem;overflow:hidden;}
+.prod-mem{background:var(--gd);border-radius:14px;padding:1.5rem;overflow:hidden;display:flex;flex-direction:column;}
+.prod-clara{background:var(--cd);border-radius:14px;padding:1.5rem;overflow:hidden;display:flex;flex-direction:column;}
 .prod-ey{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
 .prod-mem .prod-ey{color:var(--gl);}
 .prod-clara .prod-ey{color:var(--cl);}
 .prod-t{font-size:18px;font-weight:600;color:var(--w);margin-bottom:6px;}
 .prod-price{font-size:22px;font-weight:600;color:var(--gl);margin-bottom:8px;}
 .prod-price span{font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);}
-.prod-b{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;font-weight:300;margin-bottom:1.25rem;}
+.prod-b{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;font-weight:300;margin-bottom:1.25rem;flex:1;}
 .ap{border-radius:8px;padding:0.875rem 1rem;margin-bottom:8px;}
 .ap-direct{background:rgba(99,165,105,0.15);border:0.5px solid rgba(99,165,105,0.3);}
 .ap-employer{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.15);}
@@ -598,7 +598,7 @@ function unlock(){
   </a>
   <div class="nlinks">
     <a onclick="showTab(0)" id="na0" class="on">GTM</a>
-    <a onclick="showTab(1)" id="na1">Products</a>
+    <a onclick="showTab(1)" id="na1">Membership</a>
     <a onclick="showTab(2)" id="na2">Members</a>
     <a onclick="showTab(3)" id="na3">Employers</a>
     <a onclick="showTab(4)" id="na4">GTM Team</a>
@@ -618,7 +618,7 @@ function unlock(){
 <div class="tab-bar" id="tabbar">
   <div class="tab-inner">
     <div class="tab on" id="t0" onclick="showTab(0)"><div class="tab-lbl">GTM</div></div>
-    <div class="tab" id="t1" onclick="showTab(1)"><div class="tab-lbl">Products</div></div>
+    <div class="tab" id="t1" onclick="showTab(1)"><div class="tab-lbl">Membership</div></div>
     <div class="tab" id="t2" onclick="showTab(2)"><div class="tab-lbl">Members</div></div>
     <div class="tab" id="t3" onclick="showTab(3)"><div class="tab-lbl">Employers</div></div>
     <div class="tab" id="t4" onclick="showTab(4)"><div class="tab-lbl">GTM Team</div></div>
@@ -639,26 +639,27 @@ function unlock(){
 
   <!-- VISUAL: PHASE ARC -->
   <div style="background:var(--gd);border-radius:14px;padding:2rem;margin-bottom:1.5rem;">
-    <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(99,165,105,0.7);margin-bottom:1rem;text-align:center;">How we go to market</div>
+    <div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(99,165,105,0.7);margin-bottom:4px;text-align:center;">How we go to market</div>
+    <div style="font-size:11px;color:rgba(255,255,255,0.4);text-align:center;margin-bottom:1rem;font-weight:300;">Start with the promise. Build proof through outcomes, member stories, and clinical confidence.</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem;">
       <div style="background:rgba(99,165,105,0.18);border:0.5px solid rgba(99,165,105,0.4);border-radius:10px;padding:1.25rem;text-align:center;">
         <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:8px;">Phase 1</div>
-        <div style="font-size:16px;font-weight:600;color:var(--w);margin-bottom:6px;">Memberships<br>Direct to Consumer</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.55);line-height:1.5;">Sell Longevity One memberships directly to individuals. Build proof, outcomes, and member stories.</div>
+        <div style="font-size:16px;font-weight:600;color:var(--w);margin-bottom:6px;">Direct-to-Consumer<br>Membership</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);line-height:1.5;">Individuals purchase a Longevity One membership directly for proactive, year-round health optimization.</div>
       </div>
       <div style="background:rgba(99,165,105,0.1);border:0.5px solid rgba(99,165,105,0.25);border-radius:10px;padding:1.25rem;text-align:center;">
         <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(99,165,105,0.7);margin-bottom:8px;">Phase 2</div>
-        <div style="font-size:16px;font-weight:600;color:var(--w);margin-bottom:6px;">Benefits Programs<br>to Employers</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;">Sell Employer One programs to businesses. Employees receive the membership as a workplace benefit.</div>
+        <div style="font-size:16px;font-weight:600;color:var(--w);margin-bottom:6px;">Employer-Paid<br>Memberships</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;">Employers fund Longevity One memberships as a premium health benefit for their employees.</div>
       </div>
       <div style="background:rgba(124,106,238,0.12);border:0.5px solid rgba(124,106,238,0.3);border-radius:10px;padding:1.25rem;text-align:center;">
         <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--cl);margin-bottom:8px;">Phase 3</div>
         <div style="font-size:16px;font-weight:600;color:var(--w);margin-bottom:6px;">Clara<br>Standalone Product</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;">Spin Clara into its own subscription, direct to consumers and to doctor&#39;s offices whose patients want to stay connected to their health data.</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;">Clara becomes a subscription product for consumers, employers, and clinical practices who want a connected health companion.</div>
       </div>
     </div>
     <div style="background:rgba(99,165,105,0.1);border:0.5px solid rgba(99,165,105,0.2);border-radius:8px;padding:0.875rem 1.25rem;text-align:center;">
-      <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;">Every membership includes</div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;">Every member experiences one unified journey across:</div>
       <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
         <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.8);"><i class="ti ti-stethoscope" style="color:#63a569;font-size:14px;"></i>Medical journey</div>
         <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.8);"><i class="ti ti-sparkles" style="color:#7c6aee;font-size:14px;"></i>Clara journey</div>
@@ -668,22 +669,19 @@ function unlock(){
   </div>
 
   <!-- PRODUCTS -->
-  <div class="sey" style="margin-bottom:0.75rem;">Products</div>
+  <div class="sey" style="margin-bottom:0.75rem;">Memberships</div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem;">
     <div class="card" style="border-top:3px solid var(--gl);">
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;">Product 1</div>
-      <div class="ct">Longevity One membership</div>
-      <div class="cb">The core 12-month membership. Includes the Longevity Circuit, year-round care, Clara, and community. $4,000/year. Sold direct to individuals.</div>
+      <div class="ct">Longevity One</div>
+      <div class="cb">For consumers who pay directly for Longevity One. Includes advanced diagnostics, year-round care, Clara, and community access.</div>
     </div>
     <div class="card" style="border-top:3px solid #378ADD;">
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#185FA5;margin-bottom:6px;">Product 2</div>
-      <div class="ct">Employer One program</div>
-      <div class="cb">The employer-funded group benefit. Includes the full Longevity One membership for each enrolled employee. Sold to businesses as a workplace benefit.</div>
+      <div class="ct">Longevity One Business</div>
+      <div class="cb">For employers who want to offer Longevity One as a premium health benefit. Employees receive a full membership funded through the company.</div>
     </div>
     <div class="card" style="border-top:3px solid var(--cl);">
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--cl);margin-bottom:6px;">Product 3</div>
       <div class="ct">Clara</div>
-      <div class="cb">Included with every membership today. As outcomes evidence builds, Clara launches as a standalone subscription, direct to consumers and to clinical practices.</div>
+      <div class="cb">The AI care layer inside Longevity One. Initially bundled with memberships; later positioned as a standalone product for consumers, employers, and clinical practices.</div>
     </div>
   </div>
 
@@ -698,7 +696,7 @@ function unlock(){
     <div style="background:#EEF6FF;border:0.5px solid #C5DDF7;border-radius:10px;padding:1rem 1.25rem;">
       <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#185FA5;margin-bottom:6px;">B2B employer</div>
       <div style="font-size:13px;font-weight:600;color:#0C447C;margin-bottom:4px;">Lead Generation → Qualified Lead → Demo → Close → Onboard Client/Activate Memberships → Deepen Outcomes → Renewal</div>
-      <div style="font-size:11px;color:#185FA5;line-height:1.5;font-weight:300;">Pure outbound into Northern Ontario employers. Single call goal: booked demo. AE builds the ROI case and closes the Employer One program.</div>
+      <div style="font-size:11px;color:#185FA5;line-height:1.5;font-weight:300;">Pure outbound into Northern Ontario employers. Single call goal: booked demo. AE builds the ROI case and closes the Longevity One Care Business program.</div>
     </div>
   </div>
 
@@ -886,7 +884,7 @@ function unlock(){
             <li>Builds employer ROI case: absenteeism, retention, culture</li>
             <li>Proposes pilot cohort (30-90 day) as low-risk on-ramp</li>
             <li>Navigates multi-stakeholder process (HR + CFO + CEO)</li>
-            <li>Closes to signed Employer One group agreement</li>
+            <li>Closes to signed Longevity One Care Business agreement</li>
           </ul>
         </div>
         <div>
@@ -974,13 +972,12 @@ function unlock(){
 </div>
 <div class="pb" id="p1">
 <div class="sec">
-  <div class="sey">The product portfolio</div>
-  <div class="st">Two products. Know them both cold.</div>
-  <div class="sb">The membership is what the SDR positions and the AE closes. Clara is part of the membership, and what the whole business is building toward as a standalone product.</div>
+  <div class="sey">The membership portfolio</div>
+  <div class="st">Two paths to membership connected by Clara. Know them both cold.</div>
+  <div class="sb">Longevity One is the core membership. Clara is included today to connect care, data, and member engagement, while building the evidence base for a future standalone product.</div>
 
   <div class="product-arch">
     <div class="prod-mem">
-      <div class="prod-ey">Product 1 · The membership</div>
       <div class="prod-t">Longevity One</div>
       <div class="prod-price">$4,000 <span>/ year</span></div>
       <div class="prod-b">A 12-month proactive health membership. One comprehensive assessment day, year-round care access, continuous biometric monitoring, and Clara included.</div>
@@ -988,7 +985,6 @@ function unlock(){
       <div class="ap ap-employer"><div class="ap-label">Access path 2 · Employer-provided</div><div class="ap-t">Employer funds it as a benefit</div><div class="ap-b">B2B motion. Employer purchases group package. Employee receives the membership as a benefit.</div></div>
     </div>
     <div class="prod-clara">
-      <div class="prod-ey">Product 2 · Clara</div>
       <div class="prod-t">Clara</div>
       <div class="clara-free"><span class="clara-badge">Free for members now</span><span class="clara-future">→ subscription coming</span></div>
       <div class="prod-b">Clara is an AI care coordination and engagement companion that helps members navigate and act on their health by unifying data, interpreting context, and guiding decisions in real time for consistent, proactive care outcomes.</div>
@@ -1564,7 +1560,7 @@ function unlock(){
       <div style="background:rgba(99,165,105,0.15);border:0.5px solid rgba(99,165,105,0.3);border-radius:10px;padding:1rem;text-align:left;">
         <div style="font-size:18px;color:#63a569;margin-bottom:8px;"><i class="ti ti-stethoscope"></i></div>
         <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#63a569;margin-bottom:3px;">Science</div>
-        <div style="font-size:13px;font-weight:600;color:#ffffff;margin-bottom:3px;">Medical journey</div>
+        <div style="font-size:13px;font-weight:600;color:#ffffff;margin-bottom:3px;">Medical</div>
         <div style="font-size:11px;color:rgba(255,255,255,0.65);line-height:1.5;">Advanced diagnostics, 100+ biomarkers, physician-led care, proactive baseline, and year-round clinical continuity.</div>
       </div>
       <div style="background:rgba(124,106,238,0.15);border:0.5px solid rgba(124,106,238,0.3);border-radius:10px;padding:1rem;text-align:left;">
