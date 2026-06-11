@@ -580,7 +580,7 @@ function checkPw(){
   var val = document.getElementById('pw-input').value;
   var hash = 0;
   for(var i=0;i<val.length;i++){ hash = ((hash<<5)-hash)+val.charCodeAt(i); hash|=0; }
-  if(hash === -1189146700){ sessionStorage.setItem('lwh-gtm-auth','granted'); unlock(); }
+  if(hash === 1149604412){ sessionStorage.setItem('lwh-gtm-auth','granted'); unlock(); }
   else{ document.getElementById('pw-err').style.display='block'; document.getElementById('pw-input').value=''; document.getElementById('pw-input').focus(); }
 }
 
