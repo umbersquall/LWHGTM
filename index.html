@@ -8,6 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 <style>
+/* ═══════════════════════════════════════════════════════
+   Longevity Whole Health — GTM Strategy site
+   Main stylesheet (desktop-first). Breakpoints live in mobile.css
+   ═══════════════════════════════════════════════════════ */
+
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --gd:#0a4227;--gm:#1a6640;--gl:#63a569;--gp:#e8f4ea;--gf:#f3faf4;
@@ -340,6 +345,115 @@ body{font-family:'Outfit',Arial,sans-serif;color:var(--ink);background:#f8faf9;m
 .footl span{font-size:11px;color:rgba(255,255,255,0.35);cursor:pointer;}
 
 
+/* PASSWORD GATE */
+#pw-gate{position:fixed;inset:0;background:#0a4227;display:flex;align-items:center;justify-content:center;z-index:9999;}
+#pw-box{background:#0e5230;border:0.5px solid rgba(99,165,105,0.3);border-radius:16px;padding:2.5rem 2rem;width:100%;max-width:360px;text-align:center;}
+#pw-logo{width:44px;height:44px;background:#63a569;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;}
+#pw-t{font-size:17px;font-weight:600;color:#ffffff;margin-bottom:6px;font-family:'Outfit',Arial,sans-serif;}
+#pw-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:1.75rem;font-family:'Outfit',Arial,sans-serif;font-weight:300;}
+#pw-input{width:100%;padding:10px 14px;border-radius:8px;border:0.5px solid rgba(99,165,105,0.4);background:rgba(255,255,255,0.07);color:#ffffff;font-size:14px;font-family:'Outfit',Arial,sans-serif;outline:none;margin-bottom:10px;box-sizing:border-box;text-align:center;letter-spacing:0.05em;}
+#pw-input::placeholder{color:rgba(255,255,255,0.3);}
+#pw-input:focus{border-color:rgba(99,165,105,0.7);}
+#pw-btn{width:100%;padding:10px;border-radius:8px;border:none;background:#63a569;color:#ffffff;font-size:13px;font-weight:500;font-family:'Outfit',Arial,sans-serif;cursor:pointer;margin-bottom:10px;}
+#pw-btn:hover{background:#4f8e54;}
+#pw-err{font-size:12px;color:#F09595;display:none;margin-top:4px;font-family:'Outfit',Arial,sans-serif;}
+#pw-slogan{font-size:11px;color:rgba(255,255,255,0.25);margin-top:1.5rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'Outfit',Arial,sans-serif;}
+body.locked{overflow:hidden;}
+
+/* BUSINESS STRATEGY (tab 8) — added June 2026 */
+.pillar-sci{background:rgba(10,66,39,0.08);border:0.5px solid var(--bd);}
+.pillar-tech{background:var(--cp);border:0.5px solid var(--cbrd);}
+.pillar-emp{background:var(--gf);border:0.5px solid var(--bd);}
+.sc-s{background:#E8F4EA;}.sc-w{background:#FEF3E7;}.sc-o{background:#E6F1FB;}.sc-t{background:#FBEAF0;}
+.sc-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;}
+.sc-s .sc-label{color:#0F6E56;}.sc-w .sc-label{color:#854F0B;}.sc-o .sc-label{color:#185FA5;}.sc-t .sc-label{color:#993556;}
+.sc-list{list-style:none;}
+.sc-list li{font-size:12px;line-height:1.55;padding:4px 0 4px 13px;position:relative;color:var(--ink);border-bottom:0.5px solid rgba(0,0,0,0.05);}
+.sc-list li:last-child{border:none;}
+.sc-list li::before{content:'';position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;}
+.sc-s .sc-list li::before{background:#0F6E56;}.sc-w .sc-list li::before{background:#854F0B;}
+.sc-o .sc-list li::before{background:#185FA5;}.sc-t .sc-list li::before{background:#993556;}
+.hc-member-s{background:var(--gd);}.hc-employer-s{background:#0c3a5a;}
+.hc-ey-s{font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.hc-member-s .hc-ey-s{color:rgba(99,165,105,0.8);}.hc-employer-s .hc-ey-s{color:rgba(55,138,221,0.8);}
+.hc-txt{font-size:13px;font-weight:400;color:var(--w);line-height:1.6;}
+.hc-txt em{font-style:normal;}.hc-member-s .hc-txt em{color:var(--gl);}.hc-employer-s .hc-txt em{color:#85B7EB;}
+.vc-over{font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.vc-under{font-size:13px;font-weight:600;color:var(--gd);margin-bottom:4px;}
+.vc-b-s{font-size:11px;color:var(--muted);line-height:1.5;}
+.mc-num{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;}
+
+/* COMPETITIVE INTELLIGENCE (tab 9) — added June 2026 */
+.cat-tabs-ci{display:flex;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.cat-tab-ci{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:0.5px solid var(--bd);color:var(--muted);background:var(--w);}
+.cat-tab-ci.on-clinic{background:var(--gp);border-color:var(--gl);color:var(--gd);}
+.cat-tab-ci.on-virtual{background:#EEF6FF;border-color:#C5DDF7;color:#0C447C;}
+.cat-tab-ci.on-wear{background:#FAEEDA;border-color:#FAC775;color:#633806;}
+.ci-adv{border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:12px;}
+.ci-adv-clinic{background:var(--gp);border:0.5px solid var(--bd);}
+.ci-adv-virtual{background:#EEF6FF;border:0.5px solid #C5DDF7;}
+.ci-adv-wear{background:#FAEEDA;border:0.5px solid #FAC775;}
+.ci-adv-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.ci-adv-clinic .ci-adv-icon{color:var(--gm);}
+.ci-adv-virtual .ci-adv-icon{color:#185FA5;}
+.ci-adv-wear .ci-adv-icon{color:#854F0B;}
+.ci-adv-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+.ci-adv-clinic .ci-adv-label{color:var(--gm);}
+.ci-adv-virtual .ci-adv-label{color:#185FA5;}
+.ci-adv-wear .ci-adv-label{color:#854F0B;}
+.ci-adv-t{font-size:13px;font-weight:600;color:var(--gd);margin-bottom:2px;}
+.ci-adv-virtual .ci-adv-t{color:#0C447C;}
+.ci-adv-wear .ci-adv-t{color:#633806;}
+.ci-adv-b{font-size:12px;color:var(--muted);line-height:1.55;font-weight:300;}
+.comp-row-ci{background:var(--w);border:0.5px solid var(--bd);border-radius:12px;overflow:hidden;margin-bottom:8px;}
+.comp-hdr-ci{display:flex;align-items:center;gap:12px;padding:1rem 1.25rem;cursor:pointer;}
+.comp-hdr-ci:hover{background:var(--gf);}
+.comp-av-ci{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;}
+.av-clinic{background:var(--gp);color:var(--gd);}
+.av-virtual{background:#EEF6FF;color:#0C447C;}
+.av-wear{background:#FAEEDA;color:#633806;}
+.av-tbd{background:var(--gf);color:var(--muted);}
+.comp-meta-ci{flex:1;min-width:0;}
+.comp-name-ci{font-size:14px;font-weight:500;color:var(--ink);}
+.comp-loc-ci{font-size:11px;color:var(--muted);margin-top:1px;}
+.comp-chev{font-size:16px;color:var(--muted);transition:transform 0.2s;flex-shrink:0;}
+.comp-row-ci.open .comp-chev{transform:rotate(180deg);}
+.comp-body-ci{display:none;border-top:0.5px solid var(--bd);}
+.comp-row-ci.open .comp-body-ci{display:block;}
+.comp-inner-ci{padding:1.25rem;}
+.hero-stmt-ci{background:var(--gf);border-radius:0 8px 8px 0;border-left:3px solid var(--bd);padding:0.875rem 1rem;margin-bottom:1.25rem;font-size:12px;color:var(--ink);line-height:1.6;font-style:italic;}
+.ci-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:12px;}
+.swot-grid-ci{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.swot-cell-ci{border-radius:8px;padding:0.75rem;}
+.sw-ci-s{background:#E8F4EA;}.sw-ci-w{background:#FEF3E7;}.sw-ci-o{background:#E6F1FB;}.sw-ci-t{background:#FBEAF0;}
+.swot-lbl-ci{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+.sw-ci-s .swot-lbl-ci{color:#0F6E56;}.sw-ci-w .swot-lbl-ci{color:#854F0B;}.sw-ci-o .swot-lbl-ci{color:#185FA5;}.sw-ci-t .swot-lbl-ci{color:#993556;}
+.swot-list-ci{list-style:none;}
+.swot-list-ci li{font-size:11px;line-height:1.5;padding:2px 0 2px 11px;position:relative;color:var(--ink);}
+.swot-list-ci li::before{content:'';position:absolute;left:2px;top:7px;width:4px;height:4px;border-radius:50%;}
+.sw-ci-s .swot-list-ci li::before{background:#0F6E56;}.sw-ci-w .swot-list-ci li::before{background:#854F0B;}
+.sw-ci-o .swot-list-ci li::before{background:#185FA5;}.sw-ci-t .swot-list-ci li::before{background:#993556;}
+.lwh-win-card{background:var(--gp);border:0.5px solid var(--bd);border-radius:10px;padding:1rem;}
+.lwh-win-label{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gm);margin-bottom:6px;}
+.lwh-win-list{list-style:none;margin-bottom:10px;}
+.lwh-win-list li{font-size:12px;color:var(--ink);padding:3px 0 3px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--bd);}
+.lwh-win-list li:last-child{border:none;}
+.lwh-win-list li::before{content:'';position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:#0F6E56;}
+.lwh-threat-label{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#993556;margin-bottom:6px;margin-top:10px;}
+.lwh-threat-list{list-style:none;}
+.lwh-threat-list li{font-size:11px;color:var(--muted);padding:3px 0 3px 13px;position:relative;line-height:1.5;}
+.lwh-threat-list li::before{content:'';position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:#993556;}
+.tbd-ci{border:0.5px dashed var(--bd);border-radius:10px;padding:1.25rem;text-align:center;}
+.pend-badge{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;background:var(--gf);color:var(--muted);border:0.5px solid var(--bd);}
+.ci-cat-section{display:none;}
+.ci-cat-section.on{display:block;}
+</style>
+<style>
+/* ═══════════════════════════════════════════════════════
+   Longevity Whole Health — responsive breakpoints
+   Loaded after styles.css so these rules win the cascade
+   ═══════════════════════════════════════════════════════ */
+
 @media (max-width: 768px) {
   .nav { padding: 0.75rem 1rem; height: auto; flex-wrap: wrap; gap: 8px; }
   .nlinks { display: none; }
@@ -436,22 +550,8 @@ body{font-family:'Outfit',Arial,sans-serif;color:var(--ink);background:#f8faf9;m
 </style>
 </head>
 <body>
-<style>
-#pw-gate{position:fixed;inset:0;background:#0a4227;display:flex;align-items:center;justify-content:center;z-index:9999;}
-#pw-box{background:#0e5230;border:0.5px solid rgba(99,165,105,0.3);border-radius:16px;padding:2.5rem 2rem;width:100%;max-width:360px;text-align:center;}
-#pw-logo{width:44px;height:44px;background:#63a569;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;}
-#pw-t{font-size:17px;font-weight:600;color:#ffffff;margin-bottom:6px;font-family:'Outfit',Arial,sans-serif;}
-#pw-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:1.75rem;font-family:'Outfit',Arial,sans-serif;font-weight:300;}
-#pw-input{width:100%;padding:10px 14px;border-radius:8px;border:0.5px solid rgba(99,165,105,0.4);background:rgba(255,255,255,0.07);color:#ffffff;font-size:14px;font-family:'Outfit',Arial,sans-serif;outline:none;margin-bottom:10px;box-sizing:border-box;text-align:center;letter-spacing:0.05em;}
-#pw-input::placeholder{color:rgba(255,255,255,0.3);}
-#pw-input:focus{border-color:rgba(99,165,105,0.7);}
-#pw-btn{width:100%;padding:10px;border-radius:8px;border:none;background:#63a569;color:#ffffff;font-size:13px;font-weight:500;font-family:'Outfit',Arial,sans-serif;cursor:pointer;margin-bottom:10px;}
-#pw-btn:hover{background:#4f8e54;}
-#pw-err{font-size:12px;color:#F09595;display:none;margin-top:4px;font-family:'Outfit',Arial,sans-serif;}
-#pw-slogan{font-size:11px;color:rgba(255,255,255,0.25);margin-top:1.5rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'Outfit',Arial,sans-serif;}
-body.locked{overflow:hidden;}
-</style>
 
+<!-- ── PASSWORD GATE ── -->
 <div id="pw-gate">
   <div id="pw-box">
     <div id="pw-logo"><i class="ti ti-leaf" style="font-size:20px;color:#0a4227;"></i></div>
@@ -463,8 +563,13 @@ body.locked{overflow:hidden;}
     <div id="pw-slogan">Live for better.</div>
   </div>
 </div>
-
 <script>
+/* ═══════════════════════════════════════════════════════
+   Longevity Whole Health — password gate
+   Access code is verified via hash; session persists in
+   sessionStorage until the browser tab is closed.
+   ═══════════════════════════════════════════════════════ */
+
 (function(){
   document.body.classList.add('locked');
   var stored = sessionStorage.getItem('lwh-gtm-auth');
@@ -920,82 +1025,78 @@ function unlock(){
     <div class="cb">We help Northeastern Ontario residents gain meaningful health insights through a personalized, root-cause approach focused on long-term wellness, confidence, and healthier living.</div>
   </div>
 
+  <!-- OUTCOMES MESSAGING -->
   <hr style="border:none;border-top:0.5px solid var(--bd);margin:2rem 0;">
-
-  <div class="sey" style="margin-bottom:0.5rem;">How we talk about member benefits</div>
-  <div class="st" style="font-size:18px;">Lead with outcomes. Not features.</div>
+  <div class="sey">How we talk about member benefits</div>
+  <div class="st">Lead with outcomes. Not features.</div>
   <div class="sb">Members don't buy biomarkers or clinical stations. They buy what those things mean for their life. Every conversation should connect what we do to what changes for them.</div>
 
-  <div style="background:var(--gf);border:0.5px solid var(--bd);border-left:3px solid var(--gl);border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:12px;color:var(--muted);line-height:1.6;">
-    <strong style="color:var(--gd);font-weight:600;">The principle:</strong> Features describe what we have. Outcomes describe what changes. Consequences describe why it matters. Always lead with the last two.
-  </div>
+  <div class="stack-note"><strong style="font-weight:600;color:var(--gm);">The principle:</strong> Features describe what we have. Outcomes describe what changes. Consequences describe why it matters. Always lead with the last two.</div>
 
-  <div style="margin-bottom:1.5rem;">
-    <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">The reframe</div>
-    <div style="border:0.5px solid var(--bd);border-radius:12px;overflow:hidden;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;background:var(--gd);">
-        <div style="padding:0.75rem 1rem;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Feature-focused — avoid this</div>
-        <div style="padding:0.75rem 1rem;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);">Outcome-focused — say this</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;">
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);border-bottom:0.5px solid var(--bd);border-right:0.5px solid var(--bd);line-height:1.5;">We analyze over 100 biomarkers</div>
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--gd);font-weight:500;border-bottom:0.5px solid var(--bd);line-height:1.5;">You'll finally know what's actually happening in your body</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;background:var(--gf);">
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);border-bottom:0.5px solid var(--bd);border-right:0.5px solid var(--bd);line-height:1.5;">A 5-station, 3.5-hour in-clinic assessment</div>
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--gd);font-weight:500;border-bottom:0.5px solid var(--bd);line-height:1.5;">One day. A complete picture. You leave knowing where you stand</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;">
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);border-bottom:0.5px solid var(--bd);border-right:0.5px solid var(--bd);line-height:1.5;">Same-day results and a personalized action plan</div>
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--gd);font-weight:500;border-bottom:0.5px solid var(--bd);line-height:1.5;">You walk out knowing exactly what to do next — not in six weeks</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;background:var(--gf);">
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);border-bottom:0.5px solid var(--bd);border-right:0.5px solid var(--bd);line-height:1.5;">Clara is included with your membership</div>
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--gd);font-weight:500;border-bottom:0.5px solid var(--bd);line-height:1.5;">Your health doesn't pause between visits. Clara is with you every day</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;">
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);border-right:0.5px solid var(--bd);line-height:1.5;">Year-round access to episodic care</div>
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--gd);font-weight:500;line-height:1.5;">When something comes up, you're not starting from scratch with a stranger</div>
-      </div>
+  <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">The reframe</div>
+  <div style="border:0.5px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:1.5rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;background:var(--gd);">
+      <div style="padding:0.875rem 1rem;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.8);">Feature-focused &mdash; avoid this</div>
+      <div style="padding:0.875rem 1rem;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);">Outcome-focused &mdash; say this</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;">
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;background:var(--w);">We analyze over 100 biomarkers</div>
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--gm);font-weight:500;line-height:1.5;background:var(--gp);">You'll finally know what's actually happening in your body</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--bd);">
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;background:var(--w);">A 5-station, 3.5-hour in-clinic assessment</div>
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--gm);font-weight:500;line-height:1.5;background:var(--gp);">One day. A complete picture. You leave knowing where you stand</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--bd);">
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;background:var(--w);">Same-day results and a personalized action plan</div>
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--gm);font-weight:500;line-height:1.5;background:var(--gp);">You walk out knowing exactly what to do next &mdash; not in six weeks</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--bd);">
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;background:var(--w);">Clara is included with your membership</div>
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--gm);font-weight:500;line-height:1.5;background:var(--gp);">Your health doesn't pause between visits. Clara is with you every day</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--bd);">
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;background:var(--w);">Year-round access to episodic care</div>
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--gm);font-weight:500;line-height:1.5;background:var(--gp);">When something comes up, you're not starting from scratch with a stranger</div>
     </div>
   </div>
 
-  <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Benefit cards</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
-    <div style="background:var(--w);border:0.5px solid var(--bd);border-top:3px solid var(--gl);border-radius:0 0 10px 10px;padding:1rem;">
-      <div style="font-size:13px;font-weight:600;color:var(--gd);margin-bottom:3px;">Know your body</div>
-      <div style="font-size:11px;color:var(--gl);font-weight:500;margin-bottom:8px;">You stop guessing and start acting</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px;">Root-cause insight replaces the anxiety of not knowing. Members describe it as clarity they've never had from standard care.</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">In conversation</div>
-      <div style="font-size:11px;color:var(--gd);font-style:italic;line-height:1.5;">"Most people leave their annual physical feeling exactly the same as when they walked in. Our members leave knowing."</div>
+  <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Benefit cards</div>
+  <div class="four">
+    <div class="card" style="border-top:3px solid var(--gl);">
+      <div class="ct">Know your body</div>
+      <div style="font-size:11px;font-weight:600;color:var(--gl);line-height:1.45;margin-bottom:8px;">You stop guessing and start acting</div>
+      <div class="cb">Root-cause insight replaces the anxiety of not knowing. Members describe it as clarity they've never had from standard care.</div>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px;">In conversation</div>
+      <div style="font-size:12px;font-style:italic;color:var(--gm);line-height:1.55;">"Most people leave their annual physical feeling exactly the same as when they walked in. Our members leave knowing."</div>
     </div>
-    <div style="background:var(--w);border:0.5px solid var(--bd);border-top:3px solid var(--gl);border-radius:0 0 10px 10px;padding:1rem;">
-      <div style="font-size:13px;font-weight:600;color:var(--gd);margin-bottom:3px;">Catch risk early</div>
-      <div style="font-size:11px;color:var(--gl);font-weight:500;margin-bottom:8px;">You have time to change the outcome</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px;">The Longevity Circuit surfaces cardiovascular, metabolic, and cancer risk before symptoms appear — when intervention still matters.</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">In conversation</div>
-      <div style="font-size:11px;color:var(--gd);font-style:italic;line-height:1.5;">"The best time to find something is before you feel it. That's what we're built for."</div>
+    <div class="card" style="border-top:3px solid var(--gl);">
+      <div class="ct">Catch risk early</div>
+      <div style="font-size:11px;font-weight:600;color:var(--gl);line-height:1.45;margin-bottom:8px;">You have time to change the outcome</div>
+      <div class="cb">The Longevity Circuit surfaces cardiovascular, metabolic, and cancer risk before symptoms appear &mdash; when intervention still matters.</div>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px;">In conversation</div>
+      <div style="font-size:12px;font-style:italic;color:var(--gm);line-height:1.55;">"The best time to find something is before you feel it. That's what we're built for."</div>
     </div>
-    <div style="background:var(--w);border:0.5px solid var(--bd);border-top:3px solid var(--gl);border-radius:0 0 10px 10px;padding:1rem;">
-      <div style="font-size:13px;font-weight:600;color:var(--gd);margin-bottom:3px;">Get a plan you can act on</div>
-      <div style="font-size:11px;color:var(--gl);font-weight:500;margin-bottom:8px;">You know exactly what to do next</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px;">Every member leaves with a personalized health roadmap reviewed one-on-one with the Medical Director. Not generic advice — a specific plan for them.</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">In conversation</div>
-      <div style="font-size:11px;color:var(--gd);font-style:italic;line-height:1.5;">"You don't leave with a stack of results and no context. You leave with a roadmap."</div>
+    <div class="card" style="border-top:3px solid var(--gl);">
+      <div class="ct">Get a plan you can act on</div>
+      <div style="font-size:11px;font-weight:600;color:var(--gl);line-height:1.45;margin-bottom:8px;">You know exactly what to do next</div>
+      <div class="cb">Every member leaves with a personalized health roadmap reviewed one-on-one with the Medical Director. Not generic advice &mdash; a specific plan for them.</div>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px;">In conversation</div>
+      <div style="font-size:12px;font-style:italic;color:var(--gm);line-height:1.55;">"You don't leave with a stack of results and no context. You leave with a roadmap."</div>
     </div>
-    <div style="background:var(--w);border:0.5px solid var(--bd);border-top:3px solid var(--gl);border-radius:0 0 10px 10px;padding:1rem;">
-      <div style="font-size:13px;font-weight:600;color:var(--gd);margin-bottom:3px;">Build habits that last</div>
-      <div style="font-size:11px;color:var(--gl);font-weight:500;margin-bottom:8px;">Your health improves between visits, not just on assessment day</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px;">Clara is alongside every day — not a once-a-year event. Daily guidance builds sustainable habits that compound across the 12-month journey.</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">In conversation</div>
-      <div style="font-size:11px;color:var(--gd);font-style:italic;line-height:1.5;">"Clara doesn't wait for your next appointment. It's with you every day in between."</div>
+    <div class="card" style="border-top:3px solid var(--gl);">
+      <div class="ct">Build habits that last</div>
+      <div style="font-size:11px;font-weight:600;color:var(--gl);line-height:1.45;margin-bottom:8px;">Your health improves between visits, not just on assessment day</div>
+      <div class="cb">Clara is alongside every day &mdash; not a once-a-year event. Daily guidance builds sustainable habits that compound across the 12-month journey.</div>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px;">In conversation</div>
+      <div style="font-size:12px;font-style:italic;color:var(--gm);line-height:1.55;">"Clara doesn't wait for your next appointment. It's with you every day in between."</div>
     </div>
-    <div style="background:var(--w);border:0.5px solid var(--bd);border-top:3px solid var(--gl);border-radius:0 0 10px 10px;padding:1rem;">
-      <div style="font-size:13px;font-weight:600;color:var(--gd);margin-bottom:3px;">Feel in control</div>
-      <div style="font-size:11px;color:var(--gl);font-weight:500;margin-bottom:8px;">You stop dreading what you don't know</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px;">Health anxiety often comes from uncertainty, not illness. Members consistently describe a renewed sense of agency and confidence after their first assessment.</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">In conversation</div>
-      <div style="font-size:11px;color:var(--gd);font-style:italic;line-height:1.5;">"A lot of our members aren't sick. They just want to stop wondering."</div>
+    <div class="card" style="border-top:3px solid var(--gl);">
+      <div class="ct">Feel in control</div>
+      <div style="font-size:11px;font-weight:600;color:var(--gl);line-height:1.45;margin-bottom:8px;">You stop dreading what you don't know</div>
+      <div class="cb">Health anxiety often comes from uncertainty, not illness. Members consistently describe a renewed sense of agency and confidence after their first assessment.</div>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px;">In conversation</div>
+      <div style="font-size:12px;font-style:italic;color:var(--gm);line-height:1.55;">"A lot of our members aren't sick. They just want to stop wondering."</div>
     </div>
   </div>
 </div>
@@ -1052,82 +1153,78 @@ function unlock(){
     <div class="cb">We partner with Northeastern Ontario employers to deliver a people-first approach to employee wellness that helps build healthier teams, stronger workplace culture, and reduce costly workforce disruptions.</div>
   </div>
 
-  <hr style="border:none;border-top:0.5px solid #C5DDF7;margin:2rem 0;">
+  <!-- OUTCOMES MESSAGING -->
+  <hr style="border:none;border-top:0.5px solid var(--bd);margin:2rem 0;">
+  <div class="sey" style="color:#378ADD;">How we talk about employer benefits</div>
+  <div class="st" style="color:#0C447C;">Lead with outcomes. Not features.</div>
+  <div class="sb">Employers don't buy assessments or AI companions. They buy fewer sick days, stronger retention, and a culture people talk about. Every conversation should connect what we do to the business problem it solves.</div>
 
-  <div class="sey" style="margin-bottom:0.5rem;color:#185FA5;">How we talk about employer benefits</div>
-  <div class="st" style="font-size:18px;">Lead with outcomes. Not features.</div>
-  <div class="sb">Employers don't buy wellness programs. They buy solutions to workforce challenges. Every conversation should connect what we do to what improves for their business and their people.</div>
+  <div style="background:#EEF6FF;border:0.5px solid #C5DDF7;border-left:3px solid #378ADD;border-radius:0 10px 10px 0;padding:0.875rem 1.125rem;margin-bottom:1.5rem;font-size:12px;color:#185FA5;line-height:1.6;font-weight:300;"><strong style="font-weight:600;color:#0C447C;">The principle:</strong> HR leaders aren't looking for another perk. They're solving for retention, absenteeism, culture, and ROI. Lead with the business problem, not the product.</div>
 
-  <div style="background:#EEF6FF;border:0.5px solid #C5DDF7;border-left:3px solid #378ADD;border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:12px;color:#185FA5;line-height:1.6;">
-    <strong style="color:#0C447C;font-weight:600;">The principle:</strong> HR leaders aren't looking for another perk. They're solving for retention, absenteeism, culture, and ROI. Lead with the business problem, not the product.
-  </div>
-
-  <div style="margin-bottom:1.5rem;">
-    <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">The reframe</div>
-    <div style="border:0.5px solid #C5DDF7;border-radius:12px;overflow:hidden;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;background:#0c3a5a;">
-        <div style="padding:0.75rem 1rem;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Feature-focused — avoid this</div>
-        <div style="padding:0.75rem 1rem;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#85B7EB;">Outcome-focused — say this</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;">
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);border-bottom:0.5px solid #C5DDF7;border-right:0.5px solid #C5DDF7;line-height:1.5;">We offer a comprehensive annual health assessment</div>
-        <div style="padding:0.875rem 1rem;font-size:12px;color:#0C447C;font-weight:500;border-bottom:0.5px solid #C5DDF7;line-height:1.5;">Your people show up healthier, more present, and less likely to burn out</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;background:#EEF6FF;">
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);border-bottom:0.5px solid #C5DDF7;border-right:0.5px solid #C5DDF7;line-height:1.5;">Employees get access to Clara, an AI health companion</div>
-        <div style="padding:0.875rem 1rem;font-size:12px;color:#0C447C;font-weight:500;border-bottom:0.5px solid #C5DDF7;line-height:1.5;">Your people are engaged in their health year-round — not just on assessment day</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;">
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);border-bottom:0.5px solid #C5DDF7;border-right:0.5px solid #C5DDF7;line-height:1.5;">Includes year-round episodic care access</div>
-        <div style="padding:0.875rem 1rem;font-size:12px;color:#0C447C;font-weight:500;border-bottom:0.5px solid #C5DDF7;line-height:1.5;">Fewer sick days. Fewer surprises. Problems caught before they become absences</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;background:#EEF6FF;">
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);border-bottom:0.5px solid #C5DDF7;border-right:0.5px solid #C5DDF7;line-height:1.5;">A premium employee benefit program</div>
-        <div style="padding:0.875rem 1rem;font-size:12px;color:#0C447C;font-weight:500;border-bottom:0.5px solid #C5DDF7;line-height:1.5;">The kind of benefit people mention when they're telling someone why they stayed</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;">
-        <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);border-right:0.5px solid #C5DDF7;line-height:1.5;">HSA-eligible and can be funded through your benefits plan</div>
-        <div style="padding:0.875rem 1rem;font-size:12px;color:#0C447C;font-weight:500;line-height:1.5;">The CFO sees it as an investment with a measurable return, not a cost</div>
-      </div>
+  <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">The reframe</div>
+  <div style="border:0.5px solid #C5DDF7;border-radius:10px;overflow:hidden;margin-bottom:1.5rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;background:#0c3a5a;">
+      <div style="padding:0.875rem 1rem;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.8);">Feature-focused &mdash; avoid this</div>
+      <div style="padding:0.875rem 1rem;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#85B7EB;">Outcome-focused &mdash; say this</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;">
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;background:var(--w);">We offer a comprehensive annual health assessment</div>
+      <div style="padding:0.875rem 1rem;font-size:12px;color:#185FA5;font-weight:500;line-height:1.5;background:#EEF6FF;">Your people show up healthier, more present, and less likely to burn out</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #C5DDF7;">
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;background:var(--w);">Employees get access to Clara, an AI health companion</div>
+      <div style="padding:0.875rem 1rem;font-size:12px;color:#185FA5;font-weight:500;line-height:1.5;background:#EEF6FF;">Your people are engaged in their health year-round, not just on assessment day</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #C5DDF7;">
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;background:var(--w);">Includes year-round episodic care access</div>
+      <div style="padding:0.875rem 1rem;font-size:12px;color:#185FA5;font-weight:500;line-height:1.5;background:#EEF6FF;">Fewer sick days. Fewer surprises. Problems caught before they become absences</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #C5DDF7;">
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;background:var(--w);">A premium employee benefit program</div>
+      <div style="padding:0.875rem 1rem;font-size:12px;color:#185FA5;font-weight:500;line-height:1.5;background:#EEF6FF;">The kind of benefit people mention when they're telling someone why they stayed</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #C5DDF7;">
+      <div style="padding:0.875rem 1rem;font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;background:var(--w);">HSA-eligible and can be funded through your benefits plan</div>
+      <div style="padding:0.875rem 1rem;font-size:12px;color:#185FA5;font-weight:500;line-height:1.5;background:#EEF6FF;">The CFO sees it as an investment with a measurable return, not a cost</div>
     </div>
   </div>
 
-  <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Benefit cards</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
-    <div style="background:var(--w);border:0.5px solid #C5DDF7;border-top:3px solid #378ADD;border-radius:0 0 10px 10px;padding:1rem;">
-      <div style="font-size:13px;font-weight:600;color:#0C447C;margin-bottom:3px;">Reduce absenteeism</div>
-      <div style="font-size:11px;color:#378ADD;font-weight:500;margin-bottom:8px;">Your team shows up and stays productive</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px;">Early detection and proactive care means health issues are managed before they become sick days. Healthier employees are more present and more consistent.</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">In conversation</div>
-      <div style="font-size:11px;color:#0C447C;font-style:italic;line-height:1.5;">"What does a two-week absence from your top performer actually cost you? That's what we're helping prevent."</div>
+  <div style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Benefit cards</div>
+  <div class="four">
+    <div class="card" style="border-top:3px solid #378ADD;">
+      <div class="ct" style="color:#0C447C;">Reduce absenteeism</div>
+      <div style="font-size:11px;font-weight:600;color:#378ADD;line-height:1.45;margin-bottom:8px;">Your team shows up and stays productive</div>
+      <div class="cb">Early detection and proactive care means health issues are managed before they become sick days. Healthier employees are more present and more consistent.</div>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px;">In conversation</div>
+      <div style="font-size:12px;font-style:italic;color:#0C447C;line-height:1.55;">"What does a two-week absence from your top performer actually cost you? That's what we're helping prevent."</div>
     </div>
-    <div style="background:var(--w);border:0.5px solid #C5DDF7;border-top:3px solid #378ADD;border-radius:0 0 10px 10px;padding:1rem;">
-      <div style="font-size:13px;font-weight:600;color:#0C447C;margin-bottom:3px;">Retain your best people</div>
-      <div style="font-size:11px;color:#378ADD;font-weight:500;margin-bottom:8px;">You stop losing what took years to build</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px;">A benefit this meaningful signals genuine investment in people. Employees who feel cared for stay longer and refer others. Retention isn't just about salary.</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">In conversation</div>
-      <div style="font-size:11px;color:#0C447C;font-style:italic;line-height:1.5;">"Your competitors are offering a gym discount. You're offering something that actually changes how someone feels about coming to work."</div>
+    <div class="card" style="border-top:3px solid #378ADD;">
+      <div class="ct" style="color:#0C447C;">Retain your best people</div>
+      <div style="font-size:11px;font-weight:600;color:#378ADD;line-height:1.45;margin-bottom:8px;">You stop losing what took years to build</div>
+      <div class="cb">A benefit this meaningful signals genuine investment in people. Employees who feel cared for stay longer and refer others. Retention isn't just about salary.</div>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px;">In conversation</div>
+      <div style="font-size:12px;font-style:italic;color:#0C447C;line-height:1.55;">"Your competitors are offering a gym discount. You're offering something that actually changes how someone feels about coming to work."</div>
     </div>
-    <div style="background:var(--w);border:0.5px solid #C5DDF7;border-top:3px solid #378ADD;border-radius:0 0 10px 10px;padding:1rem;">
-      <div style="font-size:13px;font-weight:600;color:#0C447C;margin-bottom:3px;">Prove the ROI</div>
-      <div style="font-size:11px;color:#378ADD;font-weight:500;margin-bottom:8px;">The CFO sees it as an investment, not a cost</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px;">Measurable outcomes across absenteeism, engagement, and retention give HR leaders the data to justify the investment upward. This isn't a perk — it's a business case.</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">In conversation</div>
-      <div style="font-size:11px;color:#0C447C;font-style:italic;line-height:1.5;">"We can help you build the business case. The numbers are on your side."</div>
+    <div class="card" style="border-top:3px solid #378ADD;">
+      <div class="ct" style="color:#0C447C;">Prove the ROI</div>
+      <div style="font-size:11px;font-weight:600;color:#378ADD;line-height:1.45;margin-bottom:8px;">The CFO sees it as an investment, not a cost</div>
+      <div class="cb">Measurable outcomes across absenteeism, engagement, and retention give HR leaders the data to justify the investment upward. This isn't a perk &mdash; it's a business case.</div>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px;">In conversation</div>
+      <div style="font-size:12px;font-style:italic;color:#0C447C;line-height:1.55;">"We can help you build the business case. The numbers are on your side."</div>
     </div>
-    <div style="background:var(--w);border:0.5px solid #C5DDF7;border-top:3px solid #378ADD;border-radius:0 0 10px 10px;padding:1rem;">
-      <div style="font-size:13px;font-weight:600;color:#0C447C;margin-bottom:3px;">Build a healthier culture</div>
-      <div style="font-size:11px;color:#378ADD;font-weight:500;margin-bottom:8px;">People talk about working for you differently</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px;">When employees feel genuinely supported, morale shifts. Health becomes a shared value rather than a personal worry. That change is felt across teams, not just in individual results.</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">In conversation</div>
-      <div style="font-size:11px;color:#0C447C;font-style:italic;line-height:1.5;">"The organizations that do this well don't just have healthier employees. They have better teams."</div>
+    <div class="card" style="border-top:3px solid #378ADD;">
+      <div class="ct" style="color:#0C447C;">Build a healthier culture</div>
+      <div style="font-size:11px;font-weight:600;color:#378ADD;line-height:1.45;margin-bottom:8px;">People talk about working for you differently</div>
+      <div class="cb">When employees feel genuinely supported, morale shifts. Health becomes a shared value rather than a personal worry. That change is felt across teams, not just in individual results.</div>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px;">In conversation</div>
+      <div style="font-size:12px;font-style:italic;color:#0C447C;line-height:1.55;">"The organizations that do this well don't just have healthier employees. They have better teams."</div>
     </div>
-    <div style="background:var(--w);border:0.5px solid #C5DDF7;border-top:3px solid #378ADD;border-radius:0 0 10px 10px;padding:1rem;">
-      <div style="font-size:13px;font-weight:600;color:#0C447C;margin-bottom:3px;">Become the employer people choose</div>
-      <div style="font-size:11px;color:#378ADD;font-weight:500;margin-bottom:8px;">Recruitment gets easier</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px;">In a competitive Northern Ontario talent market, a benefit this distinctive changes how candidates see you. People mention it in interviews. It becomes part of your employer brand.</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">In conversation</div>
-      <div style="font-size:11px;color:#0C447C;font-style:italic;line-height:1.5;">"What does health mean for your people strategy? Because this is one answer to that question."</div>
+    <div class="card" style="border-top:3px solid #378ADD;">
+      <div class="ct" style="color:#0C447C;">Become the employer people choose</div>
+      <div style="font-size:11px;font-weight:600;color:#378ADD;line-height:1.45;margin-bottom:8px;">Recruitment gets easier</div>
+      <div class="cb">In a competitive Northern Ontario talent market, a benefit this distinctive changes how candidates see you. People mention it in interviews. It becomes part of your employer brand.</div>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px;">In conversation</div>
+      <div style="font-size:12px;font-style:italic;color:#0C447C;line-height:1.55;">"What does health mean for your people strategy? Because this is one answer to that question."</div>
     </div>
   </div>
 </div>
@@ -1402,65 +1499,7 @@ function unlock(){
 </div>
 </div>
 
-
-
-
-
-<script>
-const partners=[{icon:'ti-building',name:'Employer',role:'Buyer',sub:'The funder of the membership. Decides whether Longevity is a benefit, a perk, or a strategic differentiator.',focus:['Talent attraction, retention, and productivity','Total benefit cost vs. workforce experience','Culture, engagement, and employer brand','Executive and high-performer health risk'],solve:['Burnout, absenteeism, and presenteeism','Disengaged or disconnected employees','Difficulty differentiating in a tight talent market','A wellness budget with no measurable return'],partner:['Employer-paid membership for all or tiered groups','Executive health stream + broader workforce stream','Pilot cohorts (30–90 day) with outcome readouts','Onsite assessments + lunch-and-learns as on-ramps'],comms:['Lead with retention, productivity, absenteeism','Show member outcomes, not feature lists','Position membership as a differentiator, not a perk'],open:'"What does health mean for your people strategy?"'},{icon:'ti-user',name:'Employee',role:'Beneficiary',sub:'The user of the membership and where outcomes happen. Activation is the unlock, without it, the employer sees no return.',focus:['Personal energy, performance, and longevity','Family health and aging well','Control and clarity over their own health','Time and friction, can they actually use it?'],solve:['Unanswered questions GPs are too rushed to address','Fragmented care across multiple providers','Anxiety about their numbers, symptoms, or trajectory','Wanting agency, not just appointments'],partner:['Frictionless onboarding through their employer','Clear first 90-day journey: assess → insight → plan','Family-add option once trust is established','Member stories shared back to drive peer enrollment'],comms:['Speak to confidence, clarity, and root cause','Lead with the experience, not the science','Highlight a low-friction first step (the assessment)'],open:'"What do you wish you understood about your health?"'},{icon:'ti-tool',name:'Unions',role:'Workforce representative',sub:'Represent unionized members at the bargaining table. In Northern Ontario mining, smelting, and industrial sectors, unions shape what benefits an employer offers.',focus:['Member health, safety, and dignity at work','Wages, benefits, pensions, and retirement security','Occupational health, mining, smelting, trades','Bargaining outcomes and member retention'],solve:['Equitable benefits negotiated into the contract','Real workplace safety, not just policy language','Care that addresses occupational and shift-work risk','A benefits package members can compare with pride'],partner:['Inclusion in collectively-bargained benefits packages','Member-paid premium tier as an optional add-on','Joint occupational-health programming with employers','Be a value-add the local can champion at bargaining'],comms:['Speak member outcomes, not vendor features','Lead with longevity, MSK, mental health, shift recovery','Frame us as a benefit the union secured, not imposed'],open:'"What did your members say in the last survey?"'},{icon:'ti-leaf',name:'Indigenous communities',role:'Community partner',sub:'Sovereign First Nations partners across Anishinaabe and Cree territories in the Sudbury region. Many engage with mining companies through Impact Benefit Agreements that include health and wellness commitments.',focus:['Community health sovereignty and self-determination','Cultural safety and integration with traditional healing','Closing intergenerational health inequities','Workforce wellbeing for community members in industry'],solve:['Care that respects culture, history, and community voice','Gaps in chronic disease, mental health, and longevity','Health programs tied to IBA wellness commitments','Workforce health for members employed by industry partners'],partner:['Community-led conversations first, we listen before we propose','Co-design with Health Directors and Tribal Council leadership','Bridge role with mining-company partners via IBA wellness funds','Cultural safety training for Longevity staff, non-negotiable'],comms:['Lead with relationship, reciprocity, and long-term commitment','Recognize sovereignty in every conversation','Move at the community\'s pace, not the sales pipeline\'s'],open:'"What health priorities has the community identified?"'},{icon:'ti-users',name:'HR Advisory / People Strategy',role:'Strategic advisor',sub:'Trusted advisor to the employer on culture, performance, and wellbeing strategy. Often the first influencer in the room before a buying decision is made.',focus:['Culture, performance, and wellbeing strategy','Leadership effectiveness and team health','EVP, engagement, and retention design','Translating people strategy into programs'],solve:['Clients with wellbeing intent but no execution','Programs that look good on paper, no measurable lift','Pressure to show ROI on culture investments','Differentiating their advisory practice'],partner:['Co-design wellbeing programs with Longevity inside','Recommended-vendor / preferred-partner status','Joint case studies and white-papers','Speaking partnerships at their client events'],comms:['Speak strategy, not services, culture, EVP, performance','Position us as the execution layer for their philosophy','Bring data: outcome metrics, engagement, retention'],open:'"How are your clients operationalizing wellbeing?"'},{icon:'ti-file-invoice',name:'Broker / Benefits advisor',role:'Procurement gatekeeper',sub:'Designs the benefits stack and shepherds renewals. Compensation is shifting from price-only to advisory value.',focus:['Benefits design, renewals, and client retention','Cost containment and plan optimization','Differentiating beyond commodity quotes','Maintaining advisory relevance with HR leaders'],solve:['Clients pushing back on rising premiums','Pressure to bring something new each renewal','Losing accounts to advisory-led competitors','Wellness add-ons that fail to engage employees'],partner:['Referral arrangement with clear economics','Co-presented client meetings, we bring the substance','Inclusion in their wellbeing / non-traditional toolkit','Client retention case studies they can use in pitches'],comms:['Position as a new category, not another vendor','Lead with renewal differentiation','Make them look smart in front of HR leaders'],open:'"What\'s giving you renewal leverage this year?"'},{icon:'ti-shield',name:'Insurer',role:'Risk layer',sub:'Underwrites the population. Their entire business is reducing the cost and frequency of downstream claims.',focus:['Claims cost, loss ratios, and risk selection','Population health and chronic disease load','Disability, drug, and paramedical utilization','Differentiated wellness to support group renewal'],solve:['Rising chronic, mental health, and MSK claims','Sponsor demand for value beyond reimbursement','Difficulty proving prevention ROI to underwriters','Wellness vendors that don\'t move clinical needles'],partner:['Population pilot tied to claims-cost benchmarks','Integration into their sponsor wellness toolkit','Anonymized outcomes data sharing on chronic risk','Co-marketing to brokers and large group sponsors'],comms:['Speak claims language, disability, MSK, metabolic','Frame us as upstream prevention, not a benefit','Bring the clinical and the actuarial story together'],open:'"Where is your claims pressure highest?"'},{icon:'ti-devices',name:'HR Software / Benefits Platform',role:'Channel',sub:'Where benefits live for the employer and employee. Their KPI is engagement and stickiness on the platform.',focus:['Admin efficiency and HR ops automation','Employee experience and platform engagement','Marketplace breadth and ecosystem partners','Stickiness, what keeps employers from churning'],solve:['Clients asking for premium, differentiated benefits','Low employee engagement on the platform','Generic point solutions that don\'t move usage metrics','Need for outcome-led stories to win and retain accounts'],partner:['Marketplace listing with embedded enrollment','Single-sign-on or deep-link integration','Co-marketing to their employer base','Platform-native member experience and analytics'],comms:['Talk engagement, retention, perceived value','Show how Longevity drives platform stickiness','Make the integration story easy and concrete'],open:'"What\'s pulling employees back into the platform?"'},{icon:'ti-device-mobile',name:'HealthTech',role:'Care continuum',sub:'Virtual care, digital triage, and engagement apps. They scale access, we deliver the longitudinal, in-person depth they can\'t.',focus:['Access, scale, and convenience at low unit cost','Digital engagement and adherence','Virtual triage, primary care, and mental health','Completing the care continuum for sponsors'],solve:['Complex members who don\'t fit virtual-only','Sponsor demand for diagnostic and in-person depth','Engagement that drops off after first interaction','Differentiation in a crowded virtual-care market'],partner:['Bidirectional referral pathway for complex cases','Bundled offering, virtual front door + Longevity depth','Joint care plans and shared notes where appropriate','Co-marketing as a complete continuum, not competitors'],comms:['Position as complement, not competitor','Highlight what we do that virtual care can\'t','Speak the language of continuum and outcomes'],open:'"Where do your complex members fall through?"'}];
-
-function showPartner(n){
-  for(let i=0;i<9;i++) document.getElementById('ps'+i).classList.toggle('on',i===n);
-  const p=partners[n];
-  document.getElementById('partnerDetail').innerHTML=`<div class="pd-header"><div class="pd-icon"><i class="ti ${p.icon}"></i></div><div><div class="pd-title">${p.name}</div><div class="pd-sub">${p.sub}</div></div></div><div class="pd-grid"><div class="pd-section"><div class="pd-section-t">Their focus</div><ul class="pd-list">${p.focus.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="pd-section"><div class="pd-section-t">What they solve for</div><ul class="pd-list">${p.solve.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="pd-section"><div class="pd-section-t">How we partner</div><ul class="pd-list">${p.partner.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="pd-section"><div class="pd-section-t">How we communicate</div><ul class="pd-list">${p.comms.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><div class="pd-open"><div class="pd-open-label">Opening question</div><div class="pd-open-q">${p.open}</div></div>`;
-}
-
-function showTab(n){
-  for(let i=0;i<10;i++){
-    var p=document.getElementById('p'+i);
-    var t=document.getElementById('t'+i);
-    var na=document.getElementById('na'+i);
-    if(p) p.classList.toggle('on',i===n);
-    if(t) t.classList.toggle('on',i===n);
-    if(na) na.classList.toggle('on',i===n);
-  }
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-showPartner(0);
-</script>
-</body>
-</html>
-<!-- ═══════════════════════════════════════════════════════
-     BUSINESS STRATEGY SECTION (tab index 9)
-     added June 2026
-     ═══════════════════════════════════════════════════════ -->
-<style>
-.pillar-sci{background:rgba(10,66,39,0.08);border:0.5px solid var(--bd);}
-.pillar-tech{background:var(--cp);border:0.5px solid var(--cbrd);}
-.pillar-emp{background:var(--gf);border:0.5px solid var(--bd);}
-.sc-s{background:#E8F4EA;}.sc-w{background:#FEF3E7;}.sc-o{background:#E6F1FB;}.sc-t{background:#FBEAF0;}
-.sc-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;}
-.sc-s .sc-label{color:#0F6E56;}.sc-w .sc-label{color:#854F0B;}.sc-o .sc-label{color:#185FA5;}.sc-t .sc-label{color:#993556;}
-.sc-list{list-style:none;}
-.sc-list li{font-size:12px;line-height:1.55;padding:4px 0 4px 13px;position:relative;color:var(--ink);border-bottom:0.5px solid rgba(0,0,0,0.05);}
-.sc-list li:last-child{border:none;}
-.sc-list li::before{content:'';position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;}
-.sc-s .sc-list li::before{background:#0F6E56;}.sc-w .sc-list li::before{background:#854F0B;}
-.sc-o .sc-list li::before{background:#185FA5;}.sc-t .sc-list li::before{background:#993556;}
-.hc-member-s{background:var(--gd);}.hc-employer-s{background:#0c3a5a;}
-.hc-ey-s{font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
-.hc-member-s .hc-ey-s{color:rgba(99,165,105,0.8);}.hc-employer-s .hc-ey-s{color:rgba(55,138,221,0.8);}
-.hc-txt{font-size:13px;font-weight:400;color:var(--w);line-height:1.6;}
-.hc-txt em{font-style:normal;}.hc-member-s .hc-txt em{color:var(--gl);}.hc-employer-s .hc-txt em{color:#85B7EB;}
-.vc-over{font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
-.vc-under{font-size:13px;font-weight:600;color:var(--gd);margin-bottom:4px;}
-.vc-b-s{font-size:11px;color:var(--muted);line-height:1.5;}
-.mc-num{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gl);margin-bottom:6px;}
-</style>
-
-
-
+<!-- ── BUSINESS STRATEGY (tab 8) ── -->
 <div class="pb" id="p8">
 <div class="sec">
   <div class="sey">Business strategy</div>
@@ -1606,76 +1645,8 @@ showPartner(0);
   </div>
 </div>
 </div>
-<!-- ═══════════════════════════════════════════════════════
-     COMPETITIVE INTELLIGENCE SECTION (tab index 10)
-     added June 2026
-     ═══════════════════════════════════════════════════════ -->
-<style>
-.cat-tabs-ci{display:flex;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap;}
-.cat-tab-ci{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:0.5px solid var(--bd);color:var(--muted);background:var(--w);}
-.cat-tab-ci.on-clinic{background:var(--gp);border-color:var(--gl);color:var(--gd);}
-.cat-tab-ci.on-virtual{background:#EEF6FF;border-color:#C5DDF7;color:#0C447C;}
-.cat-tab-ci.on-wear{background:#FAEEDA;border-color:#FAC775;color:#633806;}
-.ci-adv{border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:12px;}
-.ci-adv-clinic{background:var(--gp);border:0.5px solid var(--bd);}
-.ci-adv-virtual{background:#EEF6FF;border:0.5px solid #C5DDF7;}
-.ci-adv-wear{background:#FAEEDA;border:0.5px solid #FAC775;}
-.ci-adv-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
-.ci-adv-clinic .ci-adv-icon{color:var(--gm);}
-.ci-adv-virtual .ci-adv-icon{color:#185FA5;}
-.ci-adv-wear .ci-adv-icon{color:#854F0B;}
-.ci-adv-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
-.ci-adv-clinic .ci-adv-label{color:var(--gm);}
-.ci-adv-virtual .ci-adv-label{color:#185FA5;}
-.ci-adv-wear .ci-adv-label{color:#854F0B;}
-.ci-adv-t{font-size:13px;font-weight:600;color:var(--gd);margin-bottom:2px;}
-.ci-adv-virtual .ci-adv-t{color:#0C447C;}
-.ci-adv-wear .ci-adv-t{color:#633806;}
-.ci-adv-b{font-size:12px;color:var(--muted);line-height:1.55;font-weight:300;}
-.comp-row-ci{background:var(--w);border:0.5px solid var(--bd);border-radius:12px;overflow:hidden;margin-bottom:8px;}
-.comp-hdr-ci{display:flex;align-items:center;gap:12px;padding:1rem 1.25rem;cursor:pointer;}
-.comp-hdr-ci:hover{background:var(--gf);}
-.comp-av-ci{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;}
-.av-clinic{background:var(--gp);color:var(--gd);}
-.av-virtual{background:#EEF6FF;color:#0C447C;}
-.av-wear{background:#FAEEDA;color:#633806;}
-.av-tbd{background:var(--gf);color:var(--muted);}
-.comp-meta-ci{flex:1;min-width:0;}
-.comp-name-ci{font-size:14px;font-weight:500;color:var(--ink);}
-.comp-loc-ci{font-size:11px;color:var(--muted);margin-top:1px;}
-.comp-chev{font-size:16px;color:var(--muted);transition:transform 0.2s;flex-shrink:0;}
-.comp-row-ci.open .comp-chev{transform:rotate(180deg);}
-.comp-body-ci{display:none;border-top:0.5px solid var(--bd);}
-.comp-row-ci.open .comp-body-ci{display:block;}
-.comp-inner-ci{padding:1.25rem;}
-.hero-stmt-ci{background:var(--gf);border-radius:0 8px 8px 0;border-left:3px solid var(--bd);padding:0.875rem 1rem;margin-bottom:1.25rem;font-size:12px;color:var(--ink);line-height:1.6;font-style:italic;}
-.ci-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:12px;}
-.swot-grid-ci{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.swot-cell-ci{border-radius:8px;padding:0.75rem;}
-.sw-ci-s{background:#E8F4EA;}.sw-ci-w{background:#FEF3E7;}.sw-ci-o{background:#E6F1FB;}.sw-ci-t{background:#FBEAF0;}
-.swot-lbl-ci{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
-.sw-ci-s .swot-lbl-ci{color:#0F6E56;}.sw-ci-w .swot-lbl-ci{color:#854F0B;}.sw-ci-o .swot-lbl-ci{color:#185FA5;}.sw-ci-t .swot-lbl-ci{color:#993556;}
-.swot-list-ci{list-style:none;}
-.swot-list-ci li{font-size:11px;line-height:1.5;padding:2px 0 2px 11px;position:relative;color:var(--ink);}
-.swot-list-ci li::before{content:'';position:absolute;left:2px;top:7px;width:4px;height:4px;border-radius:50%;}
-.sw-ci-s .swot-list-ci li::before{background:#0F6E56;}.sw-ci-w .swot-list-ci li::before{background:#854F0B;}
-.sw-ci-o .swot-list-ci li::before{background:#185FA5;}.sw-ci-t .swot-list-ci li::before{background:#993556;}
-.lwh-win-card{background:var(--gp);border:0.5px solid var(--bd);border-radius:10px;padding:1rem;}
-.lwh-win-label{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gm);margin-bottom:6px;}
-.lwh-win-list{list-style:none;margin-bottom:10px;}
-.lwh-win-list li{font-size:12px;color:var(--ink);padding:3px 0 3px 13px;position:relative;line-height:1.5;border-bottom:0.5px solid var(--bd);}
-.lwh-win-list li:last-child{border:none;}
-.lwh-win-list li::before{content:'';position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:#0F6E56;}
-.lwh-threat-label{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#993556;margin-bottom:6px;margin-top:10px;}
-.lwh-threat-list{list-style:none;}
-.lwh-threat-list li{font-size:11px;color:var(--muted);padding:3px 0 3px 13px;position:relative;line-height:1.5;}
-.lwh-threat-list li::before{content:'';position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:#993556;}
-.tbd-ci{border:0.5px dashed var(--bd);border-radius:10px;padding:1.25rem;text-align:center;}
-.pend-badge{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;background:var(--gf);color:var(--muted);border:0.5px solid var(--bd);}
-.ci-cat-section{display:none;}
-.ci-cat-section.on{display:block;}
-</style>
 
+<!-- ── COMPETITIVE INTELLIGENCE (tab 9) ── -->
 <div class="pb" id="p9">
 <div class="sec">
   <div class="sey">Competitive intelligence</div>
@@ -1728,6 +1699,34 @@ showPartner(0);
 </div>
 
 <script>
+/* ═══════════════════════════════════════════════════════
+   Longevity Whole Health — app logic
+   Tab switching, ecosystem partner data, competitive
+   intelligence data and accordion rendering.
+   ═══════════════════════════════════════════════════════ */
+
+/* ── ECOSYSTEM PARTNERS + TAB SWITCHING ── */
+const partners=[{icon:'ti-building',name:'Employer',role:'Buyer',sub:'The funder of the membership. Decides whether Longevity is a benefit, a perk, or a strategic differentiator.',focus:['Talent attraction, retention, and productivity','Total benefit cost vs. workforce experience','Culture, engagement, and employer brand','Executive and high-performer health risk'],solve:['Burnout, absenteeism, and presenteeism','Disengaged or disconnected employees','Difficulty differentiating in a tight talent market','A wellness budget with no measurable return'],partner:['Employer-paid membership for all or tiered groups','Executive health stream + broader workforce stream','Pilot cohorts (30–90 day) with outcome readouts','Onsite assessments + lunch-and-learns as on-ramps'],comms:['Lead with retention, productivity, absenteeism','Show member outcomes, not feature lists','Position membership as a differentiator, not a perk'],open:'"What does health mean for your people strategy?"'},{icon:'ti-user',name:'Employee',role:'Beneficiary',sub:'The user of the membership and where outcomes happen. Activation is the unlock, without it, the employer sees no return.',focus:['Personal energy, performance, and longevity','Family health and aging well','Control and clarity over their own health','Time and friction, can they actually use it?'],solve:['Unanswered questions GPs are too rushed to address','Fragmented care across multiple providers','Anxiety about their numbers, symptoms, or trajectory','Wanting agency, not just appointments'],partner:['Frictionless onboarding through their employer','Clear first 90-day journey: assess → insight → plan','Family-add option once trust is established','Member stories shared back to drive peer enrollment'],comms:['Speak to confidence, clarity, and root cause','Lead with the experience, not the science','Highlight a low-friction first step (the assessment)'],open:'"What do you wish you understood about your health?"'},{icon:'ti-tool',name:'Unions',role:'Workforce representative',sub:'Represent unionized members at the bargaining table. In Northern Ontario mining, smelting, and industrial sectors, unions shape what benefits an employer offers.',focus:['Member health, safety, and dignity at work','Wages, benefits, pensions, and retirement security','Occupational health, mining, smelting, trades','Bargaining outcomes and member retention'],solve:['Equitable benefits negotiated into the contract','Real workplace safety, not just policy language','Care that addresses occupational and shift-work risk','A benefits package members can compare with pride'],partner:['Inclusion in collectively-bargained benefits packages','Member-paid premium tier as an optional add-on','Joint occupational-health programming with employers','Be a value-add the local can champion at bargaining'],comms:['Speak member outcomes, not vendor features','Lead with longevity, MSK, mental health, shift recovery','Frame us as a benefit the union secured, not imposed'],open:'"What did your members say in the last survey?"'},{icon:'ti-leaf',name:'Indigenous communities',role:'Community partner',sub:'Sovereign First Nations partners across Anishinaabe and Cree territories in the Sudbury region. Many engage with mining companies through Impact Benefit Agreements that include health and wellness commitments.',focus:['Community health sovereignty and self-determination','Cultural safety and integration with traditional healing','Closing intergenerational health inequities','Workforce wellbeing for community members in industry'],solve:['Care that respects culture, history, and community voice','Gaps in chronic disease, mental health, and longevity','Health programs tied to IBA wellness commitments','Workforce health for members employed by industry partners'],partner:['Community-led conversations first, we listen before we propose','Co-design with Health Directors and Tribal Council leadership','Bridge role with mining-company partners via IBA wellness funds','Cultural safety training for Longevity staff, non-negotiable'],comms:['Lead with relationship, reciprocity, and long-term commitment','Recognize sovereignty in every conversation','Move at the community\'s pace, not the sales pipeline\'s'],open:'"What health priorities has the community identified?"'},{icon:'ti-users',name:'HR Advisory / People Strategy',role:'Strategic advisor',sub:'Trusted advisor to the employer on culture, performance, and wellbeing strategy. Often the first influencer in the room before a buying decision is made.',focus:['Culture, performance, and wellbeing strategy','Leadership effectiveness and team health','EVP, engagement, and retention design','Translating people strategy into programs'],solve:['Clients with wellbeing intent but no execution','Programs that look good on paper, no measurable lift','Pressure to show ROI on culture investments','Differentiating their advisory practice'],partner:['Co-design wellbeing programs with Longevity inside','Recommended-vendor / preferred-partner status','Joint case studies and white-papers','Speaking partnerships at their client events'],comms:['Speak strategy, not services, culture, EVP, performance','Position us as the execution layer for their philosophy','Bring data: outcome metrics, engagement, retention'],open:'"How are your clients operationalizing wellbeing?"'},{icon:'ti-file-invoice',name:'Broker / Benefits advisor',role:'Procurement gatekeeper',sub:'Designs the benefits stack and shepherds renewals. Compensation is shifting from price-only to advisory value.',focus:['Benefits design, renewals, and client retention','Cost containment and plan optimization','Differentiating beyond commodity quotes','Maintaining advisory relevance with HR leaders'],solve:['Clients pushing back on rising premiums','Pressure to bring something new each renewal','Losing accounts to advisory-led competitors','Wellness add-ons that fail to engage employees'],partner:['Referral arrangement with clear economics','Co-presented client meetings, we bring the substance','Inclusion in their wellbeing / non-traditional toolkit','Client retention case studies they can use in pitches'],comms:['Position as a new category, not another vendor','Lead with renewal differentiation','Make them look smart in front of HR leaders'],open:'"What\'s giving you renewal leverage this year?"'},{icon:'ti-shield',name:'Insurer',role:'Risk layer',sub:'Underwrites the population. Their entire business is reducing the cost and frequency of downstream claims.',focus:['Claims cost, loss ratios, and risk selection','Population health and chronic disease load','Disability, drug, and paramedical utilization','Differentiated wellness to support group renewal'],solve:['Rising chronic, mental health, and MSK claims','Sponsor demand for value beyond reimbursement','Difficulty proving prevention ROI to underwriters','Wellness vendors that don\'t move clinical needles'],partner:['Population pilot tied to claims-cost benchmarks','Integration into their sponsor wellness toolkit','Anonymized outcomes data sharing on chronic risk','Co-marketing to brokers and large group sponsors'],comms:['Speak claims language, disability, MSK, metabolic','Frame us as upstream prevention, not a benefit','Bring the clinical and the actuarial story together'],open:'"Where is your claims pressure highest?"'},{icon:'ti-devices',name:'HR Software / Benefits Platform',role:'Channel',sub:'Where benefits live for the employer and employee. Their KPI is engagement and stickiness on the platform.',focus:['Admin efficiency and HR ops automation','Employee experience and platform engagement','Marketplace breadth and ecosystem partners','Stickiness, what keeps employers from churning'],solve:['Clients asking for premium, differentiated benefits','Low employee engagement on the platform','Generic point solutions that don\'t move usage metrics','Need for outcome-led stories to win and retain accounts'],partner:['Marketplace listing with embedded enrollment','Single-sign-on or deep-link integration','Co-marketing to their employer base','Platform-native member experience and analytics'],comms:['Talk engagement, retention, perceived value','Show how Longevity drives platform stickiness','Make the integration story easy and concrete'],open:'"What\'s pulling employees back into the platform?"'},{icon:'ti-device-mobile',name:'HealthTech',role:'Care continuum',sub:'Virtual care, digital triage, and engagement apps. They scale access, we deliver the longitudinal, in-person depth they can\'t.',focus:['Access, scale, and convenience at low unit cost','Digital engagement and adherence','Virtual triage, primary care, and mental health','Completing the care continuum for sponsors'],solve:['Complex members who don\'t fit virtual-only','Sponsor demand for diagnostic and in-person depth','Engagement that drops off after first interaction','Differentiation in a crowded virtual-care market'],partner:['Bidirectional referral pathway for complex cases','Bundled offering, virtual front door + Longevity depth','Joint care plans and shared notes where appropriate','Co-marketing as a complete continuum, not competitors'],comms:['Position as complement, not competitor','Highlight what we do that virtual care can\'t','Speak the language of continuum and outcomes'],open:'"Where do your complex members fall through?"'}];
+
+function showPartner(n){
+  for(let i=0;i<9;i++) document.getElementById('ps'+i).classList.toggle('on',i===n);
+  const p=partners[n];
+  document.getElementById('partnerDetail').innerHTML=`<div class="pd-header"><div class="pd-icon"><i class="ti ${p.icon}"></i></div><div><div class="pd-title">${p.name}</div><div class="pd-sub">${p.sub}</div></div></div><div class="pd-grid"><div class="pd-section"><div class="pd-section-t">Their focus</div><ul class="pd-list">${p.focus.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="pd-section"><div class="pd-section-t">What they solve for</div><ul class="pd-list">${p.solve.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="pd-section"><div class="pd-section-t">How we partner</div><ul class="pd-list">${p.partner.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="pd-section"><div class="pd-section-t">How we communicate</div><ul class="pd-list">${p.comms.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><div class="pd-open"><div class="pd-open-label">Opening question</div><div class="pd-open-q">${p.open}</div></div>`;
+}
+
+function showTab(n){
+  for(let i=0;i<10;i++){
+    var p=document.getElementById('p'+i);
+    var t=document.getElementById('t'+i);
+    var na=document.getElementById('na'+i);
+    if(p) p.classList.toggle('on',i===n);
+    if(t) t.classList.toggle('on',i===n);
+    if(na) na.classList.toggle('on',i===n);
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── COMPETITIVE INTELLIGENCE (tab 9) ── */
 var ciClinics=[
 {id:'ci-neomo',initials:'NE',avClass:'av-clinic',name:'NEOMO Executive Health',loc:'Sudbury, Ontario · Direct competitor',
 hero:'They help Northern Ontario executives and business owners gain a clear picture of their health through a comprehensive one-day physician-led assessment, so they can get an actionable roadmap and manage risk without traveling south.',
@@ -1862,7 +1861,11 @@ function showCiCat(n){
   }
 }
 
+/* ── INIT ── */
+showPartner(0);
 buildCiList(ciClinics,'ci-clinic-list');
 buildCiList(ciVirtuals,'ci-virtual-list');
 buildCiList(ciWear,'ci-wear-list');
 </script>
+</body>
+</html>
