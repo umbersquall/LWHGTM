@@ -447,6 +447,36 @@ body.locked{overflow:hidden;}
 .pend-badge{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;background:var(--gf);color:var(--muted);border:0.5px solid var(--bd);}
 .ci-cat-section{display:none;}
 .ci-cat-section.on{display:block;}
+.ci-chart-wrap{background:var(--w);border:1px solid var(--bd);border-radius:12px;padding:1.25rem;margin-bottom:1.5rem;}
+.ci-chart-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:8px;}
+.ci-chart-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.ci-chart-filters{display:flex;gap:5px;flex-wrap:wrap;}
+.ci-chart-btn{padding:4px 10px;border-radius:14px;font-size:11px;font-weight:500;cursor:pointer;border:0.5px solid var(--bd);color:var(--muted);background:transparent;font-family:inherit;}
+.ci-chart-btn.active{background:var(--gp);border-color:var(--gl);color:var(--gd);}
+.ci-chart-legend{display:flex;gap:14px;margin-top:0.75rem;flex-wrap:wrap;}
+.ci-chart-legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);}
+.ci-chart-legend-dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0;}
+#ci-chart-tooltip{position:fixed;pointer-events:none;opacity:0;transition:opacity 0.12s;background:var(--w);border:1px solid var(--bd);border-radius:10px;padding:12px 14px;width:288px;box-shadow:0 4px 20px rgba(0,0,0,0.1);z-index:9999;font-family:'Outfit',sans-serif;}
+.ci-tt-name{font-size:13px;font-weight:600;color:var(--gd);margin-bottom:8px;line-height:1.3;}
+.ci-tt-sub{font-size:12px;color:var(--muted);line-height:1.5;}
+.ci-tt-sec{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;margin-top:8px;}
+.ci-tt-sec-win{color:var(--gm);}
+.ci-tt-sec-threat{color:#854F0B;}
+.ci-tt-ul{margin:0;padding:0 0 0 12px;list-style:disc;}
+.ci-tt-ul li{font-size:11px;color:var(--muted);line-height:1.5;padding:1px 0;}
+.ci-scoring-wrap{border-top:1px solid var(--bd);margin-top:1rem;padding-top:0.75rem;}
+.ci-scoring-trigger{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;}
+.ci-scoring-trigger span{font-size:11px;font-weight:500;color:var(--muted);}
+.ci-scoring-trigger .ti{font-size:13px;color:var(--muted);transition:transform 0.2s;}
+.ci-scoring-body{display:none;padding-top:1rem;}
+.ci-scoring-body.open{display:block;}
+.ci-scoring-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.ci-scoring-col{}
+.ci-scoring-axis{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gm);margin-bottom:0.875rem;}
+.ci-scoring-item{display:flex;gap:9px;margin-bottom:0.75rem;align-items:flex-start;}
+.ci-scoring-n{font-size:10px;font-weight:700;color:var(--gl);min-width:13px;padding-top:1px;}
+.ci-scoring-t{font-size:12px;font-weight:500;color:var(--gd);margin-bottom:3px;}
+.ci-scoring-b{font-size:11px;color:var(--muted);line-height:1.55;font-weight:300;}
 </style>
 <style>
 /* ═══════════════════════════════════════════════════════
@@ -1705,6 +1735,65 @@ function unlock(){
     <div class="cat-tab-ci" id="ci-tab2" onclick="showCiCat(2)"><i class="ti ti-watch" style="font-size:12px;margin-right:5px;"></i>Wearables</div>
   </div>
 
+  <div class="ci-chart-wrap">
+    <div class="ci-chart-header">
+      <div class="ci-chart-label">Competitor positioning</div>
+      <div class="ci-chart-filters">
+        <button class="ci-chart-btn active" id="cif-all" onclick="filterCiChart('all')">All</button>
+        <button class="ci-chart-btn" id="cif-clinic" onclick="filterCiChart('clinic')">Private clinics</button>
+        <button class="ci-chart-btn" id="cif-virtual" onclick="filterCiChart('virtual')">Virtual health</button>
+        <button class="ci-chart-btn" id="cif-wear" onclick="filterCiChart('wear')">Wearables</button>
+      </div>
+    </div>
+    <canvas id="ci-chart"></canvas>
+    <div class="ci-chart-legend">
+      <div class="ci-chart-legend-item"><span class="ci-chart-legend-dot" style="background:#3B6D11;"></span>Private clinics</div>
+      <div class="ci-chart-legend-item"><span class="ci-chart-legend-dot" style="background:#185FA5;"></span>Virtual health</div>
+      <div class="ci-chart-legend-item"><span class="ci-chart-legend-dot" style="background:#854F0B;"></span>Wearables</div>
+      <div class="ci-chart-legend-item"><span class="ci-chart-legend-dot" style="background:#0F6E56;"></span>LWH</div>
+    </div>
+    <div class="ci-scoring-wrap">
+      <button class="ci-scoring-trigger" onclick="toggleCiScoring()" id="ci-scoring-btn">
+        <span>How positions are scored</span>
+        <i class="ti ti-chevron-down" id="ci-scoring-chev"></i>
+      </button>
+      <div class="ci-scoring-body" id="ci-scoring-body">
+        <div class="ci-scoring-grid">
+          <div class="ci-scoring-col">
+            <div class="ci-scoring-axis">← Reactive &nbsp;·&nbsp; Proactive →</div>
+            <div class="ci-scoring-item">
+              <div class="ci-scoring-n">1</div>
+              <div><div class="ci-scoring-t">Prevention orientation</div><div class="ci-scoring-b">Does the company design care around preventing illness before it occurs, or is it built to respond to symptoms and existing conditions?</div></div>
+            </div>
+            <div class="ci-scoring-item">
+              <div class="ci-scoring-n">2</div>
+              <div><div class="ci-scoring-t">Diagnostic depth</div><div class="ci-scoring-b">Does the company establish a comprehensive health baseline — biomarkers, imaging, functional testing — before problems emerge, or test only in response to a complaint?</div></div>
+            </div>
+            <div class="ci-scoring-item">
+              <div class="ci-scoring-n">3</div>
+              <div><div class="ci-scoring-t">Longitudinal monitoring</div><div class="ci-scoring-b">Does the company track health metrics continuously or across time, or deliver single point-in-time interactions with no structured follow-through?</div></div>
+            </div>
+          </div>
+          <div class="ci-scoring-col">
+            <div class="ci-scoring-axis">↓ Transactional &nbsp;·&nbsp; Relationship ↑</div>
+            <div class="ci-scoring-item">
+              <div class="ci-scoring-n">1</div>
+              <div><div class="ci-scoring-t">Care continuity</div><div class="ci-scoring-b">Is there an ongoing, named physician or care team relationship, or is care delivered by whoever is available at the moment of need?</div></div>
+            </div>
+            <div class="ci-scoring-item">
+              <div class="ci-scoring-n">2</div>
+              <div><div class="ci-scoring-t">Engagement cadence</div><div class="ci-scoring-b">Does the company create regular touchpoints between formal care events — daily, weekly — or only engage when a member initiates contact?</div></div>
+            </div>
+            <div class="ci-scoring-item">
+              <div class="ci-scoring-n">3</div>
+              <div><div class="ci-scoring-t">Personalization depth</div><div class="ci-scoring-b">Is the care plan uniquely built for this individual and updated over time, or is it a standard protocol applied uniformly across members?</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="ci-cat-section on" id="ci-cs0">
     <div class="ci-adv ci-adv-clinic">
       <i class="ti ti-shield-check ci-adv-icon"></i>
@@ -1744,6 +1833,9 @@ function unlock(){
 </div>
 </div>
 
+<div id="ci-chart-tooltip"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <script>
 /* ═══════════════════════════════════════════════════════
    Longevity Whole Health - app logic
@@ -1770,6 +1862,7 @@ function showTab(n){
     if(na) na.classList.toggle('on',i===n);
   }
   window.scrollTo({top:0,behavior:'smooth'});
+  if(n===9 && !ciChart) initCiChart();
 }
 
 /* ── COMPETITIVE INTELLIGENCE (tab 9) ── */
@@ -1986,6 +2079,192 @@ function showCiCat(n){
     if(tab){ tab.className='cat-tab-ci'+(i===n?' '+labels[i]:''); }
     if(sec){ sec.classList.toggle('on',i===n); }
   }
+}
+
+/* ── COMPETITOR POSITIONING CHART ── */
+var ciChart = null;
+
+var ciCompMap = {};
+[].concat(ciClinics, ciVirtuals, ciWear).forEach(function(c){ ciCompMap[c.id] = c; });
+
+function ciTrim(s, n){ return s.length <= n ? s : s.substring(0, n).replace(/\s\S*$/, '') + '…'; }
+
+var ciChartPoints = [
+  {t:'clinic',  id:'ci-neomo',     i:'NE',  name:'NEOMO Executive Health',    x:6.5, y:5.5},
+  {t:'clinic',  id:'ci-medcan',    i:'MC',  name:'Medcan Health Management',  x:7.0, y:6.0},
+  {t:'clinic',  id:'ci-lavie',     i:'LV',  name:'La Vie Executive Health',   x:6.0, y:5.0},
+  {t:'clinic',  id:'ci-harrison',  i:'HH',  name:'Harrison Healthcare',       x:7.0, y:5.5},
+  {t:'clinic',  id:'ci-rezilient', i:'RZ',  name:'Rezilient Health',          x:7.5, y:6.5},
+  {t:'clinic',  id:'ci-lume',      i:'LM',  name:'Lume Women + Health',       x:5.5, y:6.0},
+  {t:'virtual', id:'ci-teladoc',   i:'TH',  name:'Teladoc Health Canada',     x:2.5, y:3.0},
+  {t:'virtual', id:'ci-felix',     i:'FX',  name:'Felix',                     x:2.0, y:2.5},
+  {t:'virtual', id:'ci-june',      i:'JN',  name:'June Health',               x:3.0, y:4.5},
+  {t:'virtual', id:'ci-nia',       i:'NH',  name:'NiaHealth',                 x:5.5, y:4.0},
+  {t:'virtual', id:'ci-maple',     i:'MP',  name:'Maple',                     x:3.0, y:2.5},
+  {t:'wear',    id:'ci-oura',      i:'OR',  name:'Oura',                      x:7.0, y:1.5},
+  {t:'wear',    id:'ci-whoop',     i:'WH',  name:'WHOOP',                     x:7.5, y:1.5},
+  {t:'wear',    id:'ci-motiv',     i:'MO',  name:'Motiv Ring',                x:5.0, y:1.5},
+  {t:'wear',    id:'ci-evie',      i:'EV',  name:'Evie Ring',                 x:5.5, y:2.0},
+  {t:'wear',    id:'ci-ultrahuman',i:'UH',  name:'Ultrahuman',                x:7.0, y:2.0},
+  {t:'lwh',     id:'ci-lwh',       i:'LWH', name:'Longevity Whole Health',    x:9.2, y:9.2},
+];
+
+var ciColorMap = {clinic:'#3B6D11', virtual:'#185FA5', wear:'#854F0B', lwh:'#0F6E56'};
+
+function buildCiChartDatasets(filter){
+  var types = filter==='all' ? ['clinic','virtual','wear','lwh'] : [filter,'lwh'];
+  return types.map(function(t){
+    var pts = ciChartPoints.filter(function(p){ return p.t===t; });
+    var col = ciColorMap[t];
+    return {
+      label: t,
+      data: pts.map(function(p){ return {x:p.x, y:p.y, r:t==='lwh'?14:11, meta:p}; }),
+      backgroundColor: col+(t==='lwh'?'EE':'BB'),
+      borderColor: col,
+      borderWidth: t==='lwh'?2:1.5,
+    };
+  });
+}
+
+var ciQuadrantPlugin = {
+  id: 'ciQuadrant',
+  beforeDraw: function(chart){
+    var ctx=chart.ctx, xs=chart.scales.x, ys=chart.scales.y;
+    var mx=xs.getPixelForValue(5), my=ys.getPixelForValue(5);
+    ctx.save();
+    ctx.fillStyle='rgba(10,66,39,0.06)';
+    ctx.fillRect(mx, ys.top, xs.right-mx, my-ys.top);
+    ctx.restore();
+  },
+  afterDraw: function(chart){
+    var ctx=chart.ctx, xs=chart.scales.x, ys=chart.scales.y;
+    var mx=xs.getPixelForValue(5), my=ys.getPixelForValue(5);
+    ctx.save();
+
+    // Quadrant lines — solid, visible
+    ctx.strokeStyle='rgba(26,102,64,0.25)';
+    ctx.lineWidth=1.5;
+    ctx.setLineDash([]);
+    ctx.beginPath(); ctx.moveTo(mx, ys.top); ctx.lineTo(mx, ys.bottom); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(xs.left, my); ctx.lineTo(xs.right, my); ctx.stroke();
+
+    // Axis labels
+    ctx.font='9px Outfit,sans-serif';
+    ctx.fillStyle='rgba(74,90,80,0.6)';
+
+    // X-axis: Reactive / Proactive along the bottom
+    ctx.textAlign='left';
+    ctx.fillText('Reactive', xs.left+4, ys.bottom+14);
+    ctx.textAlign='right';
+    ctx.fillText('Proactive', xs.right-4, ys.bottom+14);
+
+    // Y-axis: each label centered in its own half, rotated cleanly
+    ctx.save();
+    ctx.translate(xs.left-6, (ys.top+my)/2);
+    ctx.rotate(-Math.PI/2);
+    ctx.textAlign='center';
+    ctx.fillText('Relationship', 0, 0);
+    ctx.restore();
+
+    ctx.save();
+    ctx.translate(xs.left-6, (my+ys.bottom)/2);
+    ctx.rotate(-Math.PI/2);
+    ctx.textAlign='center';
+    ctx.fillText('Transactional', 0, 0);
+    ctx.restore();
+
+    ctx.restore();
+  }
+};
+
+function ciTooltipHandler(context){
+  var el = document.getElementById('ci-chart-tooltip');
+  if(!el) return;
+  var tooltip = context.tooltip;
+  if(tooltip.opacity === 0){ el.style.opacity='0'; return; }
+  if(!tooltip.dataPoints || !tooltip.dataPoints.length) return;
+  var meta = tooltip.dataPoints[0].raw.meta;
+  var comp = meta.t !== 'lwh' ? ciCompMap[meta.id] : null;
+  var html = '<div class="ci-tt-name">' + meta.name + '</div>';
+  if(comp){
+    html += '<div class="ci-tt-sec ci-tt-sec-win">Where LWH wins</div><ul class="ci-tt-ul">';
+    comp.wins.slice(0,2).forEach(function(w){ html += '<li>' + ciTrim(w,92) + '</li>'; });
+    html += '</ul><div class="ci-tt-sec ci-tt-sec-threat">Watch out for</div><ul class="ci-tt-ul">';
+    comp.threats.slice(0,2).forEach(function(t){ html += '<li>' + ciTrim(t,92) + '</li>'; });
+    html += '</ul>';
+  } else {
+    html += '<div class="ci-tt-sub">"Our ambition is to deliver the leading proactive care experience. One that is meaningfully better than anything else in the market."</div>';
+  }
+  el.innerHTML = html;
+  var rect = context.chart.canvas.getBoundingClientRect();
+  var cx = rect.left + tooltip.caretX, cy = rect.top + tooltip.caretY;
+  var left = cx + 14;
+  if(left + 288 > window.innerWidth - 8) left = cx - 302;
+  el.style.left = left + 'px';
+  el.style.top = (cy - 8) + 'px';
+  el.style.opacity = '1';
+}
+
+function initCiChart(){
+  var canvas = document.getElementById('ci-chart');
+  if(!canvas || typeof Chart==='undefined' || typeof ChartDataLabels==='undefined') return;
+  if(ciChart){ ciChart.destroy(); }
+  ciChart = new Chart(canvas, {
+    type: 'bubble',
+    plugins: [ciQuadrantPlugin, ChartDataLabels],
+    data: { datasets: buildCiChartDatasets('all') },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      aspectRatio: 1.8,
+      layout: { padding: { top:8, right:16, bottom:20, left:24 } },
+      scales: {
+        x: {
+          min:0, max:10.8,
+          border:{ display:false },
+          grid:{ display:false },
+          ticks:{ display:false },
+          title:{ display:false },
+        },
+        y: {
+          min:0, max:10.8,
+          border:{ display:false },
+          grid:{ display:false },
+          ticks:{ display:false },
+          title:{ display:false },
+        }
+      },
+      plugins: {
+        legend: { display:false },
+        tooltip: { enabled:false, external:ciTooltipHandler },
+        datalabels: {
+          color:'#ffffff',
+          font:{ weight:'600', size:8, family:'Outfit,sans-serif' },
+          formatter: function(v){ return v.meta.i; },
+          anchor:'center',
+          align:'center',
+        }
+      }
+    }
+  });
+}
+
+function toggleCiScoring(){
+  var body=document.getElementById('ci-scoring-body');
+  var chev=document.getElementById('ci-scoring-chev');
+  if(!body) return;
+  var open=body.classList.toggle('open');
+  if(chev) chev.style.transform=open?'rotate(180deg)':'';
+}
+
+function filterCiChart(filter){
+  ['all','clinic','virtual','wear'].forEach(function(k){
+    var btn=document.getElementById('cif-'+k);
+    if(btn) btn.classList.toggle('active', k===filter);
+  });
+  if(!ciChart) return;
+  ciChart.data.datasets = buildCiChartDatasets(filter);
+  ciChart.update();
 }
 
 /* ── INIT ── */
